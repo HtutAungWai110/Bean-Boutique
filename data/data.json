@@ -1,0 +1,362 @@
+[
+  {
+    "id": 1,
+    "name": "Espresso",
+    "category": "coffee",
+    "price": 299,
+    "rating": 5,
+    "ratedNumber": 1011,
+    "images": [
+      "assets/images/Espresso.jpg",
+      "assets/images/Espresso_alt1.jpg",
+      "assets/images/Espresso_alt2.jpg"
+    ],
+    "briefDescription" : "Espresso: with hot water, creating a smooth, rich, bold coffee."
+  },
+  {
+    "id": 2,
+    "name": "Americano",
+    "category": "coffee",
+    "price": 325,
+    "rating": 4.5,
+    "ratedNumber": 712,
+    "images": [
+      "assets/images/Americano.jpg",
+      "assets/images/Americano_alt1.jpg",
+      "assets/images/Americano_alt2.jpg"
+    ],
+    "briefDescription" : "Americano: bold espresso blended with hot water for smooth, rich flavor."
+  },
+  {
+    "id": 3,
+    "name": "Latte",
+    "category": "coffee",
+    "price": 415,
+    "rating": 4.5,
+    "ratedNumber": 1221,
+    "images": [
+      "assets/images/Latte.jpg",
+      "assets/images/Latte_alt1.jpg",
+      "assets/images/Latte_alt2.jpg"
+    ],
+    "briefDescription": "Latte: smooth espresso mixed with steamed milk, creamy, mellow, and comforting."
+  },
+  {
+    "id": 4,
+    "name": "Cappuccino",
+    "category": "coffee",
+    "price": 410,
+    "rating": 4.5,
+    "ratedNumber": 891,
+    "images": [
+      "assets/images/Cappuccino.jpg",
+      "assets/images/Cappuccino_alt1.jpg",
+      "assets/images/Cappuccino_alt2.jpg"
+    ],
+    "briefDescription" : "Cappuccino: equal parts espresso, steamed milk, and foam—bold, airy, and smooth."
+  },
+  {
+    "id": 5,
+    "name": "Flat White",
+    "category": "coffee",
+    "new": true,
+    "price": 435,
+    "rating": 4.5,
+    "ratedNumber": 714,
+    "images": [
+      "assets/images/Flat_white.jpg",
+      "assets/images/Flat_white_alt1.jpg",
+      "assets/images/Flat_white_alt2.jpg"
+    ],
+    "briefDescription" : "Flat White: velvety steamed milk over rich espresso, smooth, bold, and creamy."
+  },
+  {
+    "id": 6,
+    "name": "Macchiato",
+    "category": "coffee",
+    "price": 375,
+    "rating": 4.5,
+    "ratedNumber": 690,
+    "images": [
+      "assets/images/Macchiato.jpg",
+      "assets/images/Macchiato_alt1.jpg",
+      "assets/images/Macchiato_alt2.jpg"
+    ],
+    "briefDescription": "Macchiato: bold espresso “stained” with a small splash of frothy milk."
+  },
+  {
+    "id": 7,
+    "name": "Mocha",
+    "category": "coffee",
+    "price": 465,
+    "rating": 4.5,
+    "ratedNumber": 910,
+    "images": [
+      "assets/images/Mocha.jpg",
+      "assets/images/Mocha_alt1.jpg",
+      "assets/images/Mocha_alt2.jpg"
+    ],
+    "briefDescription" : "Mocha: rich espresso blended with chocolate and steamed milk, sweet and creamy."
+  },
+  {
+    "id": 8,
+    "name": "Affogato",
+    "category": "coffee",
+    "new": true,
+    "price": 500,
+    "rating": 4.5,
+    "ratedNumber": 611,
+    "images": [
+      "assets/images/Affogato.jpg",
+      "assets/images/Affogato_alt1.jpg",
+      "assets/images/Affogato_alt2.jpg"
+    ],
+    "briefDescription": "Affogato: hot espresso poured over cold ice cream, sweet and intense."
+  },
+  {
+    "id": 9,
+    "name": "Cortado",
+    "category": "coffee",
+    "new": true,
+    "price": 395,
+    "rating": 4.0,
+    "ratedNumber": 510,
+    "images": [
+      "assets/images/Cortado.jpg",
+      "assets/images/Cortado_alt1.jpg",
+      "assets/images/Cortado_alt2.jpg"
+    ],
+    "briefDescription" : "Cortado: equal parts espresso and warm milk, smooth and balanced flavor."
+  },
+  {
+    "id": 10,
+    "name": "Irish Coffee",
+    "category": "coffee",
+    "price": 600,
+    "rating": 4.5,
+    "ratedNumber": 698,
+    "images": [
+      "assets/images/Irish_coffee.jpg",
+      "assets/images/Irish_coffee_alt1.jpg",
+      "assets/images/Irish_coffee_alt2.jpg"
+    ],
+    "briefDescription" : "Irish Coffee: hot coffee mixed with whiskey, sugar, and topped with cream."
+  },
+ {
+  "id": 11,
+  "name": "Vienna",
+  "category": "coffee",
+  "new": true,
+  "price": 480,
+  "rating": 4.5,
+  "ratedNumber": 723,
+  "images": [
+    "assets/images/Vienna.jpg",
+    "assets/images/Vienna_alt1.jpg",
+    "assets/images/Vienna_alt2.jpg"
+  ],
+  "briefDescription": "Vienna Coffee: a rich blend of coffee topped with whipped cream, inspired by Austrian tradition."
+  },
+
+  {
+  "id": 12,
+  "name": "Doppio",
+  "category": "coffee",
+  "price": 330,
+  "rating": 4.0,
+  "ratedNumber": 621,
+  "images": [
+    "assets/images/Doppio.jpg",
+    "assets/images/Doppio_alt1.jpg",
+    "assets/images/Doppio_alt2.jpg"
+  ],
+  "briefDescription": "Doppio: a double shot of rich, bold espresso for a stronger coffee experience."
+  },
+
+  {
+  "id": 13,
+  "name": "Ristretto",
+  "category": "coffee",
+  "price": 325,
+  "rating": 4.0,
+  "ratedNumber": 710,
+  "images": [
+    "assets/images/Ristretto.jpg",
+    "assets/images/Ristretto_alt1.jpg",
+    "assets/images/Ristretto_alt2.jpg"
+  ],
+  "briefDescription": "Ristretto: a short, concentrated shot of espresso with a bold and intense flavor."
+  },
+  {
+  "id": 14,
+  "name": "Lungo",
+  "category": "coffee",
+  "price": 310,
+  "rating": 4.0,
+  "ratedNumber": 834,
+  "images": [
+    "assets/images/Lungo.jpg",
+    "assets/images/Lungo_alt1.jpg",
+    "assets/images/Lungo_alt2.jpg"
+  ],
+  "briefDescription": "Lungo: a long-pulled espresso offering a milder flavor and higher volume than a standard shot."
+  },
+  {
+  "id": 15,
+  "name": "Turkish Coffee",
+  "category": "coffee",
+  "price": 385,
+  "rating": 4.5,
+  "ratedNumber": 1023,
+  "images": [
+    "assets/images/Turkish_Coffee.jpg",
+    "assets/images/Turkish_Coffee_alt1.jpg",
+    "assets/images/Turkish_Coffee_alt2.jpg"
+  ],
+  "briefDescription": "Turkish Coffee: a strong and thick coffee prepared by boiling finely ground coffee with water and sugar."
+  },
+  {
+  "id": 16,
+  "name": "Café au Lait",
+  "category": "coffee",
+  "price": 425,
+  "rating": 4.0,
+  "ratedNumber": 689,
+  "images": [
+    "assets/images/Cafe_au_Lait.jpg",
+    "assets/images/Cafe_au_Lait_alt1.jpg",
+    "assets/images/Cafe_au_Lait_alt2.jpg"
+  ],
+  "briefDescription": "Café au Lait: strong coffee combined with steamed milk for a creamy and smooth taste."
+  },
+  {
+    "id": 17,
+    "name": "Café Cubano",
+    "category": "coffee",
+    "price": 365,
+    "rating": 4,
+    "ratedNumber": 590,
+     "images": [
+    "assets/images/Café Cubano.jpg",
+    "assets/images/Café Cubano_alt1.jpg",
+    "assets/images/Café Cubano_alt2.jpg"
+  ],
+    "briefDescription": "Café au Lait: strong coffee combined with steamed milk for a creamy and smooth taste."
+  },
+  {
+  "id": 18,
+  "name": "Café Bombón",
+  "category": "coffee",
+  "new": true,
+  "price": 450,
+  "rating": 4.0,
+  "ratedNumber": 1064,
+  "images": [
+    "assets/images/Cafe_Bombon.jpg",
+    "assets/images/Cafe_Bombon_alt1.jpg",
+    "assets/images/Cafe_Bombon_alt2.jpg"
+  ],
+  "briefDescription": "Café Bombón: a sweet coffee made with espresso and condensed milk layered for a rich flavor."
+  },
+  {
+  "id": 19,
+  "name": "Red Eye",
+  "category": "coffee",
+  "price": 390,
+  "rating": 4.0,
+  "ratedNumber": 799,
+  "images": [
+    "assets/images/Red_Eye.jpg",
+    "assets/images/Red_Eye_alt1.jpg",
+    "assets/images/Red_Eye_alt2.jpg"
+  ],
+  "briefDescription": "Red Eye: a strong combination of drip coffee and a shot of espresso for a bold caffeine boost."
+  },
+  {
+  "id": 20,
+  "name": "Black Eye",
+  "category": "coffee",
+  "price": 410,
+  "rating": 4.0,
+  "ratedNumber": 947,
+  "images": [
+    "assets/images/Black_Eye.jpg",
+    "assets/images/Black_Eye_alt1.jpg",
+    "assets/images/Black_Eye_alt2.jpg"
+  ],
+  "briefDescription": "Black Eye: a powerful mix of drip coffee and two shots of espresso for intense flavor and energy."
+  },
+  {
+  "id": 21,
+  "name": "Drip Coffee",
+  "category": "coffee",
+  "price": 250,
+  "rating": 4.0,
+  "ratedNumber": 528,
+  "images": [
+    "assets/images/Drip_Coffee.jpg",
+    "assets/images/Drip_Coffee_alt1.jpg",
+    "assets/images/Drip_Coffee_alt2.jpg"
+  ],
+  "briefDescription": "Drip Coffee: a classic brewed coffee made by slowly dripping hot water through ground beans."
+  },
+  {
+  "id": 22,
+  "name": "Percolated Coffee",
+  "category": "coffee",
+  "price": 275,
+  "rating": 3.0,
+  "ratedNumber": 1042,
+  "images": [
+    "assets/images/Percolated_Coffee.jpg",
+    "assets/images/Percolated_Coffee_alt1.jpg",
+    "assets/images/Percolated_Coffee_alt2.jpg"
+  ],
+  "briefDescription": "Percolated Coffee: brewed using a percolator, producing a rich and robust cup through repeated boiling."
+  },
+  {
+  "id": 23,
+  "name": "Espresso Con Panna",
+  "category": "coffee",
+  "new": true,
+  "price": 405,
+  "rating": 4.0,
+  "ratedNumber": 718,
+  "images": [
+    "assets/images/Espresso_Con_Panna.jpg",
+    "assets/images/Espresso_Con_Panna_alt1.jpg",
+    "assets/images/Espresso_Con_Panna_alt2.jpg"
+  ],
+  "briefDescription": "Espresso Con Panna: a rich shot of espresso topped with a dollop of whipped cream for a creamy twist."
+  },
+ {
+  "id": 24,
+  "name": "Café de Olla",
+  "category": "coffee",
+  "price": 435,
+  "rating": 4.0,
+  "ratedNumber": 761,
+  "images": [
+    "assets/images/Cafe_de_Olla.jpg",
+    "assets/images/Cafe_de_Olla_alt1.jpg",
+    "assets/images/Cafe_de_Olla_alt2.jpg"
+  ],
+  "briefDescription": "Café de Olla: a traditional Mexican coffee brewed with cinnamon and piloncillo for a sweet, spiced flavor."
+  },
+  
+  {
+  "id": 25,
+  "name": "White Coffee",
+  "category": "coffee",
+  "new": true,
+  "price": 420,
+  "rating": 4.0,
+  "ratedNumber": 823,
+  "images": [
+    "assets/images/White_Coffee.jpg",
+    "assets/images/White_Coffee_alt1.jpg",
+    "assets/images/White_Coffee_alt2.jpg"
+  ],
+  "briefDescription": "White Coffee: lightly roasted coffee beans brewed to create a mild, smooth, and creamy flavor."
+  }
+]

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header"></header>
+    <nav class="navigation">
+        <a href="home-page.html"><img src="assets/icons/logo.png" alt="logo" class="logo"></a>
+        <ul class="nav-menu">
+            <a href="home-page.html" class="hover-menu"><li class="hover-navlink">Home</li></a>
+            <a href="" class="hover-menu"><li class="hover-navlink">Contact</li></a>
+            <div class="navdropdown-products" id="dropDown">
+                <li class="hover-dropdown">
+                    Products 
+                <img src="assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png" alt="drop down">
+                </li>
+                <ul class="navdropdown-box">
+                    <li class="dropdown-hover"><a href="products.html?category=coffee" >Coffe menu</a></li>
+                    <li class="dropdown-hover"><a href="products.html" >Brewing machine</a></li>
+                </ul>
+            </div>
+            <div class="search-bar">
+                <input type="text">
+                <button class="nva-buttons search-btn"><img src="assets/icons/search_50dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png" alt="search" class="search-icon"></button>
+            </div>
+
+            <div class="login-signup-wrapper">
+                <a href=""><button class="login-btn">Login</button></a>
+                <a href=""><button class="signup-btn">Sign up</button></a>
+            </div>
+            
+             <div class="cart-wrapper">
+                <a href="">
+                    <img src="assets/icons/shopping_cart_50dp_000000_FILL0_wght300_GRAD200_opsz48.png" class="nav-buttons" alt="cart">
+                    <span class="cart-text">Cart</span>
+                </a>
+            </div>
+
+           
+        </ul>
+        
+    </nav>
+    <!--Swiper container-->
+    <div class="swiper">
+        <!-- Wrapper for slides -->
+        <div class="swiper-wrapper">
+            <!-- Slides -->
+            <div class="swiper-slide"><img src="assets/images/Coffee That makes you happy.png" alt="poster" class="posters"></div>
+            <div class="swiper-slide"><img src="assets/images/Grand Opening.png" alt="poster" class="posters"></div>
+
+        </div>
+
+        <!-- Optional navigation buttons -->
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+
+        <!-- Optional pagination -->
+        <div class="swiper-pagination"></div>
+        <div class="swiper-pagination">
+            <span class="swiper-pagination-bullet"></span>
+            <span class="swiper-pagination-bullet swiper-pagination-bullet-active"></span>
+            ...
+        </div>
+
+    </div>
+
+    <div class="overlay-popup">
+    <!--This will be displayed if fecthing data from json file throws an error-->
+        <div class="popup-box">
+            <button class="close-popup" id="closePopup">
+                <img src="assets/icons/close_30dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="close button" class="close-icon">
+            </button>
+            <div class="error-message-wrapper">
+                <div>
+                    <img src="assets/icons/warning_50dp_EA3323_FILL0_wght300_GRAD200_opsz48.png" alt="warning" class="warning-icon">
+                </div>
+                <div>
+                    
+                    <p class="pre-error-message">
+                        Oops! Something went wrong.
+                    </p>
+                    <p class="error-message">
+
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+
+        
+      
+    </div> 
+
+    <div class="items-container">
+    <!--This is a coffee container featuring the first ten coffee from the menu-->
+        <h2 class="category-header">Our Special Coffee Menu</h2>
+        <div class="items-wrapper" id="coffeeContainer">
+            <!--
+                <div class="item" data-state="item">
+                        <img src="assets/images/Americano.jpg" alt="" class="item-img">
+                        <p class="item-name">Americano</p>
+                        <p class="breif-description">
+                            Espresso with hot water, creating a smooth, rich, bold coffee.
+                        </p>
+                        <div class="rating-wrapper">
+                            <img src="assets/ratings/rating-40.png" alt="rating" class="rating">
+                            <span class="rated-number">411</span>
+                        </div>
+                        <div class="price-btn-wrapper">
+                            <p class="price">$2.00</p>
+                            <a href="product.html?id=123" class="view-link">
+                                <button class="view-btn">View product
+                                    <img src="assets/icons/arrow_right_alt_20dp_FFFFFF_FILL0_wght300_GRAD200_opsz20.png" alt="arrow"
+                                    class="view-btn-arrow">
+                                </button>
+                            </a>
+                            
+                        </div>
+                </div> 
+            -->
+    
+        </div>
+        <div class="explore-btn-wrapper">
+        <!--Customers can explore every coffee on menu by clicking button below-->
+        
+        <a href="products.html?category=coffee"><button class="explore-btn">Explore more</button></a>
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="scripts/main.js" type="module"></script>
+</body>
+</html>

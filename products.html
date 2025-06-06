@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header"></header>
+    <nav class="navigation">
+        <a href="home-page.html"><img src="assets/icons/logo.png" alt="logo" class="logo"></a>
+        <ul class="nav-menu">
+            <a href="home-page.html" class="hover-menu"><li class="hover-navlink">Home</li></a>
+            <a href="" class="hover-menu"><li class="hover-navlink">Contact</li></a>
+            
+            <div class="navdropdown-products" id="dropDown">
+                <li class="hover-dropdown">
+                    Products 
+                <img src="assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png" alt="drop down">
+                </li>
+                <ul class="navdropdown-box">
+                    <li class="dropdown-hover"><a href="products.html?category=coffee" >Coffe menu</a></li>
+                    <li class="dropdown-hover"><a href="" >Brewing machine</a></li>
+                </ul>
+            </div>
+           
+            <div class="search-bar">
+                <input type="text">
+                <button class="nva-buttons search-btn"><img src="assets/icons/search_50dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png" alt="search" class="search-icon"></button>
+            </div>
+
+            <div class="login-signup-wrapper">
+                <a href=""><button class="login-btn">Login</button></a>
+                <a href=""><button class="signup-btn">Sign up</button></a>
+            </div>
+
+            <div class="cart-wrapper">
+                <a href="">
+                    <img src="assets/icons/shopping_cart_50dp_000000_FILL0_wght300_GRAD200_opsz48.png" class="nav-buttons" alt="cart">
+                    <span class="cart-text">Cart</span>
+                </a>
+            </div>
+        </ul>
+        
+    </nav> 
+
+    <div class="list-of-items">
+        <div class="items-wrapper" id="products-page-item-list">
+            
+        </div>
+    </div>
+
+    <script src="scripts/products.js" type="module"></script>
+</body>
+</html>

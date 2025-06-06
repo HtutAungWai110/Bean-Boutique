@@ -1,0 +1,19 @@
+{
+  "name": "coffee-shop",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "live-server . --open=home-page.html"
+  },
+  "dependencies": {
+    "swiper": "^11.2.8"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}
