@@ -340,7 +340,6 @@ body{
 .items-container{
     max-width: 100%;
     margin: 0 auto;
-    padding: 20px;
     background: linear-gradient(rgba(255, 208, 150, 0.2));
     overflow: hidden;
 }
@@ -348,7 +347,8 @@ body{
 .category-header{
     text-align: center;
     color: #4c2910;
-    padding: 20px 0px;
+    padding: 30px 0px;
+    font-weight: 800;
 }
 
 
@@ -359,13 +359,12 @@ body{
     gap: 20px;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 20px;
+    padding: 0px 20px;
 }
 
 .item{
-    max-width: 220px;
+    max-width: 230px;
     height: 350px;
-    padding: 10px;
     box-shadow: 1px 1px 1px #ebebeb;
     border-radius: 20px;
     display: grid;
@@ -374,7 +373,12 @@ body{
     transition: 0.5s ease-in-out;
     background-color: #ffffff;
     border: 1px solid #bbbbbb;
+    overflow: hidden;
 
+}
+
+.item-padding{
+    padding: 0px 10px;
 }
 
 .item:hover{
@@ -393,10 +397,8 @@ body{
 }
 
 .item-img{
-    max-width: 220px;
-    max-height: auto;
-    border: 1px solid #e6e6e6;
-    border-radius: 5px;
+    width: 100%;
+    height: auto;
     
 }
 

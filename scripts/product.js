@@ -18,20 +18,22 @@ const productid = params.get('id');
   } //Rating map to match rating images with rating scores fetched from data.json
 
 async function findProuct(productid){
-
-    const fectcheddata = await fetchData();
-    const product = await fectcheddata.find(item => item.id === Number(productid));
+    try{
+        const fectcheddata = await fetchData();
+        const product = await fectcheddata.find(item => item.id === Number(productid))
+        if (!product){
+            throw new Error ('Product not found')
+        }
+        renderProducts(product)
+    } catch (error){
+        console.error(error)
+    }
 
     
+   
+}
 
-    // if(!product){
-    //     throw new Error ("Product not found")
-    // }
-    // } catch(error){
-    //     console.error(error);
-    //     document.getElementById("productContainer").innerHTML = `<p>${error}</p>`
-    // }
-
+function renderProducts(product){
     const {id, name, category, price, rating, ratedNumber, images,  briefDescription} = product
 
     const productContainer = document.getElementById("productContainer");
@@ -132,7 +134,6 @@ async function findProuct(productid){
     `
     
     appendEventListeners(product);
-   
 }
 
 function appendImagesEvent(e){
@@ -178,6 +179,7 @@ function appendEventListeners(product){
         }
     )
 
+
     if (product.category === "coffee"){
         const portionSelectors = document.querySelectorAll(".portion-size") || null;
 
@@ -191,40 +193,42 @@ function appendEventListeners(product){
 
         const selectBox = document.querySelector('.custom-select') || null;
 
-        if(selectBox === null) return;
-        const selectWrapper = selectBox.querySelector(".selected-wrapper")
-        const dropdownIcon = selectWrapper.querySelector(".dropdown-icon")
-        const selected = selectWrapper.querySelector('.selected');
-        const optionsContainer = selectBox.querySelector('.options');
-        const options = selectBox.querySelectorAll('.option');
+        if(selectBox){
+            const selectWrapper = selectBox.querySelector(".selected-wrapper")
+            const dropdownIcon = selectWrapper.querySelector(".dropdown-icon")
+            const selected = selectWrapper.querySelector('.selected');
+            const optionsContainer = selectBox.querySelector('.options');
+            const options = selectBox.querySelectorAll('.option');
 
-        let hidden = true;
-        selectWrapper.addEventListener('click', () => {
-            if (hidden){
-                optionsContainer.classList.add("options-shown");
-                dropdownIcon.src = "assets/icons/keyboard_arrow_up_20dp_000000_FILL0_wght400_GRAD0_opsz20.png"
-                hidden = false
-                return
-            } 
+            let hidden = true;
+            selectWrapper.addEventListener('click', () => {
+                if (hidden){
+                    optionsContainer.classList.add("options-shown");
+                    dropdownIcon.src = "assets/icons/keyboard_arrow_up_20dp_000000_FILL0_wght400_GRAD0_opsz20.png"
+                    hidden = false
+                    return
+                } 
 
-            optionsContainer.classList.remove("options-shown");
-            dropdownIcon.src = "assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png"
-            hidden = true;
+                optionsContainer.classList.remove("options-shown");
+                dropdownIcon.src = "assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png"
+                hidden = true;
+                
+                
+            });
+
+            options.forEach(option => {
+            option.addEventListener('click', () => {
+                selected.innerText = option.innerText.trim();
+                selected.dataset.temp = option.innerText.trim();
+                optionsContainer.classList.remove("options-shown");
+                dropdownIcon.src = "assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png"
+                hidden = true;
             
-            
-        });
-
-        options.forEach(option => {
-        option.addEventListener('click', () => {
-            selected.innerText = option.innerText.trim();
-            selected.dataset.temp = option.innerText.trim();
-            optionsContainer.classList.remove("options-shown");
-            dropdownIcon.src = "assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png"
-            hidden = true;
-           
-        });
-        });
+            });
+            });
         }
+        
+    }
 
          
 

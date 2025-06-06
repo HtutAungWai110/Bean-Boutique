@@ -21,12 +21,18 @@ let productsData;
 
 
 async function getProducts(){
-    const fetchedData = await filterData(category)
-    productsData = fetchedData;
-    if(productsData == []){
-      return;
-    }
+  try{
+      const fetchedData = await filterData(category)
+      productsData = fetchedData || null;
+      if (productsData === null) {
+        throw new Error("Items not found");
+      }
     renderProducts()
+  } catch (error){
+    console.error(error);
+    document.querySelector(".category-header").textContent = error
+  }
+   
 } 
 
 
@@ -36,17 +42,17 @@ function renderProducts(){
     const itemsList = productsData.map(item => 
          `<div class="item" data-state="item" key=${item.id}>
           <img src="${item.images[0]}" alt="${item.images[0]}" class="item-img">
-          <p class="item-name">${item.name}</p>
-           <a href="product.html?id=${item.id}" class="breif-description">
+          <p class="item-name item-padding">${item.name}</p>
+           <a href="product.html?id=${item.id}" class="breif-description item-padding">
             ${item.briefDescription}
            </a>
-          <div class="rating-wrapper">
+          <div class="rating-wrapper item-padding">
               <img src="${ratingMap[item.rating]}" alt="rating" class="rating">
               <span class="rated-number">
               ${item.ratedNumber}
               </span>
           </div>
-          <div class="price-btn-wrapper">
+          <div class="price-btn-wrapper item-padding">
               <p class="price">£${(item.price/100).toFixed(2)}</p>
               <a href="product.html?id=${item.id}" class="view-link">
                   <button class="view-btn">View product
@@ -58,6 +64,7 @@ function renderProducts(){
         </div>
       `
     )
+    document.querySelector(".category-header").textContent = category.toUpperCase()
     itemsContainer.innerHTML = itemsList.join("");
     
 }
