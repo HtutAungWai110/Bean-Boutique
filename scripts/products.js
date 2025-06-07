@@ -61,11 +61,22 @@ function renderProducts(){
                   </button>
               </a>
           </div>
+
+          <div class="promotion">
+          
+          ${item?.promotion || ""}
+          </div>
         </div>
       `
     )
     document.querySelector(".category-header").textContent = category.toUpperCase()
     itemsContainer.innerHTML = itemsList.join("");
+    const promo = document.querySelectorAll('.promotion');
+    promo.forEach(promo => {
+      if (!promo.textContent.trim()) {
+        promo.style.padding = '0';
+      }
+    })
     
 }
 

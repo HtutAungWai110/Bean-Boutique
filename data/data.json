@@ -3,7 +3,8 @@
     "id": 1,
     "name": "Espresso",
     "category": "coffee",
-    "price": 299,
+    "price": 240,
+    "promotion": "20% Off",
     "rating": 5,
     "ratedNumber": 1011,
     "images": [
@@ -17,7 +18,8 @@
     "id": 2,
     "name": "Americano",
     "category": "coffee",
-    "price": 325,
+    "price": 265,
+    "promotion": "20% Off",
     "rating": 4.5,
     "ratedNumber": 712,
     "images": [
@@ -31,7 +33,8 @@
     "id": 3,
     "name": "Latte",
     "category": "coffee",
-    "price": 415,
+    "price": 335,
+    "promotion": "20% Off",
     "rating": 4.5,
     "ratedNumber": 1221,
     "images": [
@@ -45,7 +48,8 @@
     "id": 4,
     "name": "Cappuccino",
     "category": "coffee",
-    "price": 410,
+    "price": 330,
+    "promotion": "20% Off",
     "rating": 4.5,
     "ratedNumber": 891,
     "images": [
@@ -59,8 +63,9 @@
     "id": 5,
     "name": "Flat White",
     "category": "coffee",
-    "new": true,
-    "price": 435,
+    
+    "price": 345,
+    "promotion": "20% Off",
     "rating": 4.5,
     "ratedNumber": 714,
     "images": [
@@ -102,8 +107,8 @@
     "id": 8,
     "name": "Affogato",
     "category": "coffee",
-    "new": true,
-    "price": 500,
+    "price": 400,
+    "promotion": "20% Off",
     "rating": 4.5,
     "ratedNumber": 611,
     "images": [
@@ -117,7 +122,7 @@
     "id": 9,
     "name": "Cortado",
     "category": "coffee",
-    "new": true,
+    
     "price": 395,
     "rating": 4.0,
     "ratedNumber": 510,
@@ -132,7 +137,8 @@
     "id": 10,
     "name": "Irish Coffee",
     "category": "coffee",
-    "price": 600,
+    "price": 480,
+    "promotion": "20% Off",
     "rating": 4.5,
     "ratedNumber": 698,
     "images": [
@@ -146,8 +152,9 @@
   "id": 11,
   "name": "Vienna",
   "category": "coffee",
-  "new": true,
-  "price": 480,
+  
+  "price": 385,
+  "promotion": "20% Off",
   "rating": 4.5,
   "ratedNumber": 723,
   "images": [
@@ -247,7 +254,7 @@
   "id": 18,
   "name": "Café Bombón",
   "category": "coffee",
-  "new": true,
+  
   "price": 450,
   "rating": 4.0,
   "ratedNumber": 1064,
@@ -318,7 +325,7 @@
   "id": 23,
   "name": "Espresso Con Panna",
   "category": "coffee",
-  "new": true,
+  
   "price": 405,
   "rating": 4.0,
   "ratedNumber": 718,
@@ -348,7 +355,6 @@
   "id": 25,
   "name": "White Coffee",
   "category": "coffee",
-  "new": true,
   "price": 420,
   "rating": 4.0,
   "ratedNumber": 823,
@@ -358,5 +364,145 @@
     "assets/images/White_Coffee_alt2.jpg"
   ],
   "briefDescription": "White Coffee: lightly roasted coffee beans brewed to create a mild, smooth, and creamy flavor."
+  },
+  {
+    "id": 26,
+    "name": "Arabica",
+    "category": "beans",
+    "price": 399,
+    "rating": 4.5,
+    "ratedNumber": 2145,
+    "images": [
+      "assets/images/Arabica.jpg",
+      "assets/images/Arabica_alt1.jpg",
+      "assets/images/Arabica_alt2.jpg"
+    ],
+    "briefDescription": "Arabica beans offer a smooth, mild, aromatic flavor."
+  },
+  {
+    "id": 27,
+    "name": "Robusta",
+    "category": "beans",
+    "price": 249,
+    "rating": 4.0,
+    "ratedNumber": 1780,
+    "images": [
+      "assets/images/Robusta.jpg",
+      "assets/images/Robusta_alt1.jpg",
+      "assets/images/Robusta_alt2.jpg"
+    ],
+    "briefDescription": "Robusta beans are strong, bitter, and full-bodied."
+  },
+  {
+    "id": 28,
+    "name": "Liberica",
+    "category": "beans",
+    "price": 459,
+    "rating": 4.5,
+    "ratedNumber": 987,
+    "images": [
+      "assets/images/Liberica.jpg",
+      "assets/images/Liberica_alt1.jpg",
+      "assets/images/Liberica_alt2.jpg"
+    ],
+    "briefDescription": "Liberica offers a smoky, floral, and woody taste."
+  },
+  {
+    "id": 29,
+    "name": "Excelsa",
+    "category": "beans",
+    "price": 429,
+    "rating": 4.0,
+    "ratedNumber": 1320,
+    "images": [
+      "assets/images/Excelsa.jpg",
+      "assets/images/Excelsa_alt1.jpg",
+      "assets/images/Excelsa_alt2.jpg"
+    ],
+    "briefDescription": "Excelsa beans are tart, fruity, and layered in flavor."
+  },
+  {
+    "id": 30,
+    "name": "Bourbon",
+    "category": "beans",
+    "price": 379,
+    "rating": 5.0,
+    "ratedNumber": 3210,
+    "images": [
+      "assets/images/Bourbon.jpg",
+      "assets/images/Bourbon_alt1.jpg",
+      "assets/images/Bourbon_alt2.jpg"
+    ],
+    "briefDescription": "Bourbon is sweet, balanced, and has mild acidity."
+  },
+  {
+    "id": 31,
+    "name": "Typica",
+    "category": "beans",
+    "price": 409,
+    "rating": 4.5,
+    "ratedNumber": 1555,
+    "images": [
+      "assets/images/Typica.jpg",
+      "assets/images/Typica_alt1.jpg",
+      "assets/images/Typica_alt2.jpg"
+    ],
+    "briefDescription": "Typica offers a clean cup with floral and sweet notes."
+  },
+  {
+    "id": 32,
+    "name": "Geisha",
+    "category": "beans",
+    "price": 749,
+    "rating": 5.0,
+    "ratedNumber": 2710,
+    "images": [
+      "assets/images/Geisha.jpg",
+      "assets/images/Geisha_alt1.jpg",
+      "assets/images/Geisha_alt2.jpg"
+    ],
+    "briefDescription": "Geisha beans are floral, delicate, and high-end."
+  },
+  {
+    "id": 33,
+    "name": "Caturra",
+    "category": "beans",
+    "price": 389,
+    "rating": 4.0,
+    "ratedNumber": 1418,
+    "images": [
+      "assets/images/Caturra.jpg",
+      "assets/images/Caturra_alt1.jpg",
+      "assets/images/Caturra_alt2.jpg"
+    ],
+    "briefDescription": "Caturra is balanced, bright, and slightly citrusy."
+  },
+  {
+    "id": 34,
+    "name": "SL28",
+    "category": "beans",
+    "price": 529,
+    "rating": 4.5,
+    "ratedNumber": 3056,
+    "images": [
+      "assets/images/SL28.jpg",
+      "assets/images/SL28_alt1.jpg",
+      "assets/images/SL28_alt2.jpg"
+    ],
+    "briefDescription": "SL28 has rich, wine-like flavor with high acidity."
+  },
+  {
+    "id": 35,
+    "name": "Pacamara",
+    "category": "beans",
+    "price": 499,
+    "rating": 4.5,
+    "ratedNumber": 2013,
+    "images": [
+      "assets/images/Pacamara.jpg",
+      "assets/images/Pacamara_alt1.jpg",
+      "assets/images/Pacamara_alt2.jpg"
+    ],
+    "briefDescription": "Pacamara is bold, complex, with chocolate notes."
   }
 ]

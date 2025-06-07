@@ -50,13 +50,13 @@ document.addEventListener('DOMContentLoaded', function () {
   async function renderCoffeeContainer(){
     try{
 
-  const filtered = await filterData("coffee"); //Fetching all coffee items from data.json
+    const filtered = await filterData("coffee"); //Fetching all coffee items from data.json
     const trimedData = filtered.splice(0, 10); //Triming array 
     const coffeeContainer = document.getElementById("coffeeContainer")
     if (filtered.length === 0){
       throw new Error ("Products not found")
     } 
-    const itemlist = trimedData.map(item => 
+    const itemlist = trimedData.map(item =>
       `<div class="item" data-state="item" key=${item.id}>
           <img src="${item.images[0]}" alt="${item.images[0]}" class="item-img">
           <p class="item-name item-padding">${item.name}</p>
@@ -78,11 +78,27 @@ document.addEventListener('DOMContentLoaded', function () {
                   </button>
               </a>
           </div>
+
+          <div class="promotion">
+          
+          ${item?.promotion || ""}
+          </div>
         </div>
       `
     );
-    coffeeContainer.innerHTML = itemlist.join('');
+
+    
+
+    coffeeContainer.innerHTML = itemlist.join('')
+    const promo = document.querySelectorAll('.promotion');
+    promo.forEach(promo => {
+      if (!promo.textContent.trim()) {
+        promo.style.padding = '0';
+      }
+    })
+
     } catch(error){
+      console.error(error)
     coffeeContainer.innerHTML = `<p>${error}</p>`
     }
     

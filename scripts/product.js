@@ -20,13 +20,14 @@ const productid = params.get('id');
 async function findProuct(productid){
     try{
         const fectcheddata = await fetchData();
-        const product = await fectcheddata.find(item => item.id === Number(productid))
+        const product = await fectcheddata.find(item => item.id === Number(productid));
         if (!product){
             throw new Error ('Product not found')
         }
         renderProducts(product)
     } catch (error){
-        console.error(error)
+        console.error(error);
+        document.getElementById("productContainer").innerHTML = error
     }
 
     
@@ -34,7 +35,7 @@ async function findProuct(productid){
 }
 
 function renderProducts(product){
-    const {id, name, category, price, rating, ratedNumber, images,  briefDescription} = product
+    const {id, name, category, price, promotion, rating, ratedNumber, images,  briefDescription} = product
 
     const productContainer = document.getElementById("productContainer");
     productContainer.innerHTML = "";
@@ -86,10 +87,17 @@ function renderProducts(product){
                 
                 </div>` : "";
 
+    const discount = promotion ? `<div style="padding: 10px 10px;
+    background-color: #4c2910;
+    width: fit-content;
+    border-radius: 10px;
+    color: #ffff;
+    ">${promotion}</div>` : "";
+
     productContainer.innerHTML = `
      <div class="product-left-container">
             <div class="item-images-container">
-                <img src="${images[0]}" alt="" class="item-image" data-state="mainImage">
+                <img src="${images[0]}" alt="" class="main-image" data-state="mainImage">
                 <div class="images-wrapper">
                     <img src="${images[0]}" alt="" data-state="images">
                     <img src="${images[1]}" alt="" data-state="images">
@@ -118,7 +126,10 @@ function renderProducts(product){
                 <div class="price-wrapper">
                     <p>Price: £</p>
                     <p data-price="${(price)}">${(price / 100).toFixed(2)}</p>
+                    
+                ${discount}
                 </div>
+
 
                 <div class="product-rating-wrapper">
                     <p>Rating:</p>

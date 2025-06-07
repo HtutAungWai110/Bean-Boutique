@@ -86,12 +86,16 @@ body{
 .navdropdown-products{
     display: flex;
     align-items: center;
-    position: relative;
+    height: 50px;
+    cursor: pointer;
 }
 
 .navdropdown-products:hover .navdropdown-box{
-    border: 1px solid;
-    height: 100px;
+    visibility: visible;
+    height: 230px;
+    border-bottom: 1px solid;
+    padding: 20px 0px;
+    
 }
 .hover-dropdown{
     display: flex;
@@ -104,38 +108,58 @@ body{
 }
 .navdropdown-box{
     position: absolute;
-    width: 180px;
+    width: 100%;
+    height: 0px;
     background-color: #ffffff;
-    top: 30px;
-    display: flex;
-    flex-direction: column;
+    top: 60px;
     list-style: none;
     left: 0px;
     border: none;
-    overflow: hidden;
-    border-radius: 10px;
-    height: 0px;
     transition: 0.3s ease;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 20px;
+    visibility: hidden;
+    overflow: hidden;
 }
+
 
 .navdropdown-box li{
+    margin: 10px 0px;
+}
+
+.dropdown-left{
+    border-right: 1px solid;
+    padding: 20px;
+    width: 400px;
+}
+
+.dropdown-left h2{
+    margin-bottom: 20px;
+}
+
+
+.dropdown-right .card{
+    border: 1px solid;
+    max-width: 250px;
+    background-color: #000000;
+    text-align: center;
+    
+}
+
+.dropdown-right .card p{
+    padding: 5px;
+    color: #ffffff;
+}
+
+.dropdown-right .card img{
     width: 100%;
-    height: 50%;
+    height: auto;
 }
 
-
-.dropdown-hover{
-    padding: 10px;
-    font-size: 15px;
-}
-
-.dropdown-hover:hover{
-    color: #fff;
-    background-color: #4c2910;
-}
 
 .dropdown-hover:hover a{
-    color: #ffffff;
+    opacity: 0.5;
 }
 
 .search-bar{
@@ -374,7 +398,24 @@ body{
     background-color: #ffffff;
     border: 1px solid #bbbbbb;
     overflow: hidden;
+    position: relative;
 
+}
+
+.promotion{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background-color: #4c2910;
+    color: #ffffff;
+    padding: 5px 10px;
+    font-size: 15px;
+    border-bottom-right-radius: 20px;
+}
+
+.promotion:empty{
+  padding: 0;
 }
 
 .item-padding{
@@ -401,6 +442,8 @@ body{
     height: auto;
     
 }
+
+
 
 .breif-description{
     font-size: 0.9em;
@@ -476,6 +519,7 @@ body{
 .explore-btn-wrapper{
     width: fit-content;
     margin: auto;
+    padding: 30px 0px;
 }
 
 .explore-btn{
@@ -487,7 +531,6 @@ body{
     z-index: 1;
     position: relative;
     cursor: pointer;
-
 
 }
 
@@ -535,12 +578,13 @@ body{
     font-size: 1.12em;
 }
 
-.item-images-container .item-image{
-    max-width: 500px;
+.item-images-container .main-image{
+    width: 500px;
     border-radius: 10px;
     height: auto;
     transition: 0.2s ease;
 }
+
 .images-wrapper{
     padding: 5px;
     margin: 5px 0px;
