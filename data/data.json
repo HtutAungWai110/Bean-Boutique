@@ -12,7 +12,8 @@
       "assets/images/Espresso_alt1.jpg",
       "assets/images/Espresso_alt2.jpg"
     ],
-    "briefDescription" : "Espresso: with hot water, creating a smooth, rich, bold coffee."
+    "briefDescription" : "Espresso: with hot water, creating a smooth, rich, bold coffee.",
+    "description": "Our signature Espresso is where true coffee craftsmanship begins. Made from carefully selected, freshly ground Arabica beans, each shot is brewed to perfection under high pressure to deliver a rich, full-bodied experience. Topped with a velvety golden crema, this intense, aromatic shot offers deep notes of dark chocolate, roasted nuts, and a subtle hint of citrus."
   },
   {
     "id": 2,
@@ -27,7 +28,8 @@
       "assets/images/Americano_alt1.jpg",
       "assets/images/Americano_alt2.jpg"
     ],
-    "briefDescription" : "Americano: bold espresso blended with hot water for smooth, rich flavor."
+    "briefDescription" : "Americano: bold espresso blended with hot water for smooth, rich flavor.",
+    "description": "Our Americano starts with a rich, full-bodied espresso shot, gently blended with hot water to create a smooth, balanced cup. It has the depth and character of espresso, but with a lighter body and clean finish—perfect for those who love bold flavor without the intensity."
   },
   {
     "id": 3,
@@ -42,7 +44,8 @@
       "assets/images/Latte_alt1.jpg",
       "assets/images/Latte_alt2.jpg"
     ],
-    "briefDescription": "Latte: smooth espresso mixed with steamed milk, creamy, mellow, and comforting."
+    "briefDescription": "Latte: smooth espresso mixed with steamed milk, creamy, mellow, and comforting.",
+    "description": "Our latte combines rich, smooth espresso with perfectly steamed milk for a velvety, well-balanced drink that’s both comforting and satisfying. Topped with a light layer of microfoam, it’s the perfect blend of bold and mellow—great as a morning ritual or an afternoon treat."
   },
   {
     "id": 4,
@@ -57,7 +60,8 @@
       "assets/images/Cappuccino_alt1.jpg",
       "assets/images/Cappuccino_alt2.jpg"
     ],
-    "briefDescription" : "Cappuccino: equal parts espresso, steamed milk, and foam—bold, airy, and smooth."
+    "briefDescription" : "Cappuccino: equal parts espresso, steamed milk, and foam—bold, airy, and smooth.",
+    "description": "Light, bold, and beautifully balanced. A classic espresso-based drink with equal parts rich espresso, steamed milk, and airy foam. The result is a strong, yet silky cup with a creamy texture and a bold espresso punch. Made with our smooth, aromatic espresso and carefully steamed milk, the cappuccino is perfect for those who love a bit of froth with their flavor."
   },
   {
     "id": 5,
@@ -73,7 +77,8 @@
       "assets/images/Flat_white_alt1.jpg",
       "assets/images/Flat_white_alt2.jpg"
     ],
-    "briefDescription" : "Flat White: velvety steamed milk over rich espresso, smooth, bold, and creamy."
+    "briefDescription" : "Flat White: velvety steamed milk over rich espresso, smooth, bold, and creamy.",
+    "description": "Smooth, strong, and effortlessly refined. This Australian favorite blends a double shot of espresso with velvety microfoam, creating a rich, creamy texture without the extra froth. Made with our bold espresso and just the right amount of steamed milk, the flat white delivers a more intense coffee flavor than a latte, with a silky finish in every sip."
   },
   {
     "id": 6,
@@ -87,7 +92,8 @@
       "assets/images/Macchiato_alt1.jpg",
       "assets/images/Macchiato_alt2.jpg"
     ],
-    "briefDescription": "Macchiato: bold espresso “stained” with a small splash of frothy milk."
+    "briefDescription": "Macchiato: bold espresso “stained” with a small splash of frothy milk.",
+    "description": "Bold and simple with a touch of cream. A rich espresso “stained” with just a dollop of steamed milk or foam, the macchiato highlights the pure intensity of the coffee with a hint of softness. Perfect for those who want their espresso with a subtle twist—strong, smooth, and unmistakably classic."
   },
   {
     "id": 7,
@@ -101,7 +107,8 @@
       "assets/images/Mocha_alt1.jpg",
       "assets/images/Mocha_alt2.jpg"
     ],
-    "briefDescription" : "Mocha: rich espresso blended with chocolate and steamed milk, sweet and creamy."
+    "briefDescription" : "Mocha: rich espresso blended with chocolate and steamed milk, sweet and creamy.",
+    "description": "Decadent and comforting, the mocha blends rich espresso with creamy steamed milk and luscious chocolate syrup. Topped with a light layer of foam and, if you like, a sprinkle of cocoa or whipped cream, it’s a perfect treat for chocolate and coffee lovers alike."
   },
   {
     "id": 8,
@@ -116,13 +123,13 @@
       "assets/images/Affogato_alt1.jpg",
       "assets/images/Affogato_alt2.jpg"
     ],
-    "briefDescription": "Affogato: hot espresso poured over cold ice cream, sweet and intense."
+    "briefDescription": "Affogato: hot espresso poured over cold ice cream, sweet and intense.",
+    "description": "A delightful fusion of coffee and dessert. A scoop of creamy vanilla ice cream “drowned” in a shot of hot, rich espresso creates a perfect harmony of hot and cold, bitter and sweet. This simple yet indulgent treat is the ultimate pick-me-up and a favorite for any time of day."
   },
   {
     "id": 9,
     "name": "Cortado",
     "category": "coffee",
-    
     "price": 395,
     "rating": 4.0,
     "ratedNumber": 510,
@@ -131,7 +138,8 @@
       "assets/images/Cortado_alt1.jpg",
       "assets/images/Cortado_alt2.jpg"
     ],
-    "briefDescription" : "Cortado: equal parts espresso and warm milk, smooth and balanced flavor."
+    "briefDescription" : "Cortado: equal parts espresso and warm milk, smooth and balanced flavor.",
+    "description": "Balanced and bold, the cortado pairs a shot of rich espresso with an equal amount of steamed milk. This small but powerful drink cuts the espresso’s intensity with creamy smoothness, creating a perfectly harmonious flavor. Ideal for those who want a strong coffee with a gentle, velvety finish."
   },
   {
     "id": 10,
@@ -146,13 +154,13 @@
       "assets/images/Irish_coffee_alt1.jpg",
       "assets/images/Irish_coffee_alt2.jpg"
     ],
-    "briefDescription" : "Irish Coffee: hot coffee mixed with whiskey, sugar, and topped with cream."
+    "briefDescription" : "Irish Coffee: hot coffee mixed with whiskey, sugar, and topped with cream.",
+    "description": "A warm and spirited classic. Smooth, hot coffee combined with a shot of Irish whiskey, sweetened with brown sugar, and topped with a layer of lightly whipped cream. This rich and comforting drink warms you from the inside out with a perfect balance of bold coffee and smooth whiskey notes."
   },
  {
   "id": 11,
   "name": "Vienna",
   "category": "coffee",
-  
   "price": 385,
   "promotion": "20% Off",
   "rating": 4.5,
@@ -162,7 +170,8 @@
     "assets/images/Vienna_alt1.jpg",
     "assets/images/Vienna_alt2.jpg"
   ],
-  "briefDescription": "Vienna Coffee: a rich blend of coffee topped with whipped cream, inspired by Austrian tradition."
+  "briefDescription": "Vienna Coffee: a rich blend of coffee topped with whipped cream, inspired by Austrian tradition.",
+  "description": "A luxurious blend of bold espresso and fluffy whipped cream. The hot, intense coffee is beautifully balanced by a generous topping of smooth, sweet whipped cream, creating a decadent and creamy treat with every sip. Perfect for those who enjoy their coffee with a touch of indulgence and classic European flair."
   },
 
   {
@@ -177,7 +186,8 @@
     "assets/images/Doppio_alt1.jpg",
     "assets/images/Doppio_alt2.jpg"
   ],
-  "briefDescription": "Doppio: a double shot of rich, bold espresso for a stronger coffee experience."
+  "briefDescription": "Doppio: a double shot of rich, bold espresso for a stronger coffee experience.",
+  "description": "The double shot of espresso—twice the intensity, twice the flavor. Made with finely ground coffee and expertly extracted, the doppio delivers a rich, bold, and concentrated coffee experience in every 2-ounce shot. Perfect for those who want a stronger, more robust coffee to fuel their day."
   },
 
   {
@@ -192,7 +202,8 @@
     "assets/images/Ristretto_alt1.jpg",
     "assets/images/Ristretto_alt2.jpg"
   ],
-  "briefDescription": "Ristretto: a short, concentrated shot of espresso with a bold and intense flavor."
+  "briefDescription": "Ristretto: a short, concentrated shot of espresso with a bold and intense flavor.",
+  "description": "Intensely rich and deeply concentrated. A ristretto is a “short shot” of espresso, brewed with the same amount of coffee but half the water, resulting in a thicker, sweeter, and more flavorful extraction. Ideal for those who love bold coffee with a velvety texture and a hint of natural sweetness."
   },
   {
   "id": 14,
@@ -206,7 +217,8 @@
     "assets/images/Lungo_alt1.jpg",
     "assets/images/Lungo_alt2.jpg"
   ],
-  "briefDescription": "Lungo: a long-pulled espresso offering a milder flavor and higher volume than a standard shot."
+  "briefDescription": "Lungo: a long-pulled espresso offering a milder flavor and higher volume than a standard shot.",
+  "description": "A longer, milder espresso with a rich, balanced flavor. Brewed with more water than a traditional shot, the lungo offers a larger cup without losing the depth and complexity of espresso, featuring subtle bittersweet notes and a smooth finish."
   },
   {
   "id": 15,
@@ -220,7 +232,8 @@
     "assets/images/Turkish_Coffee_alt1.jpg",
     "assets/images/Turkish_Coffee_alt2.jpg"
   ],
-  "briefDescription": "Turkish Coffee: a strong and thick coffee prepared by boiling finely ground coffee with water and sugar."
+  "briefDescription": "Turkish Coffee: a strong and thick coffee prepared by boiling finely ground coffee with water and sugar.",
+  "description": "An ancient tradition served thick, strong, and full of character. Finely ground coffee is simmered slowly with water and sugar (optional) in a special pot called a cezve, creating a rich, intense brew with a distinctive, velvety texture and naturally sweet, robust flavors."
   },
   {
   "id": 16,
@@ -234,7 +247,8 @@
     "assets/images/Cafe_au_Lait_alt1.jpg",
     "assets/images/Cafe_au_Lait_alt2.jpg"
   ],
-  "briefDescription": "Café au Lait: strong coffee combined with steamed milk for a creamy and smooth taste."
+  "briefDescription": "Café au Lait: strong coffee combined with steamed milk for a creamy and smooth taste.",
+  "description": "A classic French favorite blending strong brewed coffee with steamed milk in equal parts. This smooth, creamy drink offers a milder coffee flavor with a velvety texture—perfect for those who enjoy a comforting, well-balanced cup. Ideal for any time of day, it’s a simple pleasure with rich, rounded taste."
   },
   {
     "id": 17,
@@ -248,13 +262,13 @@
     "assets/images/Café Cubano_alt1.jpg",
     "assets/images/Café Cubano_alt2.jpg"
   ],
-    "briefDescription": "Café au Lait: strong coffee combined with steamed milk for a creamy and smooth taste."
+    "briefDescription": "Café au Lait: strong coffee combined with steamed milk for a creamy and smooth taste.",
+    "description": "A bold and sweet espresso experience with Cuban flair. This strong shot of espresso is sweetened with a touch of sugar whipped into a creamy foam called espuma, giving it a smooth, rich taste with a perfectly balanced sweetness. Perfect as a quick, energizing pick-me-up or enjoyed slowly with friends."
   },
   {
   "id": 18,
   "name": "Café Bombón",
   "category": "coffee",
-  
   "price": 450,
   "rating": 4.0,
   "ratedNumber": 1064,
@@ -263,7 +277,8 @@
     "assets/images/Cafe_Bombon_alt1.jpg",
     "assets/images/Cafe_Bombon_alt2.jpg"
   ],
-  "briefDescription": "Café Bombón: a sweet coffee made with espresso and condensed milk layered for a rich flavor."
+  "briefDescription": "Café Bombón: a sweet coffee made with espresso and condensed milk layered for a rich flavor.",
+  "description": "A delightful Spanish treat that pairs rich espresso with sweetened condensed milk in equal parts. The layers create a beautiful contrast of bold coffee and creamy sweetness, making every sip a decadent and indulgent experience. Perfect for those with a sweet tooth who love a smooth, balanced coffee."
   },
   {
   "id": 19,
@@ -277,7 +292,8 @@
     "assets/images/Red_Eye_alt1.jpg",
     "assets/images/Red_Eye_alt2.jpg"
   ],
-  "briefDescription": "Red Eye: a strong combination of drip coffee and a shot of espresso for a bold caffeine boost."
+  "briefDescription": "Red Eye: a strong combination of drip coffee and a shot of espresso for a bold caffeine boost.",
+  "description": "For serious coffee lovers who need an extra kick. A shot of espresso added to a regular brewed coffee, creating a strong, intense cup with double the caffeine and robust flavor. Perfect to power through busy mornings or long afternoons."
   },
   {
   "id": 20,
@@ -291,7 +307,8 @@
     "assets/images/Black_Eye_alt1.jpg",
     "assets/images/Black_Eye_alt2.jpg"
   ],
-  "briefDescription": "Black Eye: a powerful mix of drip coffee and two shots of espresso for intense flavor and energy."
+  "briefDescription": "Black Eye: a powerful mix of drip coffee and two shots of espresso for intense flavor and energy.",
+  "description": "Double the punch for those who want to supercharge their coffee. Made by adding two shots of espresso to a cup of brewed coffee, the Black Eye delivers an intense, bold flavor and a serious caffeine boost. Perfect for early mornings or when you need to stay sharp."
   },
   {
   "id": 21,
@@ -305,7 +322,8 @@
     "assets/images/Drip_Coffee_alt1.jpg",
     "assets/images/Drip_Coffee_alt2.jpg"
   ],
-  "briefDescription": "Drip Coffee: a classic brewed coffee made by slowly dripping hot water through ground beans."
+  "briefDescription": "Drip Coffee: a classic brewed coffee made by slowly dripping hot water through ground beans.",
+  "description": "Classic and comforting, drip coffee is brewed by slowly pouring hot water over freshly ground beans, allowing rich flavors to gently extract. The result is a clean, smooth cup with balanced acidity and a medium body—perfect for savoring any time of day."
   },
   {
   "id": 22,
@@ -319,7 +337,8 @@
     "assets/images/Percolated_Coffee_alt1.jpg",
     "assets/images/Percolated_Coffee_alt2.jpg"
   ],
-  "briefDescription": "Percolated Coffee: brewed using a percolator, producing a rich and robust cup through repeated boiling."
+  "briefDescription": "Percolated Coffee: brewed using a percolator, producing a rich and robust cup through repeated boiling.",
+  "description": "Brewed using a traditional percolator method, this coffee offers a robust and full-bodied flavor with a slightly smoky, well-rounded profile. Hot water cycles repeatedly through the coffee grounds, extracting deep, intense aromas and tastes."
   },
   {
   "id": 23,
@@ -334,7 +353,8 @@
     "assets/images/Espresso_Con_Panna_alt1.jpg",
     "assets/images/Espresso_Con_Panna_alt2.jpg"
   ],
-  "briefDescription": "Espresso Con Panna: a rich shot of espresso topped with a dollop of whipped cream for a creamy twist."
+  "briefDescription": "Espresso Con Panna: a rich shot of espresso topped with a dollop of whipped cream for a creamy twist.",
+  "description": "A simple yet indulgent treat—bold espresso crowned with a dollop of rich, lightly whipped cream. The creamy topping softens the intense coffee flavor, creating a smooth and luxurious balance in every sip. Perfect for those who love their espresso with a touch of sweet creaminess."
   },
  {
   "id": 24,
@@ -348,7 +368,8 @@
     "assets/images/Cafe_de_Olla_alt1.jpg",
     "assets/images/Cafe_de_Olla_alt2.jpg"
   ],
-  "briefDescription": "Café de Olla: a traditional Mexican coffee brewed with cinnamon and piloncillo for a sweet, spiced flavor."
+  "briefDescription": "Café de Olla: a traditional Mexican coffee brewed with cinnamon and piloncillo for a sweet, spiced flavor.",
+  "description": "A traditional Mexican coffee brewed slowly with cinnamon and piloncillo (unrefined cane sugar), creating a fragrant and warmly spiced cup. This rustic brew is rich, sweet, and aromatic—perfect for cozy mornings or festive gatherings. Made with care, it captures the heart of Mexican heritage in every comforting sip."
   },
   
   {
@@ -363,7 +384,8 @@
     "assets/images/White_Coffee_alt1.jpg",
     "assets/images/White_Coffee_alt2.jpg"
   ],
-  "briefDescription": "White Coffee: lightly roasted coffee beans brewed to create a mild, smooth, and creamy flavor."
+  "briefDescription": "White Coffee: lightly roasted coffee beans brewed to create a mild, smooth, and creamy flavor.",
+  "description": "A smooth and creamy coffee made by combining freshly brewed espresso or drip coffee with steamed milk or cream. The milk lightens the coffee’s bold flavors, creating a mellow, comforting drink with a velvety texture. Perfect for those who enjoy a gentler, milk-forward coffee experience."
   },
   {
     "id": 26,
@@ -377,7 +399,11 @@
       "assets/images/Arabica_alt1.jpg",
       "assets/images/Arabica_alt2.jpg"
     ],
-    "briefDescription": "Arabica beans offer a smooth, mild, aromatic flavor."
+    "briefDescription": "SABINYO, Specialty coffee 100% Arabica beans – Kawa Kivu, Congo",
+    "description": "Kawa Kivu Sabyinyo coffee celebrates the richness of its territory with a light roast, designed to enhance every nuance of its aromatic profile. On the palate, it releases lively notes of citrus peel, floral accents and a delicate hint of honey.",
+    "tasteNote": "Smooth, aromatic, with fruity, floral, and sweet notes; bright acidity and clean finish.",
+    "bagSize": "250g"
+
   },
   {
     "id": 27,
@@ -391,7 +417,10 @@
       "assets/images/Robusta_alt1.jpg",
       "assets/images/Robusta_alt2.jpg"
     ],
-    "briefDescription": "Robusta beans are strong, bitter, and full-bodied."
+    "briefDescription": "HaNoi Coffee (100% Vietnamese Robusta) | Dark Roast – Cafely – CAFELY.",
+    "description": "The unapologetically strong Vietnamese coffee celebrates centuries of tradition. Made from 100% robusta beans, the HaNoi blend delivers potent, earthy intensity while fueling deep focus and unwavering concentration.",
+    "tasteNote": "Dark Caramel, Roasted Walnut, Dried Date",
+    "bagSize": "240g"
   },
   {
     "id": 28,
@@ -405,7 +434,10 @@
       "assets/images/Liberica_alt1.jpg",
       "assets/images/Liberica_alt2.jpg"
     ],
-    "briefDescription": "Liberica offers a smoky, floral, and woody taste."
+    "briefDescription": "Liberica Coffee Bean & Ground Coffee by Mister Coffee.",
+    "description": "Liberica coffee is huge coffee berries characterized by having a smoky, nutty, dark chocolate notes when roasted or brewed. Its beans are asymmetrical and almost almond and teardrop-shaped that has an exceptional aroma. It has dense flavors, smoldering, wherein not everyone appreciates it.",
+    "tasteNote": "Herby, smoky, nutty, dark chocolate notes with hints of Jackfruit",
+    "bagSize": "12oz"
   },
   {
     "id": 29,
@@ -419,21 +451,27 @@
       "assets/images/Excelsa_alt1.jpg",
       "assets/images/Excelsa_alt2.jpg"
     ],
-    "briefDescription": "Excelsa beans are tart, fruity, and layered in flavor."
+    "briefDescription": "Excelsa Coffee Whole Beans Medium Roast from Philippines. Tart and Fruity, Naturally Half-Caffeinated. Pesticide-Free.",
+    "description": "Why Choose Excelsa? Excelsa is a unique, independent coffee bean celebrated for its light and easy-drinking nature, coupled with a delightful complexity. Each sip offers a mindful and immersive experience, thanks to complexity and its naturally lower caffeine content—only about half that of traditional Arabica or Robusta blends.",
+    "tasteNote": "Tart, fruity, and spicy with dark, woody notes; complex profile and lingering finish.",
+    "bagSize": "12oz"
   },
   {
     "id": 30,
-    "name": "Bourbon",
+    "name": "Artisan",
     "category": "beans",
     "price": 379,
     "rating": 5.0,
     "ratedNumber": 3210,
     "images": [
-      "assets/images/Bourbon.jpg",
-      "assets/images/Bourbon_alt1.jpg",
-      "assets/images/Bourbon_alt2.jpg"
+      "assets/images/Artisan.jpg",
+      "assets/images/Artisan_alt1.jpg",
+      "assets/images/Artisan_alt2.jpg"
     ],
-    "briefDescription": "Bourbon is sweet, balanced, and has mild acidity."
+    "briefDescription": "Handcrafted Artisan Coffee – Freshly Roasted in Central Kentucky.",
+    "description": "Enjoy the rich, medium roast of our Brazilian coffee, crafted in small batches and roasted fresh in Central Kentucky. Naturally processed for bold flavor and a smooth, balanced finish, this coffee is available in both Whole Bean and Ground. Our ground coffee is ideal for traditional drip and pour-over methods, while the whole bean option lets you grind it to your preference.",
+    "tasteNote": "Handcrafted, rich, and flavorful; often complex with balanced acidity and unique origin-driven notes.",
+    "bagSize": "12oz"
   },
   {
     "id": 31,
@@ -447,13 +485,16 @@
       "assets/images/Typica_alt1.jpg",
       "assets/images/Typica_alt2.jpg"
     ],
-    "briefDescription": "Typica offers a clean cup with floral and sweet notes."
+    "briefDescription": "Taher Saleh Abarat, Ancient Typica - Ancient Typica Coffee Sourced From Yemen Abarat region - Whole Beans - Ground Coffee, 100% Arabica Coffee.",
+    "description": "Immerse yourself in the rich coffee heritage of Yemen with the exquisite Taher Saleh Abarat coffee. Crafted by Taher's hands, this single farmer nano lot features ancient Typica beans grown in the beautiful Abarat region. At an altitude of 2000 meters, these beans thrive and develop a unique flavor profile. Indulge in this exceptional brew, available as whole beans or ground coffee. Customize the roast to your liking, allowing you to tailor the flavor experience perfectly.",
+    "tasteNote": "Smooth, sweet, and well-balanced with mild acidity; often features floral, fruity, and chocolaty notes.",
+    "bagSize": "380 Grams"
   },
   {
     "id": 32,
     "name": "Geisha",
     "category": "beans",
-    "price": 749,
+    "price": 449,
     "rating": 5.0,
     "ratedNumber": 2710,
     "images": [
@@ -461,38 +502,13 @@
       "assets/images/Geisha_alt1.jpg",
       "assets/images/Geisha_alt2.jpg"
     ],
-    "briefDescription": "Geisha beans are floral, delicate, and high-end."
+    "briefDescription": "This Cafeistmo 125g Panama Geisha coffee single box from the Lérida Coffee Estate Whole Beans - Ground Coffee",
+    "description": "This Cafeistmo single box features 125g of Panama Geisha coffee from the Lérida Coffee Estate. Indulge in this sustainably sourced coffee's delicate floral and fruity flavors. It is carefully packaged in a fine, high-quality black cardboard box, making it a perfect gift for any specialty coffee enthusiast. Includes a certificate of authenticity from the farm.",
+    "tasteNote": "Citrus, molasses, cherry, pineapple, and melon, with citrus acidity and a creamy body.",
+    "bagSize": "125g"
   },
   {
     "id": 33,
-    "name": "Caturra",
-    "category": "beans",
-    "price": 389,
-    "rating": 4.0,
-    "ratedNumber": 1418,
-    "images": [
-      "assets/images/Caturra.jpg",
-      "assets/images/Caturra_alt1.jpg",
-      "assets/images/Caturra_alt2.jpg"
-    ],
-    "briefDescription": "Caturra is balanced, bright, and slightly citrusy."
-  },
-  {
-    "id": 34,
-    "name": "SL28",
-    "category": "beans",
-    "price": 529,
-    "rating": 4.5,
-    "ratedNumber": 3056,
-    "images": [
-      "assets/images/SL28.jpg",
-      "assets/images/SL28_alt1.jpg",
-      "assets/images/SL28_alt2.jpg"
-    ],
-    "briefDescription": "SL28 has rich, wine-like flavor with high acidity."
-  },
-  {
-    "id": 35,
     "name": "Pacamara",
     "category": "beans",
     "price": 499,
@@ -503,6 +519,9 @@
       "assets/images/Pacamara_alt1.jpg",
       "assets/images/Pacamara_alt2.jpg"
     ],
-    "briefDescription": "Pacamara is bold, complex, with chocolate notes."
+    "briefDescription": "Beans of fire Pacamara 16oz coffee - whole beans or ground",
+    "description": "A true gem of Salvadoran coffee culture, Pacamara composes an equally tranquil and energetic flavor balance in its creamy mouthfeel, upbeat acidity, and intense floral aroma.",
+    "tasteNote": "Bold, creamy, and complex with bright acidity; notes of tropical fruit, chocolate, and floral undertones.",
+    "bagSize": "16oz"
   }
 ]
