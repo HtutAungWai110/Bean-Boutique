@@ -2,6 +2,7 @@ import { fetchData } from "./index.js";
 
 const params = new URLSearchParams(window.location.search);
 const productid = params.get('id');
+let product;
 
  const ratingMap = {
     0: "assets/ratings/rating-0.png",
@@ -20,11 +21,14 @@ const productid = params.get('id');
 async function findProuct(productid){
     try{
         const fectcheddata = await fetchData();
-        const product = await fectcheddata.find(item => item.id === Number(productid));
-        if (!product){
+        const productData = await fectcheddata.find(item => item.id === Number(productid));
+        if (!productData){
             throw new Error ('Product not found')
         }
-        renderProducts(product)
+        product = productData;
+        console.log(product)
+        renderProducts(productData);
+        product.quantity = 1;
     } catch (error){
         console.error(error);
         document.getElementById("productContainer").innerHTML = error
@@ -35,7 +39,7 @@ async function findProuct(productid){
 }
 
 function renderProducts(product){
-    const {id, name, category, price, promotion, rating, ratedNumber, images,  briefDescription} = product
+    const {id, name, category, price, promotion, rating, ratedNumber, images,  briefDescription, description, tasteNote, bagSize} = product
 
     const productContainer = document.getElementById("productContainer");
     productContainer.innerHTML = "";
@@ -49,8 +53,8 @@ function renderProducts(product){
                         </div>
                         
                         <div class="options">
-                            <div class="option">Hot</div>
-                            <div class="option">Iced</div>
+                            <div class="option" data-temp="Hot">Hot</div>
+                            <div class="option" data-temp="Iced">Iced</div>
                         </div>
                 </div>
 
@@ -94,8 +98,34 @@ function renderProducts(product){
     color: #ffff;
     ">${promotion}</div>` : "";
 
+    const beanSelection = category === "beans" ? `<div class="selection-wrapper">
+                    <p>Whole or Ground bean: </p>
+                    <div class="custom-select">
+                        <div class="selected-wrapper">
+                            <div class="selected" data-bean="Whole">Whole</div>
+                            <img src="assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png" alt="drop down" class="dropdown-icon">
+                        </div>
+                        
+                        <div class="options">
+                            <div class="option" data-bean="Whole">Whole</div>
+                            <div class="option" data-bean="Blend">Blend</div>
+                        </div>
+                </div>
+
+                </div>` : "";
+
+    const tasteNoteText = tasteNote ? `<p 
+        style="
+        padding: 20px 0px;"
+    >Taste Note: ${tasteNote}</p>` : "";
+
+    const bagSizeText = bagSize ? `<p 
+        style="
+        padding: 20px 0px;"
+    >Taste Note: ${bagSize}</p>` : "";
+
     productContainer.innerHTML = `
-     <div class="product-left-container">
+     <div class="product-left-container data-id=${id} data-name=${name}">
             <div class="item-images-container">
                 <img src="${images[0]}" alt="" class="main-image" data-state="mainImage">
                 <div class="images-wrapper">
@@ -108,35 +138,37 @@ function renderProducts(product){
 
         <div class="product-right-container">
                 <div class="product-name">
-                    <p>Item: ${name}</p>
+                    <p>${briefDescription}</p>
                 </div>
-                
-                
 
                 <div class="description-grid">
                     <p>Description:</p>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Non quia repellendus illum similique sequi dignissimos iusto, velit vero numquam, ipsa, ipsum odio voluptatum dicta quae ut. Similique reiciendis explicabo accusantium.</p>
+                    <p>${description}</p>
                 </div>
-                
+
+                ${tasteNoteText}
                 
                 ${tempSelection}
                 ${portionSelection}
-                
+                ${beanSelection}
+                ${bagSizeText}
 
+                <div style="padding: 20px 0px;">
+                Quantity: 
+                <input type="number" id="quantity" min=1 value=1 style="width: 50px;"/>
+                </div>
+                
                 <div class="price-wrapper">
                     <p>Price: £</p>
-                    <p data-price="${(price)}">${(price / 100).toFixed(2)}</p>
-                    
+                    <p data-price="${(price)}">${(price / 100).toFixed(2)}</p>  
                 ${discount}
                 </div>
-
 
                 <div class="product-rating-wrapper">
                     <p>Rating:</p>
                     <img src="${ratingMap[rating]}" alt="" class="product-rating">
                     <p class="product-rating-number">${ratedNumber} user ratings</p>
                 </div>
-
 
                 <button id="addToCart" class="add-to-cart-btn">
                     Add to cart
@@ -169,12 +201,11 @@ function appendPortionSelectionEvent(e, arr, product){
     const priceSelector = document.querySelector("[data-price]");
     const price = product.price;
     const percentIncrease = Number(e.target.dataset.percentincrease);
-
     const updatedPrice = Number(price + (price * percentIncrease))
-
     e.target.dataset.tag = "selected-portion";
     priceSelector.dataset.price = updatedPrice;
     priceSelector.textContent = (updatedPrice / 100).toFixed(2);
+    product.portion = e.target.dataset.portion;
 
 }
 
@@ -188,18 +219,66 @@ function appendEventListeners(product){
                 appendImagesEvent(e))
 
         }
-    )
+    );
+
+    const quantityInput = document.getElementById("quantity");
+    quantityInput.addEventListener("change", () => {
+        product.quantity = quantityInput.value;
+        console.log(product)
+    })
+
+    if (product.category === "beans"){
+        const selectBox = document.querySelector('.custom-select') || null;
+        if (selectBox){
+            const selectWrapper = selectBox.querySelector(".selected-wrapper")
+            const dropdownIcon = selectWrapper.querySelector(".dropdown-icon")
+            const selected = selectWrapper.querySelector('.selected');
+            const optionsContainer = selectBox.querySelector('.options');
+            const options = selectBox.querySelectorAll('.option');
+
+            let hidden = true;
+            selectWrapper.addEventListener('click', () => {
+                if (hidden){
+                    optionsContainer.classList.add("options-shown");
+                    dropdownIcon.src = "assets/icons/keyboard_arrow_up_20dp_000000_FILL0_wght400_GRAD0_opsz20.png"
+                    hidden = false
+                    return
+                } 
+
+                optionsContainer.classList.remove("options-shown");
+                dropdownIcon.src = "assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png"
+                hidden = true;
+                
+                
+            });
+
+            options.forEach(option => {
+            option.addEventListener('click', () => {
+                selected.innerText = option.dataset.bean.trim();
+                selected.dataset.bean = option.dataset.bean.trim();
+                product.bean = selected.dataset.bean;
+                optionsContainer.classList.remove("options-shown");
+                dropdownIcon.src = "assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png"
+                hidden = true;
+            });
+            });
+            
+        }
+    }
 
 
     if (product.category === "coffee"){
         const portionSelectors = document.querySelectorAll(".portion-size") || null;
 
         if(portionSelectors){
+            const selected = document.querySelector("[data-tag=selected-portion]");
+            product.portion = selected.dataset.portion;
+
             portionSelectors.forEach((portion) => {
             portion.addEventListener('click', (e) => 
                 appendPortionSelectionEvent(e, portionSelectors, product)
             )
-        })     
+            });
         }
 
         const selectBox = document.querySelector('.custom-select') || null;
@@ -229,14 +308,14 @@ function appendEventListeners(product){
 
             options.forEach(option => {
             option.addEventListener('click', () => {
-                selected.innerText = option.innerText.trim();
-                selected.dataset.temp = option.innerText.trim();
+                selected.innerText = option.dataset.temp.trim();
+                selected.dataset.temp = option.dataset.temp.trim();
                 optionsContainer.classList.remove("options-shown");
                 dropdownIcon.src = "assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png"
                 hidden = true;
-            
             });
             });
+            product.temp = selected.dataset.temp;
         }
         
     }
@@ -246,3 +325,4 @@ function appendEventListeners(product){
     
 }
 findProuct(productid);
+console.log(product);
