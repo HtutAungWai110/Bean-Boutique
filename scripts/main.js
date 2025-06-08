@@ -6,7 +6,7 @@ import { filterData } from "./index.js";
 
   
 document.addEventListener('DOMContentLoaded', function () {
-    const swiper = new Swiper('.swiper', {
+    const swiper = new Swiper('.imageSwiper', {
       // parameters
       loop: true,
       autoplay: {
@@ -25,6 +25,11 @@ document.addEventListener('DOMContentLoaded', function () {
         prevEl: '.swiper-button-prev',
       },
     });
+
+     
+
+  
+
   });
 
 //Pending promise will be temporarily stored in data variable for later use
@@ -163,6 +168,84 @@ document.addEventListener('DOMContentLoaded', function () {
 
   };
 
+  async function  rednerPoupularItems() {
+      const fetchedData = await fetchData();
+      const sorted = (fetchedData.sort((a, b) => (b.ratedNumber * b.rating) - (a.ratedNumber * a.rating))).slice(0, 10);
+      const pouplarItemsContainer = document.getElementById("pouplarItemsContainer");
+      const itemlist = sorted.map(item => 
+        `<div class="item swiper-slide" data-state="item" key=${item.id}>
+          <img src="${item.images[0]}" alt="${item.images[0]}" class="item-img">
+          <p class="item-name item-padding">${item.name}</p>
+           <a href="product.html?id=${item.id}" class="breif-description item-padding">
+            ${item.briefDescription}
+           </a>
+          <div class="rating-wrapper item-padding">
+              <img src="${ratingMap[item.rating]}" alt="rating" class="rating">
+              <span class="rated-number">
+              ${item.ratedNumber}
+              </span>
+          </div>
+          <div class="price-btn-wrapper item-padding">
+              <p class="price">£${(item.price/100).toFixed(2)}</p>
+              <a href="product.html?id=${item.id}" class="view-link">
+                  <button class="view-btn">View product
+                      <img src="assets/icons/arrow_right_alt_20dp_FFFFFF_FILL0_wght300_GRAD200_opsz20.png" alt="arrow"
+                      class="view-btn-arrow">
+                  </button>
+              </a>
+          </div>
+
+          <div class="promotion">
+          
+          ${item?.promotion || ""}
+          </div>
+        </div>
+      `
+      );
+      pouplarItemsContainer.innerHTML = itemlist.join('');
+      const promo = document.querySelectorAll('.promotion');
+      promo.forEach(promo => {
+        if (!promo.textContent.trim()) {
+          promo.style.padding = '0';
+        }
+      })
+      console.log(itemlist);
+
+      const mySwiper = new Swiper('.mySwiper', {
+      loop: true,
+      autoplay: {
+        delay: 5000,
+      },
+      slidesPerView: 6,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+      breakpoints: {
+        1280: {
+        slidesPerView: 6,
+      },
+      // when window width is <= 1024px
+      1024: {
+        slidesPerView: 5,
+      },
+      // when window width is <= 768px
+      860: {
+        slidesPerView: 4,
+      },
+      // when window width is <= 480px
+      480: {
+        slidesPerView: 2,
+      }, 
+
+      300: {
+        slidesPerView: 1,
+      }
+      },
+    });
+
+  }
 
   
 
@@ -170,4 +253,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
   renderBeansContainer();
   renderCoffeeContainer();
-  
+  rednerPoupularItems()
