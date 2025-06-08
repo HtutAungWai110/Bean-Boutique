@@ -25,8 +25,21 @@ async function findProuct(productid){
         if (!productData){
             throw new Error ('Product not found')
         }
-        product = productData;
-        console.log(product)
+
+        const {id, name, category, price, rating, ratedNumber, images, briefDescription} = productData;
+
+        product = {
+            id, 
+            name, 
+            category, 
+            price, 
+            rating, 
+            ratedNumber,
+            images,
+            briefDescription
+        };
+        console.log(productData);
+
         renderProducts(productData);
         product.quantity = 1;
     } catch (error){
@@ -38,8 +51,8 @@ async function findProuct(productid){
    
 }
 
-function renderProducts(product){
-    const {id, name, category, price, promotion, rating, ratedNumber, images,  briefDescription, description, tasteNote, bagSize} = product
+function renderProducts(productData){
+    const {id, name, category, price, promotion, rating, ratedNumber, images,  briefDescription, description, tasteNote, bagSize} = productData
 
     const productContainer = document.getElementById("productContainer");
     productContainer.innerHTML = "";
@@ -99,7 +112,7 @@ function renderProducts(product){
     ">${promotion}</div>` : "";
 
     const beanSelection = category === "beans" ? `<div class="selection-wrapper">
-                    <p>Whole or Ground bean: </p>
+                    <p>Whole bean or Ground: </p>
                     <div class="custom-select">
                         <div class="selected-wrapper">
                             <div class="selected" data-bean="Whole">Whole</div>
@@ -108,7 +121,7 @@ function renderProducts(product){
                         
                         <div class="options">
                             <div class="option" data-bean="Whole">Whole</div>
-                            <div class="option" data-bean="Blend">Blend</div>
+                            <div class="option" data-bean="Ground">Ground</div>
                         </div>
                 </div>
 
@@ -121,8 +134,8 @@ function renderProducts(product){
 
     const bagSizeText = bagSize ? `<p 
         style="
-        padding: 20px 0px;"
-    >Taste Note: ${bagSize}</p>` : "";
+        padding: 10px 0px;"
+    >Size: ${bagSize}</p>` : "";
 
     productContainer.innerHTML = `
      <div class="product-left-container data-id=${id} data-name=${name}">
@@ -155,7 +168,7 @@ function renderProducts(product){
 
                 <div style="padding: 20px 0px;">
                 Quantity: 
-                <input type="number" id="quantity" min=1 value=1 style="width: 50px;"/>
+                <input type="number" id="quantity" min=1 value=1 style="width: 50px; font-size : 15px"/>
                 </div>
                 
                 <div class="price-wrapper">
@@ -176,7 +189,7 @@ function renderProducts(product){
         </div>
     `
     
-    appendEventListeners(product);
+    appendEventListeners(productData);
 }
 
 function appendImagesEvent(e){
@@ -193,23 +206,23 @@ function appendImagesEvent(e){
 
 }
 
-function appendPortionSelectionEvent(e, arr, product){
+function appendPortionSelectionEvent(e, arr, productData){
 
     arr.forEach(item => 
         item.dataset.tag = "portions"
     )
     const priceSelector = document.querySelector("[data-price]");
-    const price = product.price;
+    const price = productData.price;
     const percentIncrease = Number(e.target.dataset.percentincrease);
-    const updatedPrice = Number(price + (price * percentIncrease))
+    const updatedPrice = Math.floor(Number(price + (price * percentIncrease)))
     e.target.dataset.tag = "selected-portion";
     priceSelector.dataset.price = updatedPrice;
     priceSelector.textContent = (updatedPrice / 100).toFixed(2);
     product.portion = e.target.dataset.portion;
-
+    product.price = updatedPrice;
 }
 
-function appendEventListeners(product){
+function appendEventListeners(productData){
     
     const imgaes = document.querySelectorAll("[data-state=images]")
     imgaes.forEach((image,index) => 
@@ -223,8 +236,7 @@ function appendEventListeners(product){
 
     const quantityInput = document.getElementById("quantity");
     quantityInput.addEventListener("change", () => {
-        product.quantity = quantityInput.value;
-        console.log(product)
+        product.quantity = Number(quantityInput.value);
     })
 
     if (product.category === "beans"){
@@ -262,6 +274,8 @@ function appendEventListeners(product){
                 hidden = true;
             });
             });
+
+            product.bean = selected.dataset.bean;
             
         }
     }
@@ -276,7 +290,7 @@ function appendEventListeners(product){
 
             portionSelectors.forEach((portion) => {
             portion.addEventListener('click', (e) => 
-                appendPortionSelectionEvent(e, portionSelectors, product)
+                appendPortionSelectionEvent(e, portionSelectors, productData)
             )
             });
         }
@@ -310,6 +324,7 @@ function appendEventListeners(product){
             option.addEventListener('click', () => {
                 selected.innerText = option.dataset.temp.trim();
                 selected.dataset.temp = option.dataset.temp.trim();
+                product.temp = selected.dataset.temp;
                 optionsContainer.classList.remove("options-shown");
                 dropdownIcon.src = "assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png"
                 hidden = true;
@@ -320,9 +335,14 @@ function appendEventListeners(product){
         
     }
 
+    const addToCartBtn = document.getElementById("addToCart");
+
+    addToCartBtn.addEventListener("click", () => {
+        console.log(product)
+    })
+
          
 
     
 }
 findProuct(productid);
-console.log(product);
