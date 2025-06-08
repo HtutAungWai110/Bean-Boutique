@@ -23,10 +23,7 @@ let productsData;
 async function getProducts(){
   try{
       const fetchedData = await filterData(category)
-      productsData = fetchedData || null;
-      if (productsData === null) {
-        throw new Error("Items not found");
-      }
+      productsData = fetchedData
     renderProducts()
   } catch (error){
     console.error(error);

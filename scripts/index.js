@@ -59,7 +59,7 @@ const fetchUrl = "data/data.json"; //json file url
         item.category === target //if item category matches, return current item 
       )
       if (filteredData.length === 0){
-        throw new Error("Item not found!")//if an array is empty, 0 items is found
+        throw new Error("Items not found!")//if an array is empty, 0 items is found
       }
       return filteredData;
   }
