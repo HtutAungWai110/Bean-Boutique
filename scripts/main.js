@@ -168,6 +168,63 @@ document.addEventListener('DOMContentLoaded', function () {
 
   };
 
+  async function  renderCoffeeMachines() {
+    try{
+
+    const filtered = await filterData("espresso machine"); //Fetching all coffee items from data.json
+    const trimedData = filtered.splice(0, 5); //Triming array 
+    const coffeMachinesContainer = document.getElementById("coffeMachinesContainer")
+    if (filtered.length === 0){
+      throw new Error ("Products not found")
+    } 
+    const itemlist = trimedData.map(item =>
+      `<div class="item" data-state="item" key=${item.id}>
+          <img src="${item.images[0]}" alt="${item.images[0]}" class="item-img">
+          <p class="item-name item-padding">${item.name}</p>
+           <a href="product.html?id=${item.id}" class="breif-description item-padding">
+            ${item.briefDescription}
+           </a>
+          <div class="rating-wrapper item-padding">
+              <img src="${ratingMap[item.rating]}" alt="rating" class="rating">
+              <span class="rated-number">
+              ${item.ratedNumber}
+              </span>
+          </div>
+          <div class="price-btn-wrapper item-padding">
+              <p class="price">£${(item.price/100).toFixed(2)}</p>
+              <a href="product.html?id=${item.id}" class="view-link">
+                  <button class="view-btn">View product
+                      <img src="assets/icons/arrow_right_alt_20dp_FFFFFF_FILL0_wght300_GRAD200_opsz20.png" alt="arrow"
+                      class="view-btn-arrow">
+                  </button>
+              </a>
+          </div>
+
+          <div class="promotion">
+          
+          ${item?.promotion || ""}
+          </div>
+        </div>
+      `
+    );
+
+    
+
+    coffeMachinesContainer.innerHTML = itemlist.join('')
+    const promo = document.querySelectorAll('.promotion');
+    promo.forEach(promo => {
+      if (!promo.textContent.trim()) {
+        promo.style.padding = '0';
+      }
+    })
+
+    } catch(error){
+      console.error(error)
+    coffeeContainer.innerHTML = `<p>${error}</p>`
+    }
+    
+  }
+
   async function  rednerPoupularItems() {
       const fetchedData = await fetchData();
       const sorted = (fetchedData.sort((a, b) => (b.ratedNumber * b.rating) - (a.ratedNumber * a.rating))).slice(0, 10);
@@ -226,21 +283,19 @@ document.addEventListener('DOMContentLoaded', function () {
         1280: {
         slidesPerView: 6,
       },
-      // when window width is <= 1024px
       1024: {
         slidesPerView: 5,
       },
-      // when window width is <= 768px
       860: {
         slidesPerView: 4,
       },
       // when window width is <= 480px
       480: {
-        slidesPerView: 2,
+        slidesPerView: 3,
       }, 
 
       300: {
-        slidesPerView: 1,
+        slidesPerView: 2,
       }
       },
     });
@@ -250,7 +305,8 @@ document.addEventListener('DOMContentLoaded', function () {
   
 
 
-
+  
   renderBeansContainer();
   renderCoffeeContainer();
-  rednerPoupularItems()
+  renderCoffeeMachines();
+  rednerPoupularItems();

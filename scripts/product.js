@@ -52,7 +52,7 @@ async function findProuct(productid){
 }
 
 function renderProducts(productData){
-    const {id, name, category, price, promotion, rating, ratedNumber, images,  briefDescription, description, tasteNote, bagSize} = productData
+    const {id, name, category, price, promotion, rating, ratedNumber, images,  briefDescription, description, tasteNote, bagSize, features, productInfo} = productData
 
     const productContainer = document.getElementById("productContainer");
     productContainer.innerHTML = "";
@@ -127,15 +127,29 @@ function renderProducts(productData){
 
                 </div>` : "";
 
-    const tasteNoteText = tasteNote ? `<p 
-        style="
-        padding: 20px 0px;"
-    >Taste Note: ${tasteNote}</p>` : "";
+    const tasteNoteText = tasteNote ? `
+    <div class="description-grid">
+        <p>Taste Note:</p>
+        <p>${tasteNote}</p>
+    </div>`: "";
 
     const bagSizeText = bagSize ? `<p 
         style="
         padding: 10px 0px;"
     >Size: ${bagSize}</p>` : "";
+
+    const featuresText = features ? `
+    <div class="description-grid">
+        <p>Features:</p>
+        <p>${features}</p>
+    </div>`: "";
+
+    const productInfoText = productInfo ? `
+        <div class="description-grid">
+            <p>Product Information:</p>
+            <p>${productInfo}</p>
+        </div>
+    `: "";
 
     productContainer.innerHTML = `
      <div class="product-left-container data-id=${id} data-name=${name}">
@@ -165,6 +179,8 @@ function renderProducts(productData){
                 ${portionSelection}
                 ${beanSelection}
                 ${bagSizeText}
+                ${featuresText}
+                ${productInfoText}
 
                 <div style="padding: 20px 0px;">
                 Quantity: 
@@ -180,7 +196,7 @@ function renderProducts(productData){
                 <div class="product-rating-wrapper">
                     <p>Rating:</p>
                     <img src="${ratingMap[rating]}" alt="" class="product-rating">
-                    <p class="product-rating-number">${ratedNumber} user ratings</p>
+                    <p class="product-rating-number">${ratedNumber} ratings</p>
                 </div>
 
                 <button id="addToCart" class="add-to-cart-btn">

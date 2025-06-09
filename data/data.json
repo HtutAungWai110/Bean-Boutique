@@ -523,5 +523,175 @@
     "description": "A true gem of Salvadoran coffee culture, Pacamara composes an equally tranquil and energetic flavor balance in its creamy mouthfeel, upbeat acidity, and intense floral aroma.",
     "tasteNote": "Bold, creamy, and complex with bright acidity; notes of tropical fruit, chocolate, and floral undertones.",
     "bagSize": "16oz"
+  },
+  {
+    "id": 34,
+    "name": "Cafehabit Espresso Coffee Machine",
+    "category": "espresso machine",
+    "price": 81294,
+    "rating": 4.5,
+    "ratedNumber": 1789,
+    "images": [
+      "assets/images/Cafehabit_Espresso_Coffee_Machine.jpg",
+      "assets/images/Cafehabit_Espresso_Coffee_Machine_alt1.jpg",
+      "assets/images/Cafehabit_Espresso_Coffee_Machine_alt2.jpg"
+    ],
+    "briefDescription": "Premium White Espresso Coffee Machine Heat Exchanger, and Vibratory Pump for Barista-Quality Brewing at Home or in the Office",
+    "description": "Enjoy the convenience of an espresso machine with a milk frother. [Precise Temperature Control]: The espresso machine is equipped with digital temperature control(PID). [Easy Maintenance]: The detachable drip tray allows for hassle-free cleaning and maintenance, ensuring your machine stays in top condition for lasting performance.The venerable E61 group brings boiler-fed heating and a mechanical solenoid found on cafe machines the world over.",
+    "features": "Warm Up: Brew Time 5 minutes, Portafilter Size: 58mm, Cup Warmer, Pre-Infusion/Aroma, Solenoid Valve.",
+    "productInfo": "Cpacity: 3 Liters, Weight: 60 pounds, Material: Stainless Steel, Wattage: 2000 watts"
+  },
+  {
+    "id": 35,
+    "name": "Breville Barista Express Espresso Machine",
+    "category": "espresso machine",
+    "price": 51437,
+    "rating": 4.5,
+    "ratedNumber": 1288,
+    "images": [
+      "assets/images/Breville_Barista_Express_Espresso_Machine.jpg",
+      "assets/images/Breville_Barista_Express_Espresso_Machine_alt1.jpg",
+      "assets/images/Breville_Barista_Express_Espresso_Machine_alt2.jpg"
+    ],
+    "briefDescription": "Breville Barista Express Espresso Machine BES870XL, Brushed Stainless Steel",
+    "description": "The Breville Barista Express delivers third wave specialty coffee at home using the 4 keys formula and is part of the Barista Series that offers all in one espresso machines with integrated grinder to go from beans to espresso in under one minute.",
+    "features": "OPTIMAL WATER PRESSURE, PRECISE ESPRESSO EXTRACTION, ESPRESSO MACHINE WITH GRIND SIZE DIAL, ESPRESSO MAKER WITH BUILT-IN COFFEE GRINDER",
+    "productInfo": "Cpacity: 1 Cup, Weight: 22.1 pounds, Material: Stainless Steel, Wattage: 1600 watts"
+  },
+  {
+    "id": 36,
+    "name": "Electactic Espresso Machine",
+    "category": "espresso machine",
+    "price": 22148,
+    "rating": 4.0,
+    "ratedNumber": 1978,
+    "images": [
+      "assets/images/Electactic_Espresso_Machine.jpg",
+      "assets/images/Electactic_Espresso_Machine_alt1.jpg",
+      "assets/images/Electactic_Espresso_Machine_alt2.jpg"
+    ],
+    "briefDescription": "Espresso Machine with Grinder, 20 Bar Expresso Coffee Machines with Milk Frother Steam Wand, Professional Espresso Maker with Removable Water Tank, Cappuccino & Latte Machine for Home",
+    "description": "Barista-Quality Coffee at Home - Enjoy barista-level coffee with our espresso machine, featuring a built-in grinder, a 20-BAR Italian pump, and a powerful 1500W motor for optimal extraction. Easily adjust settings at home to enjoy personalized coffee quality. Our expresso coffee machines comes with a precision conical burr grinder. With 30 preset grind settings, you have full control over grind size, ensuring perfect texture and flavor in every cup.",
+    "features": "20 Bar Pressure, Built-in Grinder, Milk Frother, Cup Warmer, Removable Water Tank, 58mm Commercial Portafilter, Semi-Automatic Functionality20 Bar Pressure, Built-in Grinder, Milk Frother, Cup Warmer, Removable Water Tank, 58mm Commercial Portafilter, Semi-Automatic Functionality",
+    "productInfo": "Cpacity: 2.3 Liters, Weight: 18.04 pounds, Material: Stainless Steel, Wattage: 1500 watts"
+  },
+  {
+    "id": 37,
+    "name": "Primula Classic Stovetop Espresso and espresso machine",
+    "category": "espresso machine",
+    "price": 22148,
+    "rating": 4.5,
+    "ratedNumber": 2278,
+    "images": [
+      "assets/images/Primula_Classic_Stovetop_Espresso_and_Coffee_Maker.jpg",
+      "assets/images/Primula_Classic_Stovetop_Espresso_and_Coffee_Maker_alt1.jpg",
+      "assets/images/Primula_Classic_Stovetop_Espresso_and_Coffee_Maker_alt2.jpg"
+    ],
+    "briefDescription": "Primula Classic Stovetop Espresso and espresso machine, Moka Pot for Italian and Cuban Café Brewing, Greca espresso machine, Cafeteras, 6 Espresso Cups, Silver",
+    "description": "Primula’s Stovetop Espresso espresso machine delivers six perfect demitasse servings of rich, authentic espresso or Cuban coffee. Stove top expresso makers are popular because you can make quality espresso quickly, without the hassle of electric espresso machines. Primula’s Stovetop Espresso Maker is compact and easy to use.",
+    "features": "PORTABLE, CRAFT COFFEE AT HOME, DURABLE DESIGN, EASY TO USE, EASY TO CLEAN, COFFEE ON-THE-GO",
+    "productInfo": "Cpacity: 6 Cups, Weight: 0.8 Ounces, Material: Aluminium, Wattage: 1000 watts"
+  },
+  {
+    "id": 38,
+    "name": "Keurig K-Duo espresso machine",
+    "category": "espresso machine",
+    "price": 11085,
+    "rating": 4.5,
+    "ratedNumber": 1208,
+    "images": [
+      "assets/images/Keurig_K-Duo_Coffee_Maker.jpg",
+      "assets/images/Keurig_K-Duo_Coffee_Maker_alt1.jpg",
+      "assets/images/Keurig_K-Duo_Coffee_Maker_alt2.jpg"
+    ],
+    "briefDescription": "Keurig K-Duo Hot & Iced Single Serve & Carafe espresso machine, MultiStream Technology, 72oz Reservoir (Gen 2)",
+    "description": "Meet the improved Keurig K-Duo Single Serve & Carafe espresso machine: the brewer made for every moment. It gives you the flexibility to brew delicious coffee in single cups using K-Cup pods OR in full carafes using your favorite grounds — so you can serve yourself or a crowd, all with one compact unit.",
+    "features": "REMOVEABLE TANK, BREW BY THE CUP OR CARAFE, MULTISTREAM TECHNOLOGY, BREW OVER ICE, STRONG BREW & EXTRA HOT FUNCTIONALITY, MULTIPLE BREW SIZES",
+    "productInfo": "Cpacity: 4.5 Pounds, Weight: 1 Pound, Material: Glass, Wattage: 1.1E+3 watts"
+  },
+  {
+    "id": 39,
+    "name": "QJA Espresso Machine",
+    "category": "espresso machine",
+    "price": 31039,
+    "rating": 4.5,
+    "ratedNumber": 1006,
+    "images": [
+      "assets/images/Keurig_K-Duo_Coffee_Maker.jpg",
+      "assets/images/Keurig_K-Duo_Coffee_Maker_alt1.jpg",
+      "assets/images/Keurig_K-Duo_Coffee_Maker_alt2.jpg"
+    ],
+    "briefDescription": "Espresso Machine with Grinder, 20 Bar Pressure Professional Espresso Maker with 30 Grinding Settings, 58mm Portafilte, Anti-scalding Milk Frother Steam Wand for Latte Cappuccino (Stainless Steel)",
+    "description": " The coffee and grinder all-in-one machine, with a variety of functions, not only meets the pursuit of different coffee flavors by coffee lovers, but also achieves the ultimate in convenience and safety. It is a kitchen appliance with comprehensive functions and excellent quality, adding a unique coffee aroma to your quality life. With up to 30 grinding settings, whether you prefer the granularity of coarse grinding, suitable for the fresh taste of hand-brewed coffee, or pursue the rich and mellow taste of fine grinding, suitable for the strong flavor of espresso, this coffee grinder can accurately meet your needs.",
+    "features": "Timer, Self-Cleaning,Concial Burr Grinder,20Bar High Pressure,30 Grind Settings,1680W Powerful System, Removable Tank, Cup Warmer, Milk Frother",
+    "productInfo": "Cpacity: 2.5 Liters, Weight: 35.4 Pounds, Material: Stainless Steel, Vol  tage: 120 Volts"
+  },
+  {
+    "id": 40,
+    "name": "QJA Espresso Machine",
+    "category": "espresso machine",
+    "price": 31039,
+    "rating": 4.5,
+    "ratedNumber": 1006,
+    "images": [
+      "assets/images/QJA_Espresso_Machine.jpg",
+      "assets/images/QJA_Espresso_Machine_alt1.jpg",
+      "assets/images/QJA_Espresso_Machine_alt2.jpg"
+    ],
+    "briefDescription": "Espresso Machine with Grinder, 20 Bar Pressure Professional Espresso Maker with 30 Grinding Settings, 58mm Portafilte, Anti-scalding Milk Frother Steam Wand for Latte Cappuccino (Stainless Steel)",
+    "description": "The coffee and grinder all-in-one machine, with a variety of functions, not only meets the pursuit of different coffee flavors by coffee lovers, but also achieves the ultimate in convenience and safety. It is a kitchen appliance with comprehensive functions and excellent quality, adding a unique coffee aroma to your quality life. With up to 30 grinding settings, whether you prefer the granularity of coarse grinding, suitable for the fresh taste of hand-brewed coffee, or pursue the rich and mellow taste of fine grinding, suitable for the strong flavor of espresso, this coffee grinder can accurately meet your needs.",
+    "features": "Timer, Self-Cleaning,Concial Burr Grinder,20Bar High Pressure,30 Grind Settings,1680W Powerful System, Removable Tank, Cup Warmer, Milk Frother",
+    "productInfo": "Cpacity: 2.5 Liters, Weight: 35.4 Pounds, Material: Stainless Steel, Wattage: 120 Volts"
+  },
+  {
+    "id": 41,
+    "name": "KEENSTAR Espresso Machine",
+    "category": "espresso machine",
+    "price": 10346,
+    "rating": 4,
+    "ratedNumber": 817,
+    "images": [
+      "assets/images/KEENSTAR_Espresso_Machine.jpg",
+      "assets/images/KEENSTAR_Espresso_Machine_alt1.jpg",
+      "assets/images/KEENSTAR_Espresso_Machine_alt2.jpg"
+    ],
+    "briefDescription": "Espresso Coffee Machine with Milk Tank, 20Bar Hot & Iced Coffee Machine with Rapid Cold Brew, Touch Screen Espresso Maker with Steam Wand for Coffee Lover",
+    "description": "Cold brew pulls all the great coffee flavor from coffee beans. Smooth, fresh cold brew in as little as 10 minutes, saves your time in the morning. You could also make hot coffee such as Latte, espresso, or Americano as you like. Espresso Maker with 20-bar professional pump and 1350W powerful motor gives you top quality extraction, resulting in a more fragrant and rich aroma. You can create an latte, cappuccino, or Americano at home or office with our stainless steel espresso maker. Brew program will pre-infuse the ground coffee first, and control the amount of water flow precisely, it ensures a good flavor of espresso coffee.",
+    "features": "Cup Warmer, Milk Frother, Permanent Filter",
+    "productInfo": "Cpacity: 1.1 Liters, Weight: 10.69 Pounds, Material: Stainless Steel, Wattage: 1500 watts"
+  },
+  {
+    "id": 42,
+    "name": "Hanrose Espresso Machine",
+    "category": "espresso machine",
+    "price": 29561,
+    "rating": 4.0,
+    "ratedNumber": 1321,
+    "images": [
+      "assets/images/Hanrose_Espresso_Machine.jpg",
+      "assets/images/Hanrose_Espresso_Machine_alt1.jpg",
+      "assets/images/Hanrose_Espresso_Machine_alt2.jpg"
+    ],
+    "briefDescription": "Espresso Machine With Grinder, 20 Bar Espresso Machine with Milk Frother Steam Wand, Espresso Machines for Home, Expresso Coffee Machines Professional, Cappuccino Latte Machine",
+    "description": "Enjoy the retro vibe that the Hanrose espresso machine with grinder brings to your home. It fits perfectly in the kitchen, living room, or office space, making it an ideal gift for weddings, birthdays, or anniversaries. Built-in grinder with 15 grind size settings, allowing you to adjust from coarse to fine. It ensures that freshly ground coffee is precisely dosed into the filter basket, enabling you to make the perfect espresso using any type of coffee beans. Equipped with an Italian ULKA pump and precise temperature control technology, it ensures stable pressure and ideal temperature, resulting in the extraction of rich and flavorful espresso.",
+    "features": "Built-in Grinder (Removable), ULKA PUMP, PID TEMPERATURE SYSTEM, 10mm Steam Wand, Espresso Machine With Grinder",
+    "productInfo": "Cpacity: 2.49 Liters, Weight: 16.4 Pounds, Material: Stainless Steel, Wattage: 1350 watts"
+  },
+  {
+    "id": 43,
+    "name": "Kndko Espresso Machine",
+    "category": "espresso machine",
+    "price": 12563,
+    "rating": 4.5,
+    "ratedNumber": 1422,
+    "images": [
+      "assets/images/Kndko_Espresso_Machine.jpg",
+      "assets/images/Kndko_Espresso_Machine_alt1.jpg",
+      "assets/images/Kndko_Espresso_Machine_alt2.jpg"
+    ],
+    "briefDescription": "20 Bar Espresso Machine with Cold Brew, Professional Expresso Machines for home, Stainless Steel Espresso Maker with Milk Frother, Auto Sleep Mode, 1.5L Removable Water Tank, for Latte, Cappuccino",
+    "description": "The espresso machine is equipped with a 20-bar professional pressure system, allows you to switch between cold and hot brewing with just one touch. With this powerhouse in your kitchen, every day becomes a new coffee adventure.  The intuitive LED display of the espresso machine monitors the brewing time, temperature, and pressure in real-time. With step-by-step guidance from single/double cup icons, even coffee beginners can easily make rich and aromatic coffee, enjoying the fun of professional coffee making.​",
+    "features": "Portable, Removable Tank, Cup Warmer, Milk Frother",
+    "productInfo": "Cpacity: 52.8 Fluid Ounces, Weight: 12.06 Pounds, Material: Stainless Steel, Wattage: 1200 watts"
   }
 ]
