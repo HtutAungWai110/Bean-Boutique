@@ -17,9 +17,10 @@
     <header class="header"></header>
     <nav class="navigation">
         <a href="home-page.html"><img src="assets/icons/logo.png" alt="logo" class="logo"></a>
-        <ul class="nav-menu">
-            <a href="home-page.html" class="hover-menu"><li class="hover-navlink">Home</li></a>
-            <a href="" class="hover-menu"><li class="hover-navlink">Contact</li></a>
+        <div class="nav-menu">
+        <ul>
+            <li class="hover-navlink"><a href="home-page.html" class="hover-menu">Home</a></li>
+            <li class="hover-navlink"><a href="" class="hover-menu">Contact</a></li>
             <div class="navdropdown-products" id="dropDown">
                 <li class="hover-dropdown">
                     Shop 
@@ -58,6 +59,9 @@
                     </div>
                 </div>
             </div>
+        
+        </ul>
+        
 
             <div class="search-bar">
                 <input type="text">
@@ -65,8 +69,8 @@
             </div>
 
             <div class="login-signup-wrapper">
-                <a href=""><button class="login-btn">Login</button></a>
-                <a href=""><button class="signup-btn">Sign up</button></a>
+                <button class="login-btn">Login</button>
+                <button class="signup-btn">Signup</button>
             </div>
             
              <div class="cart-wrapper">
@@ -75,10 +79,8 @@
                     <span class="cart-text">Cart</span>
                 </a>
             </div>
-
+        </div>
            
-        </ul>
-        
     </nav>
     <!--Swiper container-->
     <div class="swiper imageSwiper">
@@ -144,7 +146,7 @@
     <div class="swiper-button-next"></div>
     </div>
 
-
+    <section>
      <div class="items-container">
     <!--This is a coffee container featuring the first ten coffee from the menu-->
         <h2 class="category-header">COFFEE BEANS</h2>
@@ -154,7 +156,7 @@
         <div class="explore-btn-wrapper">
         <!--Customers can explore every coffee on menu by clicking button below-->
         
-        <a href="products.html?category=beans"><button class="explore-btn">Explore more</button></a>
+        <button class="explore-btn"><a href="products.html?category=beans">Explore more</a></button>
         </div>
 
     </div>
@@ -168,7 +170,7 @@
         <div class="explore-btn-wrapper">
         <!--Customers can explore every coffee on menu by clicking button below-->
         
-        <a href="products.html?category=coffee"><button class="explore-btn">Explore more</button></a>
+        <button class="explore-btn"><a href="products.html?category=coffee">Explore more</a></button>
         </div>
 
     </div>
@@ -182,10 +184,11 @@
     <div class="explore-btn-wrapper">
     <!--Customers can explore every coffee on menu by clicking button below-->
     
-    <a href="products.html?category=espresso machine"><button class="explore-btn">Explore more</button></a>
+    <button class="explore-btn"><a href="products.html?category=espresso+machine">Explore more</a></button>
     </div>
 
     </div>
+    </section>
 
     
 
@@ -230,11 +233,11 @@
             <div class="footer-div" style="color: #fff;">
                 <h2>Visit</h2>
                 <ul style="list-style: none;">
-                    <li style="margin: 5px 0px;"><a href="" style="color: #a0a0a0; text-decoration: none;">Home</a></li>
-                    <li style="margin: 5px 0px;"><a href="" style="color: #a0a0a0; text-decoration: none;">Contact</a></li>
-                    <li style="margin: 5px 0px;"><a href="" style="color: #a0a0a0; text-decoration: none;">Coffee Menu</a></li>
-                    <li style="margin: 5px 0px;"><a href="" style="color: #a0a0a0; text-decoration: none;">Coffee Beans</a></li>
-                    <li style="margin: 5px 0px;"><a href="" style="color: #a0a0a0; text-decoration: none;">Espresso Machine</a></li>
+                    <li style="margin: 5px 0px;" class="footer-hover"><a href="" style="color: #a0a0a0; text-decoration: none;">Home</a></li>
+                    <li style="margin: 5px 0px;" class="footer-hover"><a href="" style="color: #a0a0a0; text-decoration: none;">Contact</a></li>
+                    <li style="margin: 5px 0px;" class="footer-hover"><a href="" style="color: #a0a0a0; text-decoration: none;">Coffee Menu</a></li>
+                    <li style="margin: 5px 0px;" class="footer-hover"><a href="" style="color: #a0a0a0; text-decoration: none;">Coffee Beans</a></li>
+                    <li style="margin: 5px 0px;" class="footer-hover"><a href="" style="color: #a0a0a0; text-decoration: none;">Espresso Machine</a></li>
                 </ul>
             </div> 
             

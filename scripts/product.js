@@ -57,6 +57,8 @@ function renderProducts(productData){
     const productContainer = document.getElementById("productContainer");
     productContainer.innerHTML = "";
 
+    const imagesContainer = images.map(image => `<img src="${image}" alt="" data-state="images">`);
+
     const tempSelection = category === "coffee" ? `<div class="selection-wrapper">
                     <p>Iced or Hot: </p>
                     <div class="custom-select">
@@ -81,7 +83,7 @@ function renderProducts(productData){
                             data-tag="selected-portion" 
                             data-percentIncrease="0"
                             data-portion="small">
-                            <span class="small-text">Small</span>
+                            <span style="margin-top: 5px;">Small (240 mL)</span>
                         </div>
 
                         <div class="portion-wrapper">
@@ -89,7 +91,7 @@ function renderProducts(productData){
                             data-tag="portions" 
                             data-percentIncrease="0.2"
                             data-portion="medium">
-                            <span class="medium-text">Medium</span>
+                            <span style="margin-top: 5px;">Medium (355 mL)</span>
                         </div>
                             
                         <div class="portion-wrapper">
@@ -97,7 +99,7 @@ function renderProducts(productData){
                             data-tag="portions" 
                             data-percentIncrease="0.5"
                             data-portion="large">
-                            <span class="large-text">Large</span>
+                            <span style="margin-top: 5px;">Large (475 mL)</span>
                         </div>
                             
                     </div>
@@ -156,9 +158,7 @@ function renderProducts(productData){
             <div class="item-images-container">
                 <img src="${images[0]}" alt="" class="main-image" data-state="mainImage">
                 <div class="images-wrapper">
-                    <img src="${images[0]}" alt="" data-state="images">
-                    <img src="${images[1]}" alt="" data-state="images">
-                    <img src="${images[2]}" alt="" data-state="images">
+                ${imagesContainer.join(" ")}
                 </div>
             </div>
         </div>
