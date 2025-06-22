@@ -1,29 +1,20 @@
 import { fetchData } from "./index.js";
+import { ratingMap } from "./index.js";
+import { displayErrorPopup } from "./index.js";
 
 const params = new URLSearchParams(window.location.search);
 const productid = params.get('id');
 let product;
 
- const ratingMap = {
-    0: "assets/ratings/rating-0.png",
-    0.5: "assets/ratings/rating-05.png",
-    1: "assets/ratings/rating-10.png",
-    1.5: "assets/ratings/rating-15.png",
-    2: "assets/ratings/rating-20.png",
-    2.5: "assets/ratings/rating-25.png",
-    3: "assets/ratings/rating-30.png",
-    3.5: "assets/ratings/rating-35.png",
-    4: "assets/ratings/rating-40.png",
-    4.5: "assets/ratings/rating-45.png",
-    5: "assets/ratings/rating-50.png",
-  } //Rating map to match rating images with rating scores fetched from data.json
+
 
 async function findProuct(productid){
     try{
         const fectcheddata = await fetchData();
         const productData = await fectcheddata.find(item => item.id === Number(productid));
         if (!productData){
-            throw new Error ('Product not found')
+            document.querySelector(".footer").style.display = "none";
+            throw new Error ('Product not found');
         }
 
         const {id, name, category, price, rating, ratedNumber, images, briefDescription} = productData;
@@ -43,7 +34,7 @@ async function findProuct(productid){
         renderProducts(productData);
         product.quantity = 1;
     } catch (error){
-        console.error(error);
+        displayErrorPopup(error);
         document.getElementById("productContainer").innerHTML = error
     }
 
@@ -52,7 +43,7 @@ async function findProuct(productid){
 }
 
 function renderProducts(productData){
-    const {id, name, category, price, promotion, rating, ratedNumber, images,  briefDescription, description, tasteNote, bagSize, features, productInfo} = productData
+    const {id, name, category, prediscountedPrice, price, promotion, rating, ratedNumber, images,  briefDescription, description, tasteNote, bagSize, features, productInfo} = productData
 
     const productContainer = document.getElementById("productContainer");
     productContainer.innerHTML = "";
@@ -112,6 +103,8 @@ function renderProducts(productData){
     border-radius: 10px;
     color: #ffff;
     ">${promotion}</div>` : "";
+
+
 
     const beanSelection = category === "beans" ? `<div class="selection-wrapper">
                     <p>Whole bean or Ground: </p>
@@ -189,8 +182,9 @@ function renderProducts(productData){
                 
                 <div class="price-wrapper">
                     <p>Price: £</p>
-                    <p data-price="${(price)}">${(price / 100).toFixed(2)}</p>  
-                ${discount}
+                    <p data-price="${(price)}">£${(price / 100).toFixed(2)}</p>  
+                    
+                    ${discount}
                 </div>
 
                 <div class="product-rating-wrapper">
@@ -198,10 +192,12 @@ function renderProducts(productData){
                     <img src="${ratingMap[rating]}" alt="" class="product-rating">
                     <p class="product-rating-number">${ratedNumber} ratings</p>
                 </div>
-
+                <div style="display: flex; align-items: center; gap: 5px;">
                 <button id="addToCart" class="add-to-cart-btn">
                     Add to cart
                 </button>
+                <img src="assets/icons/check.png" alt="check" class="check-icon">   
+                </div>
         </div>
     `
     
@@ -354,6 +350,12 @@ function appendEventListeners(productData){
     const addToCartBtn = document.getElementById("addToCart");
 
     addToCartBtn.addEventListener("click", () => {
+        const checkIcon = document.querySelector(".check-icon");
+        checkIcon.classList.add("checkIcon-spin");
+        setTimeout(() => {
+            checkIcon.classList.remove("checkIcon-spin");
+        }, 2000)
+        
         console.log(product)
     })
 
