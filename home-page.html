@@ -15,24 +15,53 @@
 </head>
 <body>
     <header class="header"></header>
-    <nav class="navigation">
-        <a href="home-page.html"><img src="assets/icons/logo.png" alt="logo" class="logo"></a>
+    <nav>
+        <div class="navigation"> 
+            <a href="home-page.html"><img src="assets/icons/logo.png" alt="logo" class="logo"></a>
+            <div class="nav-right">
+                <div class="search-wrapper" id="searchTrigger">
+                    <img src="assets/icons/search_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="search" class="nav-buttons">
+                    <span class="search-text">Search</span>
+                </div>
+
+                <div class="register-wrapper">
+                    <img src="assets/icons/person_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="register" class="nav-buttons">
+                    <span class="register-text">Register</span>
+                </div>
+
+                <div class="cart-wrapper">
+                    <a href="">
+                        <img src="assets/icons/shopping_bag_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" class="nav-buttons" alt="cart">
+                        <span class="cart-text">Cart</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="search-overlay" id="searchOverlay">
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." id="searchInput" autofocus />
+                    <button class="close-btn" id="closeSearch">✕</button>
+                </div>
+            </div>
+            
+        </div>
+       
         <div class="nav-menu">
-        <ul>
-            <li class="hover-navlink"><a href="home-page.html" class="hover-menu">Home</a></li>
-            <li class="hover-navlink"><a href="" class="hover-menu">Contact</a></li>
+            <div class="hover-navlink"><a href="home-page.html">Home</a></div>
+            <div class="hover-navlink"><a href="">Contact</a></div>
+            
             <div class="navdropdown-products" id="dropDown">
                 <li class="hover-dropdown">
                     Shop 
                 <img src="assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png" alt="drop down">
                 </li>
-                
                 <div class="navdropdown-box">
                     <div class="dropdown-left">
                         <h2>Shop</h2>
-                        <li class="dropdown-hover"><a href="products.html?category=coffee" >Coffe menu</a></li>
-                        <li class="dropdown-hover"><a href="products.html?category=beans" >Coffee beans</a></li>
-                        <li class="dropdown-hover"><a href="products.html?category=espresso machine" >Espresso machine</a></li>
+                        <ul>
+                            <li class="dropdown-hover"><a href="products.html?category=coffee" >Coffe menu</a></li>
+                            <li class="dropdown-hover"><a href="products.html?category=beans" >Coffee beans</a></li>
+                        </ul>
                     </div>
 
                     <div class="dropdown-right">
@@ -59,44 +88,26 @@
                     </div>
                 </div>
             </div>
-        
-        </ul>
-        
-
-            <div class="search-bar">
-                <input type="text">
-                <button class="nva-buttons search-btn"><img src="assets/icons/search_50dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png" alt="search" class="search-icon"></button>
-            </div>
-
-            <div class="login-signup-wrapper">
-                <button class="login-btn">Login</button>
-                <button class="signup-btn">Signup</button>
-            </div>
-            
-             <div class="cart-wrapper">
-                <a href="">
-                    <img src="assets/icons/shopping_cart_50dp_000000_FILL0_wght300_GRAD200_opsz48.png" class="nav-buttons" alt="cart">
-                    <span class="cart-text">Cart</span>
-                </a>
-            </div>
-        </div>
            
-    </nav>
-    <!--Swiper container-->
-    <div class="swiper imageSwiper">
-        <!-- Wrapper for slides -->
+            
+        </div>
+        
+    </nav> 
+
+        <div class="swiper imageSwiper">
+
         <div class="swiper-wrapper">
-            <!-- Slides -->
+
             <div class="swiper-slide"><img src="assets/images/Coffee That makes you happy.png" alt="poster" class="posters"></div>
             <div class="swiper-slide"><img src="assets/images/Grand Opening.png" alt="poster" class="posters"></div>
 
         </div>
 
-        <!-- Optional navigation buttons -->
+
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
 
-        <!-- Optional pagination -->
+
         <div class="swiper-pagination"></div>
         <div class="swiper-pagination">
             <span class="swiper-pagination-bullet"></span>
@@ -104,6 +115,20 @@
             ...
         </div>
 
+    </div>
+   
+    
+
+    <div class="subscribe-wrapper ">
+
+        <div class="subscribe-content hidden">
+        <h1>Subscribe to our email to get 15% Off!</h1>
+        <p>If you are a new comer, subscribe to get 15% Off discount coupon</p>
+        <div class="email-input-wrapper hidden">
+            <input type="email" class="email-input" placeholder="Enter your email address">
+            <button class="subscribe-btn">Subscribe</button>
+        </div>
+        </div>
     </div>
 
     <div class="overlay-popup">
@@ -137,7 +162,7 @@
 
     <h2 class="category-header">POPULAR ITEMS</h2>
     <!-- Swiper Container -->
-    <div class="swiper mySwiper">
+    <div class="swiper mySwiper hidden">
     <div class="swiper-wrapper" id="pouplarItemsContainer">
     </div>
 
@@ -147,7 +172,7 @@
     </div>
 
     <section>
-     <div class="items-container">
+     <div class="items-container hidden">
     <!--This is a coffee container featuring the first ten coffee from the menu-->
         <h2 class="category-header">COFFEE BEANS</h2>
         <div class="items-wrapper" id="beansContainer">
@@ -156,12 +181,12 @@
         <div class="explore-btn-wrapper">
         <!--Customers can explore every coffee on menu by clicking button below-->
         
-        <button class="explore-btn"><a href="products.html?category=beans">Explore more</a></button>
+        <button class="explore-btn" onclick="explore('beans')">Explore more</button>
         </div>
 
     </div>
 
-    <div class="items-container">
+    <div class="items-container hidden">
     <!--This is a coffee container featuring the first ten coffee from the menu-->
         <h2 class="category-header">OUR SPECIAL COFFEE MENU</h2>
         <div class="items-wrapper" id="coffeeContainer">
@@ -170,12 +195,12 @@
         <div class="explore-btn-wrapper">
         <!--Customers can explore every coffee on menu by clicking button below-->
         
-        <button class="explore-btn"><a href="products.html?category=coffee">Explore more</a></button>
+        <button class="explore-btn" onclick="explore('coffee')">Explore more</button>
         </div>
 
     </div>
 
-    <div class="items-container">
+    <div class="items-container hidden">
 <!--This is a coffee container featuring the first ten coffee from the menu-->
     <h2 class="category-header">Espresso Machine</h2>
     <div class="items-wrapper" id="coffeMachinesContainer">
@@ -184,7 +209,7 @@
     <div class="explore-btn-wrapper">
     <!--Customers can explore every coffee on menu by clicking button below-->
     
-    <button class="explore-btn"><a href="products.html?category=espresso+machine">Explore more</a></button>
+    <button class="explore-btn" onclick="explore('espresso machine')">Explore more</button>
     </div>
 
     </div>
@@ -258,5 +283,55 @@
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="scripts/main.js" type="module"></script>
+    <script>
+        function explore(category){
+        const encodedCateogry = encodeURIComponent(category);
+
+        // Construct the new URL with query parameter
+        const url = `products.html?category=${encodedCateogry}`;
+
+        window.location.href = url;
+        }
+    </script>
+    <script>
+        
+
+    let lastScrollTop = 0;
+    const nav = document.querySelector("nav");
+
+    window.addEventListener("scroll", function () {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll < lastScrollTop) {
+            // Scrolling up
+            nav.style.top = "0";
+        } else {
+            // Scrolling down
+            nav.style.top = "-150px"; // hides the nav (adjust if your nav height is different)
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+    });
+
+    const searchTrigger = document.getElementById('searchTrigger');
+    const searchOverlay = document.getElementById('searchOverlay');
+    const searchInput = document.getElementById('searchInput');
+    const closeBtn = document.getElementById('closeSearch');
+
+    searchTrigger.addEventListener('click', () => {
+        searchOverlay.style.top = "0";
+        setTimeout(() => {
+            searchInput.focus();
+        }, 300); // Wait for slide-in animation
+    });
+
+    closeBtn.addEventListener('click', () => {
+        searchOverlay.style.top = "-100px";
+    });
+
+    searchInput.addEventListener('blur', () => {
+        searchOverlay.style.top = "-100px";
+    });
+    </script>
 </body>
 </html>
