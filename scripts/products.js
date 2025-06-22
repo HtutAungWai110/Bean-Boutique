@@ -1,32 +1,26 @@
-import { filterData } from "./index.js";
+import { fetchData, filterData } from "./index.js";
+import { ratingMap } from "./index.js";
+import { addViewEvent } from "./index.js";
 
 const params = new URLSearchParams(window.location.search);
 const category = params.get('category');
 
 let productsData;
 
-  const ratingMap = {
-    0: "assets/ratings/rating-0.png",
-    0.5: "assets/ratings/rating-05.png",
-    1: "assets/ratings/rating-10.png",
-    1.5: "assets/ratings/rating-15.png",
-    2: "assets/ratings/rating-20.png",
-    2.5: "assets/ratings/rating-25.png",
-    3: "assets/ratings/rating-30.png",
-    3.5: "assets/ratings/rating-35.png",
-    4: "assets/ratings/rating-40.png",
-    4.5: "assets/ratings/rating-45.png",
-    5: "assets/ratings/rating-50.png",
-  } //Rating map to match rating images with rating scores fetched from data.json
-
 
 async function getProducts(){
   try{
       const fetchedData = await filterData(category)
-      productsData = fetchedData
-    renderProducts()
+      productsData = fetchedData;
+      
+      if (fetchedData.length === 0) {
+        document.querySelector(".footer").style.display = "none";
+        throw new Error("Products not found")
+
+      };
+    renderProducts();
+
   } catch (error){
-    console.error(error);
     document.querySelector(".category-header").textContent = error
   }
    
@@ -50,13 +44,12 @@ function renderProducts(){
               </span>
           </div>
           <div class="price-btn-wrapper item-padding">
+              <div style="display: flex; gap: 15px; align-items: center;">
               <p class="price">£${(item.price/100).toFixed(2)}</p>
-              <a href="product.html?id=${item.id}" class="view-link">
-                  <button class="view-btn">View product
-                      <img src="assets/icons/arrow_right_alt_20dp_FFFFFF_FILL0_wght300_GRAD200_opsz20.png" alt="arrow"
-                      class="view-btn-arrow">
+              <p class="diagonal-line">${item?.preDisPrice? (item.preDisPrice / 100).toFixed(2) : ""}</p>
+              </div>
+                  <button class="view-btn" data-id="${item.id}">View
                   </button>
-              </a>
           </div>
 
           <div class="promotion">
@@ -66,7 +59,8 @@ function renderProducts(){
         </div>
       `
     )
-    document.querySelector(".category-header").textContent = category.toUpperCase()
+    document.querySelector(".category-header").textContent = category.toUpperCase();
+    document.querySelector(".result").textContent = `${productsData.length} results`;
     itemsContainer.innerHTML = itemsList.join("");
     const promo = document.querySelectorAll('.promotion');
     promo.forEach(promo => {
@@ -74,7 +68,56 @@ function renderProducts(){
         promo.style.padding = '0';
       }
     })
-    
-}
+    addViewEvent(".view-btn");
+};
+
+
 
 getProducts();
+addEventListeners();
+
+function addEventListeners(){
+  const sortData = document.getElementById("sortData");
+  const overlayLoading = document.querySelector(".overlay-loading");
+  sortData.addEventListener("change", (e) => {
+    const selected = e.target.value;
+    console.log(selected)
+    switch (true){
+      case selected === "default":
+        productsData.sort((a, b) => a.id - b.id);
+        break;
+      case selected === "popularity":
+        productsData.sort((a, b) => (b.ratedNumber * b.rating) - (a.ratedNumber * a.rating));
+        break;
+      case selected === "lowToHigh":
+        productsData.sort((a, b) => a.price - b.price);
+        break;
+
+      case selected === "highToLow":
+        productsData.sort((a, b) => b.price - a.price);
+        break;
+      
+    }
+    overlayLoading.style.visibility = "visible";
+    setTimeout(() => {
+      renderProducts();
+      overlayLoading.style.visibility = "hidden";
+    }, 1000)
+    
+
+  })
+
+
+}
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show'); // Optional: if you want it to disappear when not in view
+    }
+  });
+});
+
+document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
