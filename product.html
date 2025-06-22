@@ -11,11 +11,40 @@
 </head>
 <body>
     <header class="header"></header>
-    <nav class="navigation">
-        <a href="home-page.html"><img src="assets/icons/logo.png" alt="logo" class="logo"></a>
-        <ul class="nav-menu">
-            <a href="home-page.html" class="hover-menu"><li class="hover-navlink">Home</li></a>
-            <a href="" class="hover-menu"><li class="hover-navlink">Contact</li></a>
+    <nav>
+        <div class="navigation"> 
+            <a href="home-page.html"><img src="assets/icons/logo.png" alt="logo" class="logo"></a>
+            <div class="nav-right">
+                <div class="search-wrapper" id="searchTrigger">
+                    <img src="assets/icons/search_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="search" class="nav-buttons">
+                    <span class="search-text">Search</span>
+                </div>
+
+                <div class="register-wrapper">
+                    <img src="assets/icons/person_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="register" class="nav-buttons">
+                    <span class="register-text">Register</span>
+                </div>
+
+                <div class="cart-wrapper">
+                    <a href="">
+                        <img src="assets/icons/shopping_bag_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" class="nav-buttons" alt="cart">
+                        <span class="cart-text">Cart</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="search-overlay" id="searchOverlay">
+                <div class="search-container">
+                    <input type="text" placeholder="Search..." id="searchInput" autofocus />
+                    <button class="close-btn" id="closeSearch">✕</button>
+                </div>
+            </div>
+            
+        </div>
+       
+        <div class="nav-menu">
+            <div class="hover-navlink"><a href="home-page.html">Home</a></div>
+            <div class="hover-navlink"><a href="">Contact</a></div>
             
             <div class="navdropdown-products" id="dropDown">
                 <li class="hover-dropdown">
@@ -25,9 +54,10 @@
                 <div class="navdropdown-box">
                     <div class="dropdown-left">
                         <h2>Shop</h2>
-                        <li class="dropdown-hover"><a href="products.html?category=coffee" >Coffe menu</a></li>
-                        <li class="dropdown-hover"><a href="products.html?category=beans" >Coffee beans</a></li>
-                        <li class="dropdown-hover"><a href="products.html?category=espresso machine" >Espresso machine</a></li>
+                        <ul>
+                            <li class="dropdown-hover"><a href="products.html?category=coffee" >Coffe menu</a></li>
+                            <li class="dropdown-hover"><a href="products.html?category=beans" >Coffee beans</a></li>
+                        </ul>
                     </div>
 
                     <div class="dropdown-right">
@@ -55,31 +85,43 @@
                 </div>
             </div>
            
-            <div class="search-bar">
-                <input type="text">
-                <button class="nva-buttons search-btn"><img src="assets/icons/search_50dp_FFFFFF_FILL0_wght400_GRAD0_opsz48.png" alt="search" class="search-icon"></button>
-            </div>
-
-            <div class="login-signup-wrapper">
-                <a href=""><button class="login-btn">Login</button></a>
-                <a href=""><button class="signup-btn">Sign up</button></a>
-            </div>
-
-            <div class="cart-wrapper">
-                <a href="">
-                    <img src="assets/icons/shopping_cart_50dp_000000_FILL0_wght300_GRAD200_opsz48.png" class="nav-buttons" alt="cart">
-                    <span class="cart-text">Cart</span>
-                </a>
-            </div>
-        </ul>
+            
+        </div>
         
     </nav> 
+
+    <div class="overlay-popup">
+    <!--This will be displayed if fecthing data from json file throws an error-->
+        <div class="popup-box">
+            <button class="close-popup" id="closePopup">
+                <img src="assets/icons/close_30dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="close button" class="close-icon">
+            </button>
+            <div class="error-message-wrapper">
+                <div>
+                    <img src="assets/icons/warning_50dp_EA3323_FILL0_wght300_GRAD200_opsz48.png" alt="warning" class="warning-icon">
+                </div>
+                <div>
+                    
+                    <p class="pre-error-message">
+                        Oops! Something went wrong.
+                    </p>
+                    <p class="error-message">
+
+                    </p>
+                </div>
+                
+            </div>
+        </div>
+
+        
+      
+    </div> 
     
     <div class="product-container" id="productContainer">
        
     </div>
 
-    <footer>
+    <footer class="footer">
 
         <div class="footer-div-wrapper">
             <div style="max-width: 300px;">
@@ -144,5 +186,45 @@
     </footer>
 
     <script src="scripts/product.js" type="module"></script>
+    <script>
+        
+
+    let lastScrollTop = 0;
+    const nav = document.querySelector("nav");
+
+    window.addEventListener("scroll", function () {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll < lastScrollTop) {
+            // Scrolling up
+            nav.style.top = "0";
+        } else {
+            // Scrolling down
+            nav.style.top = "-150px"; // hides the nav (adjust if your nav height is different)
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+    });
+
+    const searchTrigger = document.getElementById('searchTrigger');
+    const searchOverlay = document.getElementById('searchOverlay');
+    const searchInput = document.getElementById('searchInput');
+    const closeBtn = document.getElementById('closeSearch');
+
+    searchTrigger.addEventListener('click', () => {
+        searchOverlay.style.top = "0";
+        setTimeout(() => {
+            searchInput.focus();
+        }, 300); // Wait for slide-in animation
+    });
+
+    closeBtn.addEventListener('click', () => {
+        searchOverlay.style.top = "-100px";
+    });
+
+    searchInput.addEventListener('blur', () => {
+        searchOverlay.style.top = "-100px";
+    });
+    </script>
 </body>
 </html>
