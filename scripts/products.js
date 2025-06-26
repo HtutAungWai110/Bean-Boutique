@@ -13,7 +13,7 @@ async function getProducts(){
       const fetchedData = await filterData(category)
       productsData = fetchedData;
       
-      if (fetchedData.length === 0) {
+      if (!fetchedData) {
         document.querySelector(".footer").style.display = "none";
         throw new Error("Products not found")
 
@@ -21,7 +21,8 @@ async function getProducts(){
     renderProducts();
 
   } catch (error){
-    document.querySelector(".category-header").textContent = error
+    document.querySelector(".items-wrapper").innerHTML = error
+    console.error(error)
   }
    
 } 
@@ -73,8 +74,7 @@ function renderProducts(){
 
 
 
-getProducts();
-addEventListeners();
+
 
 function addEventListeners(){
   const sortData = document.getElementById("sortData");
@@ -120,4 +120,10 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+window.addEventListener("load", () => {
+  document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+  getProducts();
+  addEventListeners();
+})
+
+

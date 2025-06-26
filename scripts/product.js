@@ -51,7 +51,7 @@ function renderProducts(productData){
     const imagesContainer = images.map(image => `<img src="${image}" alt="" data-state="images">`);
 
     const tempSelection = category === "coffee" ? `<div class="selection-wrapper">
-                    <p>Iced or Hot: </p>
+                    <span>Iced or Hot: </span>
                     <div class="custom-select">
                         <div class="selected-wrapper">
                             <div class="selected" data-temp="Hot">Hot</div>
@@ -97,12 +97,12 @@ function renderProducts(productData){
                 
                 </div>` : "";
 
-    const discount = promotion ? `<div style="padding: 10px 10px;
+    const discount = promotion ? `<span style="padding: 10px 10px;
     background-color: #4c2910;
     width: fit-content;
     border-radius: 10px;
     color: #ffff;
-    ">${promotion}</div>` : "";
+    ">${promotion}</span>` : "";
 
 
 
@@ -181,16 +181,16 @@ function renderProducts(productData){
                 </div>
                 
                 <div class="price-wrapper">
-                    <p>Price: £</p>
-                    <p data-price="${(price)}">£${(price / 100).toFixed(2)}</p>  
+                    <span>Price: </span>
+                    <span data-price="${(price)}">£ ${(price / 100).toFixed(2)}</span>  
                     
                     ${discount}
                 </div>
 
                 <div class="product-rating-wrapper">
-                    <p>Rating:</p>
+                    <span>Rating:</span>
                     <img src="${ratingMap[rating]}" alt="" class="product-rating">
-                    <p class="product-rating-number">${ratedNumber} ratings</p>
+                    <span class="product-rating-number">${ratedNumber} ratings</span>
                 </div>
                 <div style="display: flex; align-items: center; gap: 5px;">
                 <button id="addToCart" class="add-to-cart-btn">
@@ -363,4 +363,6 @@ function appendEventListeners(productData){
 
     
 }
-findProuct(productid);
+window.addEventListener("load", () => {
+    findProuct(productid);
+})
