@@ -293,10 +293,6 @@ async function  rednerPoupularItems() {
 
 
   
-  renderBeansContainer();
-  renderCoffeeContainer();
-  renderCoffeeMachines();
-  rednerPoupularItems();
 
 
 const observer = new IntersectionObserver((entries) => {
@@ -309,5 +305,38 @@ const observer = new IntersectionObserver((entries) => {
   });
 });
 
-document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+window.addEventListener("load", () => {
+  renderBeansContainer();
+  renderCoffeeContainer();
+  renderCoffeeMachines();
+  rednerPoupularItems();
+  document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+
+document.querySelectorAll(".event-signup-btn").forEach(btn => {
+  btn.addEventListener("click", (e) =>{
+    const signUpOverlay = document.querySelector(".event-signup-overlay");
+    const eventData = e.target.dataset.event;
+    signUpOverlay.style.display = "block";
+    signUpOverlay.style.opacity = 1;
+    document.getElementById("eventName").value = eventData;
+  } )
+})
+
+
+
+document.getElementById("formCloseBtn").addEventListener("click", () => {
+  const signUpOverlay = document.querySelector(".event-signup-overlay");
+  signUpOverlay.style.display = "none";
+  signUpOverlay.style.opacity = 0;
+  document.getElementById("eventName").value = "";
+
+});
+
+document.getElementById("bookNowBtn").addEventListener("click", () => {
+  window.location.href = "booking.html"})
+
+
+
+})
+
 
