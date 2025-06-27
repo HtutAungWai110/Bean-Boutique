@@ -105,3 +105,4 @@ const url = `product.html?id=${encodedId}`;
 window.location.href = url;
 }
 
+

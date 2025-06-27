@@ -46,6 +46,8 @@
                     <div class="cart-text">
                         Cart
                     </div>
+
+                    <div data-cartCount></div>
                 </div>
 
             </div>
@@ -111,7 +113,7 @@
             
         </div>
         
-    </nav>  
+    </nav>   
 
 
     <div class="booking-banner">
@@ -342,6 +344,15 @@
         const url = `search-page.html?search=${search}`;
         window.location.href = url;
     }
+
+    const cartBtn = document.querySelector("[data-cart]");
+    cartBtn.addEventListener("click", () => {
+        window.location.href = "cart-page.html"
+    })
+
+    const cart = JSON.parse(localStorage.getItem("cartData")) || []
+    const cartCount = document.querySelector("[data-cartCount]");
+    cartCount.textContent = cart.length;
     </script>
 </body>
 </html>

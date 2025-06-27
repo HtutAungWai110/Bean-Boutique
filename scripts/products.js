@@ -8,6 +8,8 @@ const category = params.get('category');
 let productsData;
 
 
+
+
 async function getProducts(){
   try{
       const fetchedData = await filterData(category)

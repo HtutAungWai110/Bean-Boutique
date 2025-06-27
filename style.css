@@ -295,6 +295,18 @@ nav{
   position: relative;
 }
 
+[data-cartCount]{
+    position: absolute;
+    right: 0;
+    bottom: -5px;
+    background-color: #000000;
+    color: #ffffff;
+    border-radius: 50px;
+    font-size: 12px;
+    padding: 0px 5px;
+    
+}
+
 .cart-text {
   position: absolute;
   left: -5px;
@@ -1683,6 +1695,8 @@ height: 0px;
     background-color: #e5e5e5;
     cursor: pointer;
 }
+
+
 
 @media only screen and (max-width: 990px) {
     .event-wrapper{

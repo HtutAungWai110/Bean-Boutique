@@ -46,6 +46,8 @@
                     <div class="cart-text">
                         Cart
                     </div>
+
+                    <div data-cartCount></div>
                 </div>
 
             </div>
@@ -608,6 +610,10 @@
     cartBtn.addEventListener("click", () => {
         window.location.href = "cart-page.html"
     })
+
+    const cart = JSON.parse(localStorage.getItem("cartData")) || []
+    const cartCount = document.querySelector("[data-cartCount]");
+    cartCount.textContent = cart.length;
     </script>
 </body>
 </html>
