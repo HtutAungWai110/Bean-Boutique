@@ -5,7 +5,7 @@ import { displayErrorPopup } from "./index.js";
 const params = new URLSearchParams(window.location.search);
 const productid = params.get('id');
 let product;
-
+const cart = JSON.parse(localStorage.getItem("cartData")) || [];
 
 
 async function findProuct(productid){
@@ -26,10 +26,9 @@ async function findProuct(productid){
             price, 
             rating, 
             ratedNumber,
-            images,
+            image: images[0],
             briefDescription
         };
-        console.log(productData);
 
         renderProducts(productData);
         product.quantity = 1;
@@ -350,13 +349,8 @@ function appendEventListeners(productData){
     const addToCartBtn = document.getElementById("addToCart");
 
     addToCartBtn.addEventListener("click", () => {
-        const checkIcon = document.querySelector(".check-icon");
-        checkIcon.classList.add("checkIcon-spin");
-        setTimeout(() => {
-            checkIcon.classList.remove("checkIcon-spin");
-        }, 2000)
-        
-        console.log(product)
+        addToCart();
+
     })
 
          
@@ -366,3 +360,82 @@ function appendEventListeners(productData){
 window.addEventListener("load", () => {
     findProuct(productid);
 })
+
+async function addToCart(){
+    
+try{
+    let machingItem;
+    if (product.category === "coffee"){
+        machingItem = cart.find(item => {
+        if (product.id === item.id && product.portion === item.portion && product.temp === item.temp){
+            return item;
+        }
+    })
+    } else {
+        machingItem = cart.find(item => {
+        if (product.id === item.id){
+            return item;
+        }
+        })
+    }
+  
+
+    if(machingItem){
+        const response = await confrim();
+        if (response){
+            machingItem.quantity += product.quantity;
+            machingItem.total = machingItem.price * machingItem.quantity;
+            console.log(cart);
+            saveCart();
+        }
+    return;
+    }
+
+    product.total = product.price * product.quantity;
+    cart.push({ ...product });
+    saveCart();
+    console.log(cart)
+
+}catch(error){
+    console.error(error);
+}
+}
+
+function saveCart(){
+    localStorage.setItem("cartData", JSON.stringify(cart));
+    displayCheck(); 
+}
+
+
+
+async function confrim(){
+    return new Promise((resolve, reject) => {
+        const overlayConfirm = document.querySelector(".overlay-confirm");
+        const confirm = overlayConfirm.querySelector("[data-confirm]");
+        const deny = overlayConfirm.querySelector("[data-deny]");
+
+        overlayConfirm.style.display = "block";
+
+        confirm.addEventListener("click", () => {
+            resolve(true);
+            overlayConfirm.style.display = "none";
+        })
+
+        deny.addEventListener("click", ()=> {
+            reject(false);
+            overlayConfirm.style.display = "none";
+        })
+
+
+    })
+}
+
+function displayCheck(){
+    const checkIcon = document.querySelector(".check-icon");
+    checkIcon.classList.add("checkIcon-spin");
+    setTimeout(() => {
+        checkIcon.classList.remove("checkIcon-spin")
+    }, 1000);
+}
+
+console.log(cart)
