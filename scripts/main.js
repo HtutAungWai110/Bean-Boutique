@@ -30,12 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 //Pending promise will be temporarily stored in data variable for later use
-  
-
-  const data = fetchData();
-
-
-  
 
 async function renderCoffeeContainer(){
   try{

@@ -41,7 +41,7 @@
 
                 <div class="cart-wrapper">
                     <div class="cart">
-                        <img src="assets/icons/shopping_bag_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="cart" class="nav-buttons">
+                        <img src="assets/icons/shopping_bag_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="cart" class="nav-buttons" data-cart>
                     </div>
                     <div class="cart-text">
                         Cart
@@ -52,7 +52,10 @@
 
             <div class="search-overlay" id="searchOverlay">
                 <div class="search-container">
+                    <div class="search-field">
                     <input type="text" placeholder="Search..." id="searchInput" autofocus />
+                    <button class="search-btn" data-searchBtn><img src="assets/icons/search_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="search" class="nav-buttons"></button>
+                    </div>
                     <button class="close-btn" id="closeSearch">✕</button>
                 </div>
             </div>
@@ -61,12 +64,14 @@
        
         <div class="nav-menu">
             <div class="hover-navlink"><a href="home-page.html">Home</a></div>
-            <div class="hover-navlink"><a href="">Contact</a></div>
+            <div class="hover-navlink"><a href="">Contact us</a></div>
+            <div class="hover-navlink"><a href="booking.html">Reservation</a></div>
+            
             
             <div class="navdropdown-products" id="dropDown">
                 <li class="hover-dropdown">
                     Shop 
-                <img src="assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png" alt="drop down">
+                <img src="assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png" alt="drop down" class="arrowIcon">
                 </li>
                 <div class="navdropdown-box">
                     <div class="dropdown-left">
@@ -106,7 +111,7 @@
             
         </div>
         
-    </nav> 
+    </nav>  
 
 
     <div class="booking-banner">
@@ -261,20 +266,8 @@
         
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
     <script>
-        function explore(category){
-        const encodedCateogry = encodeURIComponent(category);
-
-        // Construct the new URL with query parameter
-        const url = `products.html?category=${encodedCateogry}`;
-
-        window.location.href = url;
-        }
-    </script>
-    <script>
-        
 
     let lastScrollTop = 0;
     const nav = document.querySelector("nav");
@@ -291,10 +284,29 @@
         }
 
         lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+    });
+    let hidden = true;
+    const dropdDown = document.getElementById("dropDown")
+    const hoverDropdown = dropdDown.querySelector(".hover-dropdown");
+    hoverDropdown.addEventListener("click", () => {
+        const dropDownBox = dropdDown.querySelector(".navdropdown-box");
+        if (hidden){
+            
+            dropDownBox.classList.toggle("navdropdown-box-show");
+            dropdDown.querySelector('.arrowIcon').src = "assets/icons/keyboard_arrow_up_20dp_000000_FILL0_wght400_GRAD0_opsz20.png"
+            hidden = false;
+        } else {
+            dropDownBox.classList.toggle("navdropdown-box-show");
+            dropdDown.querySelector('.arrowIcon').src = "assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png"
+            hidden = true;
+        }
+        
+    })
 
-         const searchTrigger = document.getElementById('searchTrigger');
+    const searchTrigger = document.getElementById('searchTrigger');
     const searchOverlay = document.getElementById('searchOverlay');
     const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.querySelector('[data-searchBtn]')
     const closeBtn = document.getElementById('closeSearch');
 
     searchTrigger.addEventListener('click', () => {
@@ -308,12 +320,28 @@
         searchOverlay.style.top = "-100px";
     });
 
-    searchInput.addEventListener('blur', () => {
-        searchOverlay.style.top = "-100px";
-    }); 
+    
+
+    searchInput.addEventListener('focus', () => {
+        window.addEventListener('keydown', (e) => {
+            if (e.key === "Enter"){
+            search();   
+            }
+        })
     });
 
-   
+    searchBtn.addEventListener("click", () => {
+        search();
+    })
+
+    function search(){
+        if (searchInput.value === ""){
+                    return;
+        }
+        const search = searchInput.value.split(" ").join("+");
+        const url = `search-page.html?search=${search}`;
+        window.location.href = url;
+    }
     </script>
 </body>
 </html>
