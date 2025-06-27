@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header"></header>
+    <nav>
+        <div class="navigation"> 
+            <a href="home-page.html"><img src="assets/icons/logo.png" alt="logo" class="logo"></a>
+            <div class="nav-right">
+                
+                <div class="search-wrapper" >
+                    <div class="search" id="searchTrigger">
+                        <img src="assets/icons/search_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="profile" class="nav-buttons">
+                    </div>
+                    <div class="search-text">
+                        Search
+                    </div>
+                </div>
+
+                <div class="register-wrapper">
+                    <div class="register">
+                        <img src="assets/icons/person_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="profile" class="nav-buttons">
+                    </div>
+                    <div class="register-text">
+                        Register
+                    </div>
+                </div>
+
+                <div class="cart-wrapper">
+                    <div class="cart">
+                        <img src="assets/icons/shopping_bag_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="cart" class="nav-buttons" data-cart>
+                    </div>
+                    <div class="cart-text">
+                        Cart
+                    </div>
+
+                    <div data-cartCount></div>
+                </div>
+
+            </div>
+
+            <div class="search-overlay" id="searchOverlay">
+                <div class="search-container">
+                    <div class="search-field">
+                    <input type="text" placeholder="Search..." id="searchInput" autofocus />
+                    <button class="search-btn" data-searchBtn><img src="assets/icons/search_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="search" class="nav-buttons"></button>
+                    </div>
+                    <button class="close-btn" id="closeSearch">✕</button>
+                </div>
+            </div>
+            
+        </div>
+       
+        <div class="nav-menu">
+            <div class="hover-navlink"><a href="home-page.html">Home</a></div>
+            <div class="hover-navlink"><a href="">Contact us</a></div>
+            <div class="hover-navlink"><a href="booking.html">Reservation</a></div>
+            
+            
+            <div class="navdropdown-products" id="dropDown">
+                <li class="hover-dropdown">
+                    Shop 
+                <img src="assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png" alt="drop down" class="arrowIcon">
+                </li>
+                <div class="navdropdown-box">
+                    <div class="dropdown-left">
+                        <h2>Shop</h2>
+                        <ul>
+                            <li class="dropdown-hover"><a href="products.html?category=coffee" >Coffe menu</a></li>
+                            <li class="dropdown-hover"><a href="products.html?category=beans" >Coffee beans</a></li>
+                            <li class="dropdown-hover"><a href="products.html?category=espresso+machine" >Espresso machine</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-right">
+                        <div class="card">
+                            <a href="products.html?category=coffee">
+                                <img src="assets/images/coffee.jpg" alt="coffee">
+                                <p>Coffee</p>
+                            </a>
+                        </div>
+
+                        <div class="card">
+                            <a href="products.html?category=beans">
+                                <img src="assets/images/beans.jpg" alt="beans">
+                                <p>Beans</p>
+                            </a>
+                        </div>
+
+                        <div class="card">
+                            <a href="products.html?category=espresso machine">
+                                <img src="assets/images/espresso_machine.jpg" alt="espresso_machine">
+                                <p>Espresso Machines</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            
+        </div>
+        
+    </nav>   
+
+        
+      
+    </div> 
+
+    <div class="overlay-loading">
+        <div class="loader"></div>
+
+    </div>
+
+    <div class="list-of-items">
+        <h2 class="search-results"></h2>
+        <div class="result-sort-wrapper">
+            <span class="result"></span>
+            <select id="sortData" class="sort-select">
+                <option value="default" class="sort-options">Default Sorting</option>
+                <option value="popularity" class="sort-options">Popularity</option>
+                <option value="lowToHigh" class="sort-options">Price Low to High</option>
+                <option value="highToLow" class="sort-options">Price High to Low</option>
+            </select>
+        </div>
+        <div class="items-wrapper" id="products-page-item-list">
+            
+        </div>
+        <div class="loadmore-btn-wrapper">
+            <button class="loadmore-btn" id="loadmoreBtn">load More</button>    
+        </div>
+        
+    </div>
+
+    <footer class="footer">
+
+        <div class="footer-div-wrapper">
+            <div style="max-width: 300px;">
+            <img src="assets/icons/logo_white.png" alt="logo" style="width: 250px; height: auto; border-bottom: 1px solid #fff; padding: 15px 0px;">
+            <p style="color: #a0a0a0; margin: 5px 0px;">"More than just coffee — it’s your daily ritual, your quiet moment, your spark to start the day."</p>
+            <div class="social-media-wrapper">
+                <img src="assets/icons/facebook.png" alt="facebook" class="social-media-icons">
+                <img src="assets/icons/instagram.png" alt="instagram" class="social-media-icons">
+                <img src="assets/icons/twitter.png" alt="twitter" class="social-media-icons">
+                <img src="assets/icons/youtube.png" alt="youtube" class="social-media-icons">
+            </div>
+            </div>  
+            <div class="footer-div">
+                <h2>Contact Info</h2>
+                <div style="color: #a0a0a0; display: flex; align-items: center; gap: 5px; margin: 5px 0px;">
+                    <img src="assets/icons/globe.png" alt="globe">
+                    beanboutique.com
+                </div>
+
+                <div  style="color: #a0a0a0; display: flex; align-items: center; gap: 5px; margin: 5px 0px;">
+                    <img src="assets/icons/phone-call.png" alt="phone">
+                    +44 7123 456789
+                </div>
+
+                <div  style="color: #a0a0a0; display: flex; align-items: center; gap: 5px; margin: 5px 0px;">
+                    <img src="assets/icons/email.png" alt="email">
+                    beanboutique@gmail.com
+                </div>
+
+                <div  style="color: #a0a0a0; display: flex; align-items: center; gap: 5px; margin: 5px 0px;">
+                    <img src="assets/icons/location.png" alt="location">
+                    Bean Boutique 128
+                    Camden High Street
+                    London NW1 7JR
+                </div>
+            </div> 
+            
+            <div class="footer-div">
+            <h2>Visit</h2>
+            <ul>
+                <li class="footer-hover"><a href="">Home</a></li>
+                <li class="footer-hover"><a href="">Contact</a></li>
+                <li class="footer-hover"><a href="">Coffee Menu</a></li>
+                <li class="footer-hover"><a href="">Coffee Beans</a></li>
+                <li class="footer-hover"><a href="">Espresso Machine</a></li>
+            </ul>
+            </div>
+
+            
+            <div class="footer-div">
+                <h2>Opening Hours</h2>
+                <p style="color: #a0a0a0; margin: 5px 0px;">Mon-Friday : 8AM - 9PM</p>
+                <p style="color: #a0a0a0; margin: 5px 0px;">Saturday : 9AM - 5PM</p>
+                <p style="color: #a0a0a0; margin: 5px 0px;">Sunday : Closed</p>
+            </div> 
+        </div>
+
+        <div class="footer-bottom">
+            <div style="color: #a0a0a0;">Privacy and Policies</div>
+            <div style="color: #a0a0a0;">@2025 All right reserved</div>
+        </div>
+        
+    </footer>
+
+
+    <script src="scripts/search.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script>
+
+    let lastScrollTop = 0;
+    const nav = document.querySelector("nav");
+
+    window.addEventListener("scroll", function () {
+        let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (currentScroll < lastScrollTop) {
+            // Scrolling up
+            nav.style.top = "0";
+        } else {
+            // Scrolling down
+            nav.style.top = "-150px"; // hides the nav (adjust if your nav height is different)
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+    });
+    let hidden = true;
+    const dropdDown = document.getElementById("dropDown")
+    const hoverDropdown = dropdDown.querySelector(".hover-dropdown");
+    hoverDropdown.addEventListener("click", () => {
+        const dropDownBox = dropdDown.querySelector(".navdropdown-box");
+        if (hidden){
+            
+            dropDownBox.classList.toggle("navdropdown-box-show");
+            dropdDown.querySelector('.arrowIcon').src = "assets/icons/keyboard_arrow_up_20dp_000000_FILL0_wght400_GRAD0_opsz20.png"
+            hidden = false;
+        } else {
+            dropDownBox.classList.toggle("navdropdown-box-show");
+            dropdDown.querySelector('.arrowIcon').src = "assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png"
+            hidden = true;
+        }
+        
+    })
+
+    const searchTrigger = document.getElementById('searchTrigger');
+    const searchOverlay = document.getElementById('searchOverlay');
+    const searchInput = document.getElementById('searchInput');
+    const searchBtn = document.querySelector('[data-searchBtn]')
+    const closeBtn = document.getElementById('closeSearch');
+
+    searchTrigger.addEventListener('click', () => {
+        searchOverlay.style.top = "0";
+        setTimeout(() => {
+            searchInput.focus();
+        }, 300); // Wait for slide-in animation
+    });
+
+    closeBtn.addEventListener('click', () => {
+        searchOverlay.style.top = "-100px";
+    });
+
+    
+
+    searchInput.addEventListener('focus', () => {
+        window.addEventListener('keydown', (e) => {
+            if (e.key === "Enter"){
+            search();   
+            }
+        })
+    });
+
+    searchBtn.addEventListener("click", () => {
+        search();
+    })
+
+    function search(){
+        if (searchInput.value === ""){
+                    return;
+        }
+        const search = searchInput.value.split(" ").join("+");
+        const url = `search-page.html?search=${search}`;
+        window.location.href = url;
+    }
+
+    const cartBtn = document.querySelector("[data-cart]");
+    cartBtn.addEventListener("click", () => {
+        window.location.href = "cart-page.html"
+    })
+
+    const cart = JSON.parse(localStorage.getItem("cartData")) || []
+    const cartCount = document.querySelector("[data-cartCount]");
+    cartCount.textContent = cart.length;
+    </script>
+</body>
+</html>
