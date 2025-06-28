@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coffee shop</title>
@@ -115,21 +114,62 @@
             
         </div>
         
-    </nav>  
+    </nav>   
 
 
     <div class="banner">
         <div>
-            <h1>Reservation</h1>
+            <h1>Contact us</h1>
             <span><a href="">Home ></a></span> 
-            <span>Reservation</span>
+            <span>Contact us</span>
         </div>
     </div>
     
+    <div class="container contact-container">
+    <div class="row justify-content-center">
+      <div class="col-lg-10 contact-box text-center">
+        <h2 class="text-center mb-5 category-header">Contact us</h2>
+
+        <!-- Email & Phone -->
+        <div class="row contact-row text-center text-md-start">
+          <div class="col-md-6 contact-item">
+            <img src="assets/icons/mail_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="email">:  <a href="mailto:beanboutique@gmail.com">beanboutique@gmail.com</a>
+          </div>
+          <div class="col-md-6 contact-item">
+            <img src="assets/icons/call_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="phone">: <a href="tel:+447123456789">+44 7123 456789</a>
+          </div>
+        </div>
+
+        <!-- Address & Website -->
+        <div class="row contact-row text-center text-md-start">
+          <div class="col-md-6 contact-item">
+            <img src="assets/icons/distance_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="location">: 128 Camden High Street, London NW1 7JR
+          </div>
+          <div class="col-md-6 contact-item">
+            <img src="assets/icons/language_24dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt="web"> <a href="home-page.html" target="_blank">beanboutique.com</a>
+          </div>
+        </div>
+
+        <!-- Google Map Embed -->
+        <div class="row mt-4">
+          <div class="col-12">
+            <iframe
+              src="https://www.google.com/maps?q=128%20Camden%20High%20Street,%20London%20NW1%207JR&output=embed"
+              allowfullscreen
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+
     <div class="user-form-wrapper">
     <form action="" class="user-form container-sm" id="userForm">
+        <h2 class="text-center category-header">Send us a message</h2>
         <div class="row mb-3">
-            <!-- First Name -->
             <div class="col-12 col-md-6">
             <label for="fname" class="form-label">First Name:</label>
             <input type="text" name="fname" id="fname" class="form-control" required>
@@ -143,7 +183,6 @@
         </div>
 
         <div class="row mb-3">
-            <!-- First Name -->
             <div class="col-12 col-md-6">
             <label for="email" class="form-label">Email:</label>
             <input type="email" name="email" id="email" class="form-control" required><br>
@@ -155,40 +194,14 @@
             <label for="phone" class="form-label">Phone Number:</label>
             <input type="number " name="phone" id="phone" class="form-control" required>
             </div>
+
+            
         </div>
 
         
 
-        <div class="row mb-3">
-            <!-- First Name -->
-            <div class="col-12 col-md-6">
-            <label for="from" class="form-label">From:</label>
-            <input type="time" name="from" id="from" class="form-control" required>
-            </div>
-
-            <!-- Last Name -->
-            <div class="col-12 col-md-6">
-            <label for="to" class="form-label">To:</label>
-            <input type="time" name="to" id="to" class="form-control" required>
-            </div>
-        </div>
 
         <div class="row mb-3">
-            <!-- First Name -->
-            <div class="col-12 col-md-6">
-            <label for="date" class="form-label">Date:</label>
-            <input type="date" name="date" id="date" class="form-control" requiredx>
-            </div>
-
-            <!-- Last Name -->
-            <div class="col-12 col-md-6">
-            <label for="numGuest" class="form-label">Number of Guests:</label>
-            <input type="number" name="numGuest" id="numGuest" class="form-control"  min="1" value="1">
-            </div>
-        </div>
-
-        <div class="row mb-3">
-            <!-- First Name -->
             <div class="col-12 col-md-6">
             <label for="note" class="form-label">Adittional Information:</label>
             <textarea name="note" id="note" class="form-control"></textarea>
@@ -200,10 +213,23 @@
         </div>
     </form>
     </div>
+
     
     
 
-
+    <div class="feed-container">
+    
+        <h2 class="text-center category-header">Our Instagram Feed</h2>
+        <div class="feed">
+        <img src="assets/images/instagram_feed1.png" alt="Post 1" class="post" />
+        <img src="assets/images/instagram_feed2.png" alt="Post 2" class="post" />
+        <img src="assets/images/instagram_feed3.png" alt="Post 3" class="post" />
+        </div>
+        <div href="" class="text-center instagram-btn">
+            <img src="assets/icons/instagram_black.png" alt="">
+            <a href="">Follow us on Instagram</a>
+        </div>
+    </div>
     
 
     <footer class="footer">

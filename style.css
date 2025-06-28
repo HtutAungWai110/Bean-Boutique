@@ -17,6 +17,107 @@ body{
     background-color: #2a2a2a;
 }
 
+.welcome-popup{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    display: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: linear-gradient(rgb(0,0,0,0.75));
+    transition: opacity 0.5s ease-in-out;
+}
+
+.welcome-container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 800px;
+    align-items: center;
+    gap: 10px;
+    padding: 20px;
+    border-radius: 20px;
+    justify-content: center;
+    position: relative;
+}
+
+.welcome-container h1{
+    font-size: 3em;
+    font-weight: 700;
+    color: #4c2910;
+}
+
+@media only screen and (max-width: 600px) {
+    .welcome-container h1{
+    font-size: 2em;
+    font-weight: 700;
+    color: #4c2910;
+    }
+
+    .welcome-container{
+        text-align: center;
+    }
+}
+.welcome-container .welcome-close{
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.welcome-container .welcome-close:hover{
+    opacity: 0.5;
+}
+
+.welcome-container input{
+    width: 90%;
+    padding: 0px 10px;
+    border: 1px solid #a8a8a8;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.welcome-popup .password-wrapper{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+.welcome-popup .password-wrapper input{
+    width: 100%;
+    background: none;
+}
+
+.welcome-popup .password-wrapper .toggle-visible{
+    position: absolute;
+    right: 5px;
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.welcome-popup .password-wrapper .toggle-visible:hover{
+    opacity: 0.8;
+}
+
+[data-signupBtn]{
+    width: 200px;
+    height: 40px;
+    color: #fff;
+    background-color: #4c2910;
+    border-radius: 15px;
+}
+
 footer{
     width: 100%;
     height: fit-content;
@@ -561,6 +662,70 @@ nav{
     width: 50px;
 }
 
+.subscription-wrapper {
+    overflow: hidden;
+    padding: 2rem 0;
+    background-color: #fdf7f1;
+}
+
+.plan-card {
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.plan-card:hover {
+    transform: translateY(-5px);
+}
+
+.plan-header {
+    background-color: #4c2910;
+    color: white;
+    padding: 1.5rem;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+.plan-body {
+    padding: 2rem;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.plan-price {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.plan-perks {
+    list-style: none;
+    padding-left: 0;
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.plan-perks li::before {
+    content: "☕";
+    margin-right: 0.5rem;
+}
+
+.btn-subscribe {
+    background-color: #4c2910;
+    color: white;
+    border-radius: 20px;
+    padding: 0.5rem 1.5rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-subscribe:hover {
+    background-color: #5a3e2b;
+}
+
 section{
     background-color: rgb(255, 252, 247);
 }
@@ -1086,65 +1251,8 @@ height: 0px;
     }
 }
 
-.subscribe-wrapper{
-    width: 100%;
-    min-height: fit-content;
-    position: relative;
-    background: linear-gradient(rgba(226, 197, 160, 0.2)) , url("assets/images/beans_decor_right.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: right;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    padding: 20px 0px;
-}
 
 
-.subscribe-content{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 80%;
-    text-align: center;
-}
-
-.subscribe-content h1{
-    color: #4c2910;
-    font-weight: 800;
-}
-
-.subscribe-content p{
-    color: #4d4d4d;
-}
-
-.email-input-wrapper{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.subscribe-wrapper .email-input{
-    background-color: #ffffff;
-    border: none;
-    border-radius: 20px;
-    padding: 0px 10px;
-    width: 80%;
-    height: 40px;
-    outline: none;
-}
-
-.subscribe-wrapper .subscribe-btn{
-    background-color: #4c2910;
-    color: #ffffff;
-    height: 40px;
-    border-radius: 20px;
-    cursor: pointer;
-    padding: 0px 5px;
-    font-size: 0.7rem;
-}
 
 .result-sort-wrapper{
     margin: auto;
@@ -1510,7 +1618,7 @@ height: 0px;
     gap: 10px;
 }
 
-.booking-submit{
+.user-submit{
     background-color: #4c2910;
     color: #ffffff;
     width: 100px;
@@ -1521,19 +1629,19 @@ height: 0px;
     cursor: pointer;
 }
 
-.booking-form-wrapper{
+.user-form-wrapper{
     width: 95%;
     margin: auto;
     padding: 10px 10px;
 }
 
-.booking-form{
+.user-form{
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 10px #ebebeb;
 }
 
-.booking-banner{
+.banner{
     background: linear-gradient(rgba(31, 17, 0, 0.75)) , url(assets/images/reservation_background.jpeg);
     width: 100%;
     height: 400px;
@@ -1545,27 +1653,112 @@ height: 0px;
     overflow: hidden;
 }
 
-.booking-banner div{
+.banner div{
     margin-left: 20px;
     text-align: left;
 }
 
-.booking-banner div h1{
+.banner div h1{
     font-size: 4em;
     color: #ffffff;
 }
 
-.booking-banner div span a{
+.banner div span a{
     color: #ffbf0e;
     text-decoration: none;
 }
 
-.booking-banner div span a:hover{
+.banner div span a:hover{
     opacity: 0.75;
 }
 
-.booking-banner div span{
+.banner div span{
     color: #ffffff;
+}
+
+.contact-container {
+    max-width: 100%;
+    padding: 3rem 1rem;
+}
+
+.contact-box {
+    width: 100%;
+    max-width: 95%;
+    background-color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.contact-box h3 {
+    color: #6f4e37;
+    margin-bottom: 2rem;
+}
+
+.contact-row {
+    margin-bottom: 1.5rem;
+}
+
+.contact-item {
+    font-size: 1rem;
+    color: #333;
+}
+
+.contact-item a {
+    color: #6f4e37;
+    text-decoration: none;
+}
+
+iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    border-radius: 15px;
+}
+
+.feed-container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px 0px;
+}
+
+.feed {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+.post {
+  width: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.2s;
+}
+
+.post:hover {
+  transform: scale(1.02);
+}
+
+.instagram-btn a{
+    text-decoration: none;
+    font-weight: 700;
+    color: #000;
+}
+
+.instagram-btn {
+    border: 3px solid #141414;
+    width: fit-content;
+    margin: 0 auto;
+    padding: 10px 20px;
+    border-radius: 30px;
+}
+
+@media (max-width: 576px) {
+    .contact-item {
+    margin-bottom: 1rem;
+    }
 }
 
 .search-results{
@@ -1777,11 +1970,7 @@ height: 0px;
     }
 }
 
-@media only screen and (max-width: 600px) {
-    .subscribe-content h1{
-        font-size: 1.2em;
-    }
-}
+
 
 @media only screen and (max-width: 560px) {
     .wavy-badge{
