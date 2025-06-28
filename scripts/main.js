@@ -4,6 +4,7 @@ import { fetchData } from "./index.js";
 import { filterData } from "./index.js";
 import { ratingMap } from "./index.js";
 import { addViewEvent } from "./index.js";
+import { domEvents } from "./index.js";
 
   
 document.addEventListener('DOMContentLoaded', function () {
@@ -304,7 +305,9 @@ window.addEventListener("load", () => {
   renderCoffeeContainer();
   renderCoffeeMachines();
   rednerPoupularItems();
-  document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+
+
+document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
 
 document.querySelectorAll(".event-signup-btn").forEach(btn => {
   btn.addEventListener("click", (e) =>{
@@ -326,11 +329,85 @@ document.getElementById("formCloseBtn").addEventListener("click", () => {
 
 });
 
+const exploreBtns = document.querySelectorAll("[data-exploreBtns]");
+exploreBtns.forEach(btn => {
+    btn.addEventListener("click", (e) => {
+      const data =  e.target.dataset.explore.split(" ").join("+")
+      const url = `products.html?category=${data}`;
+      window.location.href = url;
+    })
+});
+const passwordInputs = document.querySelectorAll("[data-password]");
+const toggleShowBtns = document.querySelectorAll("[data-toggleShow]");
+
+toggleShowBtns.forEach((element, index) => {
+  element.addEventListener("click", (e) => {
+    if (passwordInputs[index].type == "password"){
+      passwordInputs[index].type = "text";
+      e.target.src = "assets/icons/visibility_24dp_000000_FILL0_wght400_GRAD0_opsz24.png"
+    } else {
+      passwordInputs[index].type = "password"
+      e.target.src = "assets/icons/visibility_off_24dp_000000_FILL0_wght400_GRAD0_opsz24.png"
+    }
+  })
+})
+
+
+
+
 document.getElementById("bookNowBtn").addEventListener("click", () => {
   window.location.href = "booking.html"})
-
-
-
 })
+
+
+  
+
+let lastScrollTop = 0;
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll < lastScrollTop) {
+        // Scrolling up
+        nav.style.top = "0";
+    } else {
+        // Scrolling down
+        nav.style.top = "-150px"; // hides the nav (adjust if your nav height is different)
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+const welcomePopup = document.querySelector("[data-welcomePopup]");
+const closeBtn = document.querySelector("[data-welcomeClose]");
+
+
+if (!sessionStorage.getItem("welcomePopupClosed")) {
+  welcomePopup.style.display = "block"
+  welcomePopup.style.opacity = 1;
+} else {
+  welcomePopup.style.opacity = 0;
+
+  welcomePopup.addEventListener("transitionend", (e) => {
+    e.target.style.display = "none"
+  });
+}
+
+
+closeBtn.addEventListener("click", () => {
+  welcomePopup.style.opacity = 0;
+
+  welcomePopup.addEventListener("transitionend", (e) => {
+    e.target.style.display = "none"
+  });
+  sessionStorage.setItem("welcomePopupClosed", "true");
+});
+});
+
+
+domEvents();
+
 
 

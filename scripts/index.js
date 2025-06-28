@@ -106,3 +106,75 @@ window.location.href = url;
 }
 
 
+export function domEvents(){
+let hidden = true;
+const dropdDown = document.getElementById("dropDown")
+const hoverDropdown = dropdDown.querySelector(".hover-dropdown");
+window.addEventListener("DOMContentLoaded", () => {
+    hoverDropdown.addEventListener("click", () => {
+    const dropDownBox = dropdDown.querySelector(".navdropdown-box");
+    if (hidden){
+        
+        dropDownBox.classList.toggle("navdropdown-box-show");
+        dropdDown.querySelector('.arrowIcon').src = "assets/icons/keyboard_arrow_up_20dp_000000_FILL0_wght400_GRAD0_opsz20.png"
+        hidden = false;
+    } else {
+        dropDownBox.classList.toggle("navdropdown-box-show");
+        dropdDown.querySelector('.arrowIcon').src = "assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png"
+        hidden = true;
+    }
+    
+})
+
+const searchTrigger = document.getElementById('searchTrigger');
+const searchOverlay = document.getElementById('searchOverlay');
+const searchInput = document.getElementById('searchInput');
+const searchBtn = document.querySelector('[data-searchBtn]')
+const closeBtn = document.getElementById('closeSearch');
+
+searchTrigger.addEventListener('click', () => {
+    searchOverlay.style.top = "0";
+    setTimeout(() => {
+        searchInput.focus();
+    }, 300); // Wait for slide-in animation
+});
+
+closeBtn.addEventListener('click', () => {
+    searchOverlay.style.top = "-100px";
+});
+
+
+
+searchInput.addEventListener('focus', () => {
+    window.addEventListener('keydown', (e) => {
+        if (e.key === "Enter"){
+        search();   
+        }
+    })
+});
+
+searchBtn.addEventListener("click", () => {
+    search();
+})
+
+function search(){
+    if (searchInput.value === ""){
+                return;
+    }
+    const safeSearch = searchInput.value.replace(/[^\w\s]/gi, '').split(" ").join("+"); 
+    const url = `search-page.html?search=${encodeURIComponent(safeSearch)}`;
+    window.location.href = url;
+}
+
+const cartBtn = document.querySelector("[data-cart]");
+cartBtn.addEventListener("click", () => {
+    window.location.href = "cart-page.html"
+})
+})
+
+
+const cartData = JSON.parse(localStorage.getItem("cartData")) || []
+const cartCount = document.querySelector("[data-cartCount]");
+cartCount.textContent = cartData.length;
+
+}

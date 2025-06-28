@@ -1,6 +1,7 @@
 import { fetchData } from "./index.js";
 import { ratingMap } from "./index.js";
 import { displayErrorPopup } from "./index.js";
+import { domEvents } from "./index.js";
 
 const params = new URLSearchParams(window.location.search);
 const productid = params.get('id');
@@ -11,7 +12,7 @@ const cart = JSON.parse(localStorage.getItem("cartData")) || [];
 async function findProuct(productid){
     try{
         const fectcheddata = await fetchData();
-        const productData = await fectcheddata.find(item => item.id === Number(productid));
+        const productData = await fectcheddata.find(item => item.id === parseInt(productid));
         if (!productData){
             document.querySelector(".footer").style.display = "none";
             throw new Error ('Product not found');
@@ -180,8 +181,8 @@ function renderProducts(productData){
                 </div>
                 
                 <div class="price-wrapper">
-                    <span>Price: </span>
-                    <span data-price="${(price)}">£ ${(price / 100).toFixed(2)}</span>  
+                    <span>Price: £</span>
+                    <span data-price="${(price)}">${(price / 100).toFixed(2)}</span>  
                     
                     ${discount}
                 </div>
@@ -207,8 +208,6 @@ function appendImagesEvent(e){
     const src = e.target.src;
     const mainImage = document.querySelector("[data-state=mainImage]");
     mainImage.style.opacity = 0;
-    
-    
 
     mainImage.addEventListener("transitionend", () => {
         mainImage.src = src;
@@ -247,7 +246,7 @@ function appendEventListeners(productData){
 
     const quantityInput = document.getElementById("quantity");
     quantityInput.addEventListener("change", () => {
-        product.quantity = Number(quantityInput.value);
+        product.quantity = parseInt(quantityInput.value);
     })
 
     if (product.category === "beans"){
@@ -365,12 +364,18 @@ async function addToCart(){
     
 try{
     let machingItem;
-    if (product.category === "coffee"){
+    if (product.category.toLowerCase() === "coffee"){
         machingItem = cart.find(item => {
         if (product.id === item.id && product.portion === item.portion && product.temp === item.temp){
             return item;
         }
     })
+    } else if (product.category.toLowerCase() === "beans"){
+        machingItem = cart.find(item => {
+        if (product.id === item.id && product.bean === item.bean){
+            return item;
+        }
+        })
     } else {
         machingItem = cart.find(item => {
         if (product.id === item.id){
@@ -404,6 +409,12 @@ try{
 function saveCart(){
     localStorage.setItem("cartData", JSON.stringify(cart));
     displayCheck(); 
+    updateCartCount();
+}
+
+function updateCartCount(){
+    const cartCount = document.querySelector("[data-cartCount]");
+    cartCount.textContent = cart.length;
 }
 
 
@@ -438,4 +449,4 @@ function displayCheck(){
     }, 1000);
 }
 
-console.log(cart)
+domEvents();

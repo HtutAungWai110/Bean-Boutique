@@ -1,6 +1,7 @@
 import { fetchData } from "./index.js";
 import { ratingMap } from "./index.js";
 import { addViewEvent } from "./index.js";
+import { domEvents } from "./index.js";
 
 const params = new URLSearchParams(window.location.search);
 const searchTarget = params.get('search');
@@ -11,7 +12,7 @@ let maxResults = 10;
 
 async function search() {
   const fetchedData = await fetchData();
-  const searchTerms = searchTarget.toLowerCase().split(" "); 
+  const searchTerms = searchTarget.toLowerCase().split("+"); 
 
   const scoredResults = fetchedData.map(item => {
     const name = item.name.toLowerCase();
@@ -77,7 +78,7 @@ function renderResults(){
         </div>
       `
     )
-    document.querySelector(".search-results").textContent = `Search Results for "${searchTarget}"`
+    document.querySelector(".search-results").textContent = `Search Results for "${searchTarget.split("+").join(" ")}"`
     document.querySelector(".result").textContent = `Showing ${trimedData.length} of ${searchResults.length} results`;
  
     itemsContainer.innerHTML = itemsList.join("");
@@ -145,3 +146,6 @@ window.addEventListener("load", ()=>{
       renderResults();
     })
 })
+
+
+domEvents()

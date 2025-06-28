@@ -1,6 +1,7 @@
 import { fetchData, filterData } from "./index.js";
 import { ratingMap } from "./index.js";
 import { addViewEvent } from "./index.js";
+import { domEvents } from "./index.js";
 
 const params = new URLSearchParams(window.location.search);
 const category = params.get('category');
@@ -129,3 +130,4 @@ window.addEventListener("load", () => {
 })
 
 
+domEvents();
