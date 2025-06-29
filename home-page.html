@@ -76,17 +76,21 @@
         </div>
        
         <div class="nav-menu">
-            <div class="hover-navlink"><a href="home-page.html">Home</a></div>
-            <div class="hover-navlink"><a href="contact-us.html">Contact us</a></div>
-            <div class="hover-navlink"><a href="booking.html">Reservation</a></div>
-            
+            <div data-menu><img src="assets/icons/menu_30dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""></div>
+            <ul class="nav-menu-list">
+            <li class="hover-navlink"><a href="home-page.html">Home</a></li>
+            <li class="hover-navlink"><a href="event.html">Events & Workshops</a></li>
+            <li class="hover-navlink"><a href="subscription.html">Subscription</a></li>
+            <li class="hover-navlink"><a href="contact-us.html">Contact us</a></li>
+            <li class="hover-navlink"><a href="booking.html">Reservation</a></li>
+            </ul>
             
             
             <div class="navdropdown-products" id="dropDown">
-                <li class="hover-dropdown">
+                <div class="hover-dropdown">
                     Shop 
                 <img src="assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png" alt="drop down" class="arrowIcon">
-                </li>
+                </div>
                 <div class="navdropdown-box">
                     <div class="dropdown-left">
                         <h2>Shop</h2>
@@ -127,6 +131,21 @@
         
     </nav> 
 
+    <div data-responsiveNav>
+        <ul>
+            <li><a href="home-page.html">Home</a></li>
+            <li><a href="event.html">Events & Workshops</a></li>
+            <li><a href="subscription.html">Subscription</a></li>
+            <li><a href="contact-us.html">Contact us</a></li>
+            <li><a href="booking.html">Reservation</a></li>
+            <li><a href="products.html?category=coffee">Coffee Menu</a></li>
+            <li><a href="products.html?category=beans">Coffee Beans</a></li>
+            <li><a href="products.html?category=espresso machine">Espresso Machine</a></li>
+            </ul>
+        </ul>
+        <span data-navClose>✕</span>
+    </div>
+
     <div class="swiper imageSwiper">
 
         <div class="swiper-wrapper">
@@ -149,125 +168,6 @@
         </div>
 
     </div>
-   
-    
-    
-    <div class="event-signup-overlay">
-    <form action="" class="event-signup-form container-sm" id="eventSignupForm">
-        <h2 class="text-center my-4">Event Signup Form</h2>
-        <span class="form-close" id="formCloseBtn">✕</span>
-
-        <!-- Event Name -->
-        <div class="row mb-3">
-            <div class="col-12 col-md-6">
-            <label for="eventName" class="form-label">Event:</label>
-            </div>
-            <div class="col-12 col-md-6">
-            <input type="text" name="eventName" id="eventName" readonly class="form-control">
-            </div>
-        </div>
-
-        <!-- First Name -->
-        <div class="row mb-3">
-            <div class="col-12 col-md-6">
-            <label for="firstName" class="form-label">First Name:</label>
-            </div>
-            <div class="col-12 col-md-6">
-            <input type="text" id="firstName" name="firstName" required class="form-control">
-            </div>
-        </div>
-
-        <!-- Last Name -->
-        <div class="row mb-3">
-            <div class="col-12 col-md-6">
-            <label for="lastName" class="form-label">Last Name:</label>
-            </div>
-            <div class="col-12 col-md-6">
-            <input type="text" name="lastName" id="lastName" required class="form-control">
-            </div>
-        </div>
-
-        <!-- Email -->
-        <div class="row mb-4">
-            <div class="col-12 col-md-6">
-            <label for="email" class="form-label">Email:</label>
-            </div>
-            <div class="col-12 col-md-6">
-            <input type="email" name="email" id="email" required class="form-control">
-            <span id="emailError"></span>
-            </div>
-        </div>
-
-        <!-- Submit Button -->
-        <div class="text-lg-end">
-            <button class="event-submit-btn" type="submit">Submit</button>
-        </div>
-    </form>
-    </div>
-
-    <section>
-        <div class="event-wrapper container-sm">
-            <div class="event-left">
-                <img src="assets/images/tasting-event.jpeg" alt="coffee-tasting-event" class="event-img hidden">
-            </div>
-            <div class="event-right">
-                <div class="event-description hidden">
-                    <h2>Coffee Tasting Event</h2>
-                    <p>Join us for an immersive Coffee Tasting Event that will awaken your senses and deepen your appreciation for the world’s most beloved beverage. Whether you're a seasoned coffee connoisseur or a curious beginner, this guided tasting will take you on a journey through origin, roast, aroma, and flavor.</p>
-                    <p>Date: 7/8/2025</p>
-                    <p>Time: 9:00AM - 1:00PM</p>
-                    <div class="event-rating">
-                        <img src="assets/ratings/rating-45.png" alt="rating" class="rating"><span class="rated-number">10k</span>
-                    </div>
-
-                    
-                </div>
-                <button class="event-signup-btn" data-event="Coffee Tasting">Sign up</button>
-            </div>
-        </div>
-        <div class="event-wrapper container-sm">
-            <div class="event-left">
-                <img src="assets/images/brewing-class.jpeg" alt="brewing-class" class="event-img hidden">
-            </div>
-            <div class="event-right">
-                <div class="event-description hidden">
-                    <h2>Coffe Brewing Class</h2>
-                    <p>
-                        Ready to take your home coffee game to the next level? Join our Coffee Brewing Class, a hands-on workshop designed to teach you the techniques, tools, and tips that make a truly exceptional cup. Led by skilled baristas, this class will walk you through the essentials of manual brewing and help you discover what makes a cup of coffee not just good—but great.
-                    </p>
-                    <p>Start Date: 15/8/2025</p>
-                    <p>Time: 12:00PM - 3:00PM Weekly</p>
-                    <div class="event-rating">
-                        <img src="assets/ratings/rating-45.png" alt="rating" class="rating"><span class="rated-number">2.5k</span>
-                    </div>
-
-                    
-                </div>
-                <button class="event-signup-btn" data-event="Brewing Class">Sign up</button>
-            </div>
-        </div>
-        <div class="event-wrapper container-sm">
-            <div class="event-left">
-                <img src="assets/images/meet-the-roaster.jpg" alt="meet-the-roaster" class="event-img hidden">
-            </div>
-            <div class="event-right">
-                <div class="event-description hidden">
-                    <h2>Meet the roaster</h2>
-                    <p>
-                        Join us for a special “Meet the Roaster” event, where coffee lovers and curious minds come together to connect with the heart behind the beans. This is your chance to meet our expert coffee roaster, learn about the art and science of coffee roasting, and taste fresh, handcrafted brews.
-                    </p>
-                    <p>Date: 20/8/2025</p>
-                    <p>Time: 1:00PM - 3:00PM</p>
-                    <div class="event-rating">
-                        <img src="assets/ratings/rating-40.png" alt="rating" class="rating"><span class="rated-number">1.3k</span>
-                    </div>
-
-                    
-                </div>
-                <button class="event-signup-btn" data-event="Meet the roaster">Sign up</button>
-            </div>
-        </div>           
-    </section>
 
     <div class="overlay-popup" >
     <!--This will be displayed if fecthing data from json file throws an error-->
@@ -357,10 +257,10 @@
                 
             </div>
             <h2 class="slogan-text hidden">"Coffee that makes you happy"</h2>
-            <p class="hidden">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore consequatur, autem aliquid quos excepturi eaque distinctio tempore molestias repellat architecto, praesentium iste voluptatum fugiat sunt, esse odio deleniti! Quo, accusamus! Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem quo at sint voluptatibus blanditiis esse? Rem esse ipsam modi error ad alias dignissimos, quod assumenda asperiores, nesciunt inventore, sunt neque.</p>
+            <p class="hidden">Discover your new favorite coffee spot at Bean Boutique! Enjoy handcrafted drinks made from ethically sourced beans in a cozy, welcoming space. For a limited time, get 20% OFF all drinks and pastries—just mention this ad or book online. Customers love our smooth brews and friendly service. Visit us at 128 Camden High Street, London NW1 7JR, call +44 7123 456789, or book at www.beanboutique.com. Dine in, take away, or relax with free Wi-Fi. Brew the moment—offer ends soon!</p>
             <div class="advert-btn-wrapper hidden container-sm">
             <div class="booknow advert-btns" id="bookNowBtn">Book now</div>
-            <div class="explore advert-btns">Explore more</div>
+            <div class="explore advert-btns" data-exploreBtns data-explore="coffee">Explore more</div>
             </div>
             <div class="advert-bottom container-sm">
                 <div class="hidden">
@@ -423,69 +323,7 @@
 
     </div>
 
-    <div class="container subscription-wrapper">
-    <h2 class="text-center mb-5">Choose Your Coffee Plan</h2>
-    <div class="row g-4">
-      
-      <!-- Basic Brew Plan -->
-      <div class="col-md-4">
-        <div class="plan-card h-100 d-flex flex-column">
-          <div class="plan-header text-center">
-            <h4>Basic Brew</h4>
-            <div class="plan-price">$15<span class="fs-6">/mo</span></div>
-          </div>
-          <div class="plan-body flex-grow-1">
-            <ul class="plan-perks w-100">
-              <li>5 regular coffees</li>
-              <li>10% off purchases</li>
-              <li>Free brewed coffee refill</li>
-              <li>Birthday drink</li>
-            </ul>
-            <button class="btn btn-subscribe">Subscribe</button>
-          </div>
-        </div>
-      </div>
 
-      <!-- Daily Grind Plan -->
-      <div class="col-md-4">
-        <div class="plan-card h-100 d-flex flex-column">
-          <div class="plan-header text-center">
-            <h4>Daily Grind</h4>
-            <div class="plan-price">$45<span class="fs-6">/mo</span></div>
-          </div>
-          <div class="plan-body flex-grow-1">
-            <ul class="plan-perks w-100">
-              <li>1 drink per day</li>
-              <li>15% off purchases</li>
-              <li>2 guest passes</li>
-              <li>Priority ordering</li>
-            </ul>
-            <button class="btn btn-subscribe">Subscribe</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Coffee Connoisseur Plan -->
-      <div class="col-md-4">
-        <div class="plan-card h-100 d-flex flex-column">
-          <div class="plan-header text-center">
-            <h4>Coffee Connoisseur</h4>
-            <div class="plan-price">$85<span class="fs-6">/mo</span></div>
-          </div>
-          <div class="plan-body flex-grow-1">
-            <ul class="plan-perks w-100">
-              <li>2 drinks per day</li>
-              <li>Unlimited refills</li>
-              <li>20% off all items</li>
-              <li>Lounge access + free beans</li>
-            </ul>
-            <button class="btn btn-subscribe">Subscribe</button>
-          </div>
-        </div>
-      </div>
-
-    </div>
-    </div>
     <div class="items-container hidden">
     <!--This is a coffee container featuring the first ten coffee from the menu-->
         <h2 class="category-header">COFFEE BEANS</h2>
@@ -530,47 +368,46 @@
     </div>
     </section>
 
-    
-
     <footer class="footer">
-
-        <div class="footer-div-wrapper">
-            <div style="max-width: 300px;">
-            <img src="assets/icons/logo_white.png" alt="logo" style="width: 250px; height: auto; border-bottom: 1px solid #fff; padding: 15px 0px;">
-            <p style="color: #a0a0a0; margin: 5px 0px;">"More than just coffee — it’s your daily ritual, your quiet moment, your spark to start the day."</p>
+    <div class="footer-div-wrapper">
+        <div class="footer-logo-section">
+            <img src="assets/icons/logo_white.png" alt="logo" class="footer-logo">
+            <p class="footer-quote">
+                "More than just coffee — it’s your daily ritual, your quiet moment, your spark to start the day."
+            </p>
             <div class="social-media-wrapper">
                 <img src="assets/icons/facebook.png" alt="facebook" class="social-media-icons">
                 <img src="assets/icons/instagram.png" alt="instagram" class="social-media-icons">
                 <img src="assets/icons/twitter.png" alt="twitter" class="social-media-icons">
                 <img src="assets/icons/youtube.png" alt="youtube" class="social-media-icons">
             </div>
-            </div>  
-            <div class="footer-div">
-                <h2>Contact Info</h2>
-                <div style="color: #a0a0a0; display: flex; align-items: center; gap: 5px; margin: 5px 0px;">
-                    <img src="assets/icons/globe.png" alt="globe">
-                    beanboutique.com
-                </div>
+        </div>  
 
-                <div  style="color: #a0a0a0; display: flex; align-items: center; gap: 5px; margin: 5px 0px;">
-                    <img src="assets/icons/phone-call.png" alt="phone">
-                    +44 7123 456789
-                </div>
-
-                <div  style="color: #a0a0a0; display: flex; align-items: center; gap: 5px; margin: 5px 0px;">
-                    <img src="assets/icons/email.png" alt="email">
-                    beanboutique@gmail.com
-                </div>
-
-                <div  style="color: #a0a0a0; display: flex; align-items: center; gap: 5px; margin: 5px 0px;">
-                    <img src="assets/icons/location.png" alt="location">
-                    Bean Boutique 128
-                    Camden High Street
+        <div class="footer-div">
+            <h2>Contact Info</h2>
+            <div class="footer-info">
+                <img src="assets/icons/globe.png" alt="globe">
+                beanboutique.com
+            </div>
+            <div class="footer-info">
+                <img src="assets/icons/phone-call.png" alt="phone">
+                +44 7123 456789
+            </div>
+            <div class="footer-info">
+                <img src="assets/icons/email.png" alt="email">
+                beanboutique@gmail.com
+            </div>
+            <div class="footer-info address">
+                <img src="assets/icons/location.png" alt="location">
+                <span>
+                    Bean Boutique 128<br>
+                    Camden High Street<br>
                     London NW1 7JR
-                </div>
-            </div> 
-            
-            <div class="footer-div">
+                </span>
+            </div>
+        </div> 
+        
+        <div class="footer-div">
             <h2>Visit</h2>
             <ul>
                 <li class="footer-hover"><a href="home-page.html">Home</a></li>
@@ -580,23 +417,22 @@
                 <li class="footer-hover"><a href="products.html?category=beans">Coffee Beans</a></li>
                 <li class="footer-hover"><a href="products.html?category=espresso+machine">Espresso Machine</a></li>
             </ul>
-            </div>
-
-            
-            <div class="footer-div">
-                <h2>Opening Hours</h2>
-                <p style="color: #a0a0a0; margin: 5px 0px;">Mon-Friday : 8AM - 9PM</p>
-                <p style="color: #a0a0a0; margin: 5px 0px;">Saturday : 9AM - 5PM</p>
-                <p style="color: #a0a0a0; margin: 5px 0px;">Sunday : Closed</p>
-            </div> 
         </div>
 
-        <div class="footer-bottom">
-            <div style="color: #a0a0a0;">Privacy and Policies</div>
-            <div style="color: #a0a0a0;">@2025 All right reserved</div>
-        </div>
-        
+        <div class="footer-div">
+            <h2>Opening Hours</h2>
+            <p class="footer-text">Mon-Friday : 8AM - 9PM</p>
+            <p class="footer-text">Saturday : 9AM - 5PM</p>
+            <p class="footer-text">Sunday : Closed</p>
+        </div> 
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-text">Privacy and Policies</div>
+        <div class="footer-text">@2025 All right reserved</div>
+    </div>
     </footer>
+
 
     <script nonce="dev" src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script nonce="dev" src="scripts/main.js" type="module"></script>

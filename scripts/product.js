@@ -390,7 +390,6 @@ try{
         if (response){
             machingItem.quantity += product.quantity;
             machingItem.total = machingItem.price * machingItem.quantity;
-            console.log(cart);
             saveCart();
         }
     return;
@@ -399,7 +398,6 @@ try{
     product.total = product.price * product.quantity;
     cart.push({ ...product });
     saveCart();
-    console.log(cart)
 
 }catch(error){
     console.error(error);

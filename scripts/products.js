@@ -84,7 +84,6 @@ function addEventListeners(){
   const overlayLoading = document.querySelector(".overlay-loading");
   sortData.addEventListener("change", (e) => {
     const selected = e.target.value;
-    console.log(selected)
     switch (true){
       case selected === "default":
         productsData.sort((a, b) => a.id - b.id);
@@ -113,18 +112,9 @@ function addEventListeners(){
 
 }
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show'); // Optional: if you want it to disappear when not in view
-    }
-  });
-});
+
 
 window.addEventListener("load", () => {
-  document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
   getProducts();
   addEventListeners();
 })

@@ -107,6 +107,19 @@ window.location.href = url;
 
 
 export function domEvents(){
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    } else {
+      entry.target.classList.remove('show'); // Optional: if you want it to disappear when not in view
+    }
+  });
+});
+
+document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
+
 let hidden = true;
 const dropdDown = document.getElementById("dropDown")
 const hoverDropdown = dropdDown.querySelector(".hover-dropdown");
@@ -176,5 +189,17 @@ cartBtn.addEventListener("click", () => {
 const cartData = JSON.parse(localStorage.getItem("cartData")) || []
 const cartCount = document.querySelector("[data-cartCount]");
 cartCount.textContent = cartData.length;
+
+const menuBtn = document.querySelector("[data-menu]");
+const navMenu = document.querySelector("[data-responsiveNav]");
+const navClose = document.querySelector("[data-navClose]");
+
+menuBtn.addEventListener("click", () => {
+  navMenu.style.width = "100%";
+})
+
+navClose.addEventListener("click", () => {
+  navMenu.style.width = "0%";
+})
 
 }

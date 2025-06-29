@@ -167,7 +167,6 @@ footer{
     justify-content: space-between;
     gap: 50px;
     margin: auto;
-    border-bottom: 1px solid #c3c3c3;
     padding-bottom: 20px;
     flex-wrap: wrap;
 }
@@ -178,6 +177,57 @@ footer{
     display: flex;
     justify-content: space-between;
 }
+
+.footer-logo-section {
+    max-width: 300px;
+}
+
+.footer-logo {
+    width: 250px;
+    height: auto;
+    border-bottom: 1px solid #fff;
+    padding: 15px 0;
+}
+
+.footer-quote {
+    color: #a0a0a0;
+    margin: 5px 0;
+}
+
+.footer-info {
+    color: #a0a0a0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 5px 0;
+}
+
+.footer-info.address span {
+    display: inline-block;
+}
+
+.footer-text {
+    color: #a0a0a0;
+    margin: 5px 0;
+}
+
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-top: 1px solid #444;
+}
+
+.footer-hover a {
+    text-decoration: none;
+    color: #a0a0a0;
+}
+
+.footer-hover a:hover {
+    text-decoration: underline;
+    color: #fff;
+}
+
 
 .logo{
     width: 180px;
@@ -219,13 +269,31 @@ nav{
 }
 
 .nav-menu{
-    width: 95%;
+    width: 99%;
     display: flex;
-    align-items: center;
     list-style: none;
     gap: 20px;
     margin: auto;
+    overflow: hidden;
+    height: 50px;
 }
+
+.nav-menu .nav-menu-list{
+    display: flex;
+    align-items: center;
+    height: inherit;
+    list-style: none;
+    gap: 20px;
+
+}
+
+[data-menu]{
+    margin-top: 10px;
+    display: none;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
 
 
 .nav-menu ul li{
@@ -273,7 +341,6 @@ nav{
 .navdropdown-products{
     display: flex;
     align-items: center;
-    height: 50px;
     cursor: pointer;
 }
 
@@ -388,8 +455,46 @@ nav{
     opacity: 0.5;
 }
 
+[data-responsiveNav]{
+    position: fixed;
+    width: 0%;
+    height: 100%;
+    z-index: 100;
+    background-color: rgb(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    left: 0;
+    top: 0;
+    overflow: hidden;
+    transition: 0.5s ease-in-out;
+}
 
+[data-navClose]{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
 
+[data-navClose]:hover{
+    opacity: 0.5;
+}
+
+[data-responsiveNav] ul{
+    list-style: none;
+    margin-top: 50px;
+}
+
+[data-responsiveNav] ul li{
+    width: 90%;
+    border-bottom: 1px solid #b9b9b9;
+    padding: 10px 0px;   
+}
+
+[data-responsiveNav] ul li a{
+    text-decoration: none;
+    color: #000;
+}
 
 
 .cart-wrapper {
@@ -668,6 +773,13 @@ nav{
     background-color: #fdf7f1;
 }
 
+.subscription-img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    object-fit: cover;
+}
+
 .plan-card {
     border-radius: 15px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
@@ -707,11 +819,18 @@ nav{
     padding-left: 0;
     margin-bottom: 1.5rem;
     text-align: left;
+    position: relative;
 }
 
-.plan-perks li::before {
-    content: "☕";
+.plan-perks li::after {
+    content: "✅";
     margin-right: 0.5rem;
+    position: absolute;
+    right: 0;
+}
+
+.plan-perks li{
+    margin: 10px 0px;
 }
 
 .btn-subscribe {
@@ -1676,6 +1795,63 @@ height: 0px;
     color: #ffffff;
 }
 
+.subscription-banner{
+    background: linear-gradient(rgba(31, 17, 0, 0.75)) , url(assets/images/plan_banner_background.jpg);
+    width: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    padding: 50px 0px;
+}
+
+.subscription-banner div:first-child{
+    margin-top: 20px;
+    margin-left: 20px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.subscription-banner div:first-child h1{
+    font-size: 3em;
+    color: #ffffff;
+}
+
+.subscription-banner div:first-child span a{
+    color: #ffbf0e;
+    text-decoration: none;
+}
+
+.subscription-banner div:first-child span a:hover{
+    opacity: 0.75;
+}
+
+.subscription-banner div:first-child span{
+    color: #ffffff;
+}
+
+
+.subscription-banner div:last-child h2{
+    color: #ffffff;
+}
+
+.subscription-banner div:last-child p{
+    color: #a0a0a0;
+    width: 100%;
+    max-width: 800px;
+    margin: auto;
+}
+
+
+[data-viewPlan]{
+    width: 100px;
+    background-color: #4c2910;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
 .contact-container {
     max-width: 100%;
     padding: 3rem 1rem;
@@ -2045,11 +2221,16 @@ iframe {
   .dropdown-left li {
     margin: 8px 0;
   }
-  .navdropdown-products:hover .navdropdown-box{
-    height: auto;
-    border-bottom: 1px solid;
-    padding: 20px 0px;    
-}
+  .navdropdown-products{
+    display: none;
+    }
+    .nav-menu .nav-menu-list{
+        display: none;
+    }
+
+    [data-menu]{
+        display: block;
+    }
 }
 
 

@@ -286,48 +286,12 @@ async function  rednerPoupularItems() {
 
   
 
-
-  
-
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show'); // Optional: if you want it to disappear when not in view
-    }
-  });
-});
-
 window.addEventListener("load", () => {
   renderBeansContainer();
   renderCoffeeContainer();
   renderCoffeeMachines();
   rednerPoupularItems();
 
-
-document.querySelectorAll('.hidden').forEach(el => observer.observe(el));
-
-document.querySelectorAll(".event-signup-btn").forEach(btn => {
-  btn.addEventListener("click", (e) =>{
-    const signUpOverlay = document.querySelector(".event-signup-overlay");
-    const eventData = e.target.dataset.event;
-    signUpOverlay.style.display = "block";
-    signUpOverlay.style.opacity = 1;
-    document.getElementById("eventName").value = eventData;
-  } )
-})
-
-
-
-document.getElementById("formCloseBtn").addEventListener("click", () => {
-  const signUpOverlay = document.querySelector(".event-signup-overlay");
-  signUpOverlay.style.display = "none";
-  signUpOverlay.style.opacity = 0;
-  document.getElementById("eventName").value = "";
-
-});
 
 const exploreBtns = document.querySelectorAll("[data-exploreBtns]");
 exploreBtns.forEach(btn => {

@@ -72,17 +72,21 @@
         </div>
        
         <div class="nav-menu">
-            <div class="hover-navlink"><a href="home-page.html">Home</a></div>
-            <div class="hover-navlink"><a href="contact-us.html">Contact us</a></div>
-            <div class="hover-navlink"><a href="booking.html">Reservation</a></div>
-            
+            <div data-menu><img src="assets/icons/menu_30dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""></div>
+            <ul class="nav-menu-list">
+            <li class="hover-navlink"><a href="home-page.html">Home</a></li>
+            <li class="hover-navlink"><a href="event.html">Events & Workshops</a></li>
+            <li class="hover-navlink"><a href="subscription.html">Subscription</a></li>
+            <li class="hover-navlink"><a href="contact-us.html">Contact us</a></li>
+            <li class="hover-navlink"><a href="booking.html">Reservation</a></li>
+            </ul>
             
             
             <div class="navdropdown-products" id="dropDown">
-                <li class="hover-dropdown">
+                <div class="hover-dropdown">
                     Shop 
                 <img src="assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png" alt="drop down" class="arrowIcon">
-                </li>
+                </div>
                 <div class="navdropdown-box">
                     <div class="dropdown-left">
                         <h2>Shop</h2>
@@ -121,7 +125,22 @@
             
         </div>
         
-    </nav>  
+    </nav> 
+
+    <div data-responsiveNav>
+        <ul>
+            <li><a href="home-page.html">Home</a></li>
+            <li><a href="event.html">Events & Workshops</a></li>
+            <li><a href="subscription.html">Subscription</a></li>
+            <li><a href="contact-us.html">Contact us</a></li>
+            <li><a href="booking.html">Reservation</a></li>
+            <li><a href="products.html?category=coffee">Coffee Menu</a></li>
+            <li><a href="products.html?category=beans">Coffee Beans</a></li>
+            <li><a href="products.html?category=espresso machine">Espresso Machine</a></li>
+            </ul>
+        </ul>
+        <span data-navClose>✕</span>
+    </div> 
     
 
     <div class="cart-title" ><h4 data-cartTitle></h4></div>

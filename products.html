@@ -71,17 +71,21 @@
         </div>
        
         <div class="nav-menu">
-            <div class="hover-navlink"><a href="home-page.html">Home</a></div>
-            <div class="hover-navlink"><a href="contact-us.html">Contact us</a></div>
-            <div class="hover-navlink"><a href="booking.html">Reservation</a></div>
-            
+            <div data-menu><img src="assets/icons/menu_30dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""></div>
+            <ul class="nav-menu-list">
+            <li class="hover-navlink"><a href="home-page.html">Home</a></li>
+            <li class="hover-navlink"><a href="event.html">Events & Workshops</a></li>
+            <li class="hover-navlink"><a href="subscription.html">Subscription</a></li>
+            <li class="hover-navlink"><a href="contact-us.html">Contact us</a></li>
+            <li class="hover-navlink"><a href="booking.html">Reservation</a></li>
+            </ul>
             
             
             <div class="navdropdown-products" id="dropDown">
-                <li class="hover-dropdown">
+                <div class="hover-dropdown">
                     Shop 
                 <img src="assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png" alt="drop down" class="arrowIcon">
-                </li>
+                </div>
                 <div class="navdropdown-box">
                     <div class="dropdown-left">
                         <h2>Shop</h2>
@@ -120,7 +124,22 @@
             
         </div>
         
-    </nav>    
+    </nav> 
+
+    <div data-responsiveNav>
+        <ul>
+            <li><a href="home-page.html">Home</a></li>
+            <li><a href="event.html">Events & Workshops</a></li>
+            <li><a href="subscription.html">Subscription</a></li>
+            <li><a href="contact-us.html">Contact us</a></li>
+            <li><a href="booking.html">Reservation</a></li>
+            <li><a href="products.html?category=coffee">Coffee Menu</a></li>
+            <li><a href="products.html?category=beans">Coffee Beans</a></li>
+            <li><a href="products.html?category=espresso machine">Espresso Machine</a></li>
+            </ul>
+        </ul>
+        <span data-navClose>✕</span>
+    </div>    
 
     <div class="overlay-popup">
     <!--This will be displayed if fecthing data from json file throws an error-->
@@ -171,68 +190,68 @@
     </div>
 
     <footer class="footer">
-
-        <div class="footer-div-wrapper">
-            <div style="max-width: 300px;">
-            <img src="assets/icons/logo_white.png" alt="logo" style="width: 250px; height: auto; border-bottom: 1px solid #fff; padding: 15px 0px;">
-            <p style="color: #a0a0a0; margin: 5px 0px;">"More than just coffee — it’s your daily ritual, your quiet moment, your spark to start the day."</p>
+    <div class="footer-div-wrapper">
+        <div class="footer-logo-section">
+            <img src="assets/icons/logo_white.png" alt="logo" class="footer-logo">
+            <p class="footer-quote">
+                "More than just coffee — it’s your daily ritual, your quiet moment, your spark to start the day."
+            </p>
             <div class="social-media-wrapper">
                 <img src="assets/icons/facebook.png" alt="facebook" class="social-media-icons">
                 <img src="assets/icons/instagram.png" alt="instagram" class="social-media-icons">
                 <img src="assets/icons/twitter.png" alt="twitter" class="social-media-icons">
                 <img src="assets/icons/youtube.png" alt="youtube" class="social-media-icons">
             </div>
-            </div>  
-            <div class="footer-div">
-                <h2>Contact Info</h2>
-                <div style="color: #a0a0a0; display: flex; align-items: center; gap: 5px; margin: 5px 0px;">
-                    <img src="assets/icons/globe.png" alt="globe">
-                    beanboutique.com
-                </div>
+        </div>  
 
-                <div  style="color: #a0a0a0; display: flex; align-items: center; gap: 5px; margin: 5px 0px;">
-                    <img src="assets/icons/phone-call.png" alt="phone">
-                    +44 7123 456789
-                </div>
-
-                <div  style="color: #a0a0a0; display: flex; align-items: center; gap: 5px; margin: 5px 0px;">
-                    <img src="assets/icons/email.png" alt="email">
-                    beanboutique@gmail.com
-                </div>
-
-                <div  style="color: #a0a0a0; display: flex; align-items: center; gap: 5px; margin: 5px 0px;">
-                    <img src="assets/icons/location.png" alt="location">
-                    Bean Boutique 128
-                    Camden High Street
+        <div class="footer-div">
+            <h2>Contact Info</h2>
+            <div class="footer-info">
+                <img src="assets/icons/globe.png" alt="globe">
+                beanboutique.com
+            </div>
+            <div class="footer-info">
+                <img src="assets/icons/phone-call.png" alt="phone">
+                +44 7123 456789
+            </div>
+            <div class="footer-info">
+                <img src="assets/icons/email.png" alt="email">
+                beanboutique@gmail.com
+            </div>
+            <div class="footer-info address">
+                <img src="assets/icons/location.png" alt="location">
+                <span>
+                    Bean Boutique 128<br>
+                    Camden High Street<br>
                     London NW1 7JR
-                </div>
-            </div> 
-            
-            <div class="footer-div">
+                </span>
+            </div>
+        </div> 
+        
+        <div class="footer-div">
             <h2>Visit</h2>
             <ul>
-                <li class="footer-hover"><a href="">Home</a></li>
-                <li class="footer-hover"><a href="">Contact</a></li>
-                <li class="footer-hover"><a href="">Coffee Menu</a></li>
-                <li class="footer-hover"><a href="">Coffee Beans</a></li>
-                <li class="footer-hover"><a href="">Espresso Machine</a></li>
+                <li class="footer-hover"><a href="home-page.html">Home</a></li>
+                <li class="footer-hover"><a href="">Contact us</a></li>
+                <li class="footer-hover"><a href="booking.html">Reservation</a></li>
+                <li class="footer-hover"><a href="products.html?category=coffee">Coffee Menu</a></li>
+                <li class="footer-hover"><a href="products.html?category=beans">Coffee Beans</a></li>
+                <li class="footer-hover"><a href="products.html?category=espresso+machine">Espresso Machine</a></li>
             </ul>
-            </div>
-
-            
-            <div class="footer-div">
-                <h2>Opening Hours</h2>
-                <p style="color: #a0a0a0; margin: 5px 0px;">Mon-Friday : 8AM - 9PM</p>
-                <p style="color: #a0a0a0; margin: 5px 0px;">Saturday : 9AM - 5PM</p>
-                <p style="color: #a0a0a0; margin: 5px 0px;">Sunday : Closed</p>
-            </div> 
         </div>
 
-        <div class="footer-bottom">
-            <div style="color: #a0a0a0;">Privacy and Policies</div>
-            <div style="color: #a0a0a0;">@2025 All right reserved</div>
-        </div>
-        
+        <div class="footer-div">
+            <h2>Opening Hours</h2>
+            <p class="footer-text">Mon-Friday : 8AM - 9PM</p>
+            <p class="footer-text">Saturday : 9AM - 5PM</p>
+            <p class="footer-text">Sunday : Closed</p>
+        </div> 
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-text">Privacy and Policies</div>
+        <div class="footer-text">@2025 All right reserved</div>
+    </div>
     </footer>
 
 
