@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee shop</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header"></header>
+    <nav>
+        <div class="navigation"> 
+            <a href="home-page.html"><img src="assets/icons/logo.png" alt="logo" class="logo"></a>
+            <div class="nav-right">
+                
+                <div class="search-wrapper" >
+                    <div class="search" id="searchTrigger">
+                        <img src="assets/icons/search_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="profile" class="nav-buttons">
+                    </div>
+                    <div class="search-text">
+                        Search
+                    </div>
+                </div>
+
+                <div class="register-wrapper">
+                    <div class="register">
+                        <img src="assets/icons/person_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="profile" class="nav-buttons">
+                    </div>
+                    <div class="register-text">
+                        Register
+                    </div>
+                </div>
+
+                <div class="cart-wrapper">
+                    <div class="cart">
+                        <img src="assets/icons/shopping_bag_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="cart" class="nav-buttons" data-cart>
+                    </div>
+                    <div class="cart-text">
+                        Cart
+                    </div>
+
+                    <div data-cartCount></div>
+                </div>
+
+            </div>
+
+            <div class="search-overlay" id="searchOverlay">
+                <div class="search-container">
+                    <div class="search-field">
+                    <input type="text" placeholder="Search..." id="searchInput" autofocus />
+                    <button class="search-btn" data-searchBtn><img src="assets/icons/search_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="search" class="nav-buttons"></button>
+                    </div>
+                    <button class="close-btn" id="closeSearch">✕</button>
+                </div>
+            </div>
+            
+        </div>
+       
+        <div class="nav-menu">
+            <div data-menu><img src="assets/icons/menu_30dp_000000_FILL0_wght400_GRAD0_opsz24.png" alt=""></div>
+            <ul class="nav-menu-list">
+            <li class="hover-navlink"><a href="home-page.html">Home</a></li>
+            <li class="hover-navlink"><a href="event.html">Events & Workshops</a></li>
+            <li class="hover-navlink"><a href="subscription.html">Subscription</a></li>
+            <li class="hover-navlink"><a href="contact-us.html">Contact us</a></li>
+            <li class="hover-navlink"><a href="booking.html">Reservation</a></li>
+            </ul>
+            
+            
+            <div class="navdropdown-products" id="dropDown">
+                <div class="hover-dropdown">
+                    Shop 
+                <img src="assets/icons/keyboard_arrow_down_20dp_000000_FILL0_wght300_GRAD200_opsz20.png" alt="drop down" class="arrowIcon">
+                </div>
+                <div class="navdropdown-box">
+                    <div class="dropdown-left">
+                        <h2>Shop</h2>
+                        <ul>
+                            <li class="dropdown-hover"><a href="products.html?category=coffee" >Coffe menu</a></li>
+                            <li class="dropdown-hover"><a href="products.html?category=beans" >Coffee beans</a></li>
+                            <li class="dropdown-hover"><a href="products.html?category=espresso+machine" >Espresso machine</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="dropdown-right">
+                        <div class="card">
+                            <a href="products.html?category=coffee">
+                                <img src="assets/images/coffee.jpg" alt="coffee">
+                                <p>Coffee</p>
+                            </a>
+                        </div>
+
+                        <div class="card">
+                            <a href="products.html?category=beans">
+                                <img src="assets/images/beans.jpg" alt="beans">
+                                <p>Beans</p>
+                            </a>
+                        </div>
+
+                        <div class="card">
+                            <a href="products.html?category=espresso machine">
+                                <img src="assets/images/espresso_machine.jpg" alt="espresso_machine">
+                                <p>Espresso Machines</p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+            
+        </div>
+        
+    </nav> 
+
+    <div data-responsiveNav>
+        <ul>
+            <li><a href="home-page.html">Home</a></li>
+            <li><a href="event.html">Events & Workshops</a></li>
+            <li><a href="subscription.html">Subscription</a></li>
+            <li><a href="contact-us.html">Contact us</a></li>
+            <li><a href="booking.html">Reservation</a></li>
+            <li><a href="products.html?category=coffee">Coffee Menu</a></li>
+            <li><a href="products.html?category=beans">Coffee Beans</a></li>
+            <li><a href="products.html?category=espresso machine">Espresso Machine</a></li>
+            </ul>
+        </ul>
+        <span data-navClose>✕</span>
+    </div>   
+
+
+    <div class="banner">
+        <div>
+            <h1>Events & Workshops</h1>
+            <span><a href="">Home ></a></span> 
+            <span>Events & Workshops</span>
+        </div>
+    </div>
+    
+    <div class="event-signup-overlay">
+    <form action="" class="event-signup-form container-sm" id="eventSignupForm">
+        <h2 class="text-center my-4">Event Signup Form</h2>
+        <span class="form-close" id="formCloseBtn">✕</span>
+
+        <!-- Event Name -->
+        <div class="row mb-3">
+            <div class="col-12 col-md-6">
+            <label for="eventName" class="form-label">Event:</label>
+            </div>
+            <div class="col-12 col-md-6">
+            <input type="text" name="eventName" id="eventName" readonly class="form-control">
+            </div>
+        </div>
+
+        <!-- First Name -->
+        <div class="row mb-3">
+            <div class="col-12 col-md-6">
+            <label for="firstName" class="form-label">First Name:</label>
+            </div>
+            <div class="col-12 col-md-6">
+            <input type="text" id="firstName" name="firstName" required class="form-control">
+            </div>
+        </div>
+
+        <!-- Last Name -->
+        <div class="row mb-3">
+            <div class="col-12 col-md-6">
+            <label for="lastName" class="form-label">Last Name:</label>
+            </div>
+            <div class="col-12 col-md-6">
+            <input type="text" name="lastName" id="lastName" required class="form-control">
+            </div>
+        </div>
+
+        <!-- Email -->
+        <div class="row mb-4">
+            <div class="col-12 col-md-6">
+            <label for="email" class="form-label">Email:</label>
+            </div>
+            <div class="col-12 col-md-6">
+            <input type="email" name="email" id="email" required class="form-control">
+            <span id="emailError"></span>
+            </div>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="text-lg-end">
+            <button class="event-submit-btn" type="submit">Submit</button>
+        </div>
+    </form>
+    </div>
+
+    <section>
+        <div class="event-wrapper container-sm">
+            <div class="event-left">
+                <img src="assets/images/tasting-event.jpeg" alt="coffee-tasting-event" class="event-img hidden">
+            </div>
+            <div class="event-right">
+                <div class="event-description hidden">
+                    <h2>Coffee Tasting Event</h2>
+                    <p>Join us for an immersive Coffee Tasting Event that will awaken your senses and deepen your appreciation for the world’s most beloved beverage. Whether you're a seasoned coffee connoisseur or a curious beginner, this guided tasting will take you on a journey through origin, roast, aroma, and flavor.</p>
+                    <p>Date: 7/8/2025</p>
+                    <p>Time: 9:00AM - 1:00PM</p>
+                    <div class="event-rating">
+                        <img src="assets/ratings/rating-45.png" alt="rating" class="rating"><span class="rated-number">10k</span>
+                    </div>
+
+                    
+                </div>
+                <button class="event-signup-btn" data-event="Coffee Tasting">Sign up</button>
+            </div>
+        </div>
+        <div class="event-wrapper container-sm">
+            <div class="event-left">
+                <img src="assets/images/brewing-class.jpeg" alt="brewing-class" class="event-img hidden">
+            </div>
+            <div class="event-right">
+                <div class="event-description hidden">
+                    <h2>Coffe Brewing Class</h2>
+                    <p>
+                        Ready to take your home coffee game to the next level? Join our Coffee Brewing Class, a hands-on workshop designed to teach you the techniques, tools, and tips that make a truly exceptional cup. Led by skilled baristas, this class will walk you through the essentials of manual brewing and help you discover what makes a cup of coffee not just good—but great.
+                    </p>
+                    <p>Start Date: 15/8/2025</p>
+                    <p>Time: 12:00PM - 3:00PM Weekly</p>
+                    <div class="event-rating">
+                        <img src="assets/ratings/rating-45.png" alt="rating" class="rating"><span class="rated-number">2.5k</span>
+                    </div>
+
+                    
+                </div>
+                <button class="event-signup-btn" data-event="Brewing Class">Sign up</button>
+            </div>
+        </div>
+        <div class="event-wrapper container-sm">
+            <div class="event-left">
+                <img src="assets/images/meet-the-roaster.jpg" alt="meet-the-roaster" class="event-img hidden">
+            </div>
+            <div class="event-right">
+                <div class="event-description hidden">
+                    <h2>Meet the roaster</h2>
+                    <p>
+                        Join us for a special “Meet the Roaster” event, where coffee lovers and curious minds come together to connect with the heart behind the beans. This is your chance to meet our expert coffee roaster, learn about the art and science of coffee roasting, and taste fresh, handcrafted brews.
+                    </p>
+                    <p>Date: 20/8/2025</p>
+                    <p>Time: 1:00PM - 3:00PM</p>
+                    <div class="event-rating">
+                        <img src="assets/ratings/rating-40.png" alt="rating" class="rating"><span class="rated-number">1.3k</span>
+                    </div>
+
+                    
+                </div>
+                <button class="event-signup-btn" data-event="Meet the roaster">Sign up</button>
+            </div>
+        </div>           
+    </section>
+    
+
+    <footer class="footer">
+    <div class="footer-div-wrapper">
+        <div class="footer-logo-section">
+            <img src="assets/icons/logo_white.png" alt="logo" class="footer-logo">
+            <p class="footer-quote">
+                "More than just coffee — it’s your daily ritual, your quiet moment, your spark to start the day."
+            </p>
+            <div class="social-media-wrapper">
+                <img src="assets/icons/facebook.png" alt="facebook" class="social-media-icons">
+                <img src="assets/icons/instagram.png" alt="instagram" class="social-media-icons">
+                <img src="assets/icons/twitter.png" alt="twitter" class="social-media-icons">
+                <img src="assets/icons/youtube.png" alt="youtube" class="social-media-icons">
+            </div>
+        </div>  
+
+        <div class="footer-div">
+            <h2>Contact Info</h2>
+            <div class="footer-info">
+                <img src="assets/icons/globe.png" alt="globe">
+                beanboutique.com
+            </div>
+            <div class="footer-info">
+                <img src="assets/icons/phone-call.png" alt="phone">
+                +44 7123 456789
+            </div>
+            <div class="footer-info">
+                <img src="assets/icons/email.png" alt="email">
+                beanboutique@gmail.com
+            </div>
+            <div class="footer-info address">
+                <img src="assets/icons/location.png" alt="location">
+                <span>
+                    Bean Boutique 128<br>
+                    Camden High Street<br>
+                    London NW1 7JR
+                </span>
+            </div>
+        </div> 
+        
+        <div class="footer-div">
+            <h2>Visit</h2>
+            <ul>
+                <li class="footer-hover"><a href="home-page.html">Home</a></li>
+                <li class="footer-hover"><a href="">Contact us</a></li>
+                <li class="footer-hover"><a href="booking.html">Reservation</a></li>
+                <li class="footer-hover"><a href="products.html?category=coffee">Coffee Menu</a></li>
+                <li class="footer-hover"><a href="products.html?category=beans">Coffee Beans</a></li>
+                <li class="footer-hover"><a href="products.html?category=espresso+machine">Espresso Machine</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-div">
+            <h2>Opening Hours</h2>
+            <p class="footer-text">Mon-Friday : 8AM - 9PM</p>
+            <p class="footer-text">Saturday : 9AM - 5PM</p>
+            <p class="footer-text">Sunday : Closed</p>
+        </div> 
+    </div>
+
+    <div class="footer-bottom">
+        <div class="footer-text">Privacy and Policies</div>
+        <div class="footer-text">@2025 All right reserved</div>
+    </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script src="scripts/script.js" type="module"></script>
+</body>
+</html>
