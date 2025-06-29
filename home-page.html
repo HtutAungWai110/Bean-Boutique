@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;
@@ -14,14 +15,14 @@
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
 
-    <title>Coffee shop</title>
+    <title>Home</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
     <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-    />
+    >
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -66,7 +67,7 @@
             <div class="search-overlay" id="searchOverlay">
                 <div class="search-container">
                     <div class="search-field">
-                    <input type="text" placeholder="Search..." id="searchInput" autofocus />
+                    <input type="text" placeholder="Search..." id="searchInput" autofocus >
                     <button class="search-btn" data-searchBtn><img src="assets/icons/search_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="search" class="nav-buttons"></button>
                     </div>
                     <button class="close-btn" id="closeSearch">✕</button>
@@ -117,7 +118,7 @@
                         </div>
 
                         <div class="card">
-                            <a href="products.html?category=espresso machine">
+                            <a href="products.html?category=espresso+machine">
                                 <img src="assets/images/espresso_machine.jpg" alt="espresso_machine">
                                 <p>Espresso Machines</p>
                             </a>
@@ -140,8 +141,7 @@
             <li><a href="booking.html">Reservation</a></li>
             <li><a href="products.html?category=coffee">Coffee Menu</a></li>
             <li><a href="products.html?category=beans">Coffee Beans</a></li>
-            <li><a href="products.html?category=espresso machine">Espresso Machine</a></li>
-            </ul>
+            <li><a href="products.html?category=espresso+machine">Espresso Machine</a></li>
         </ul>
         <span data-navClose>✕</span>
     </div>
@@ -150,8 +150,13 @@
 
         <div class="swiper-wrapper">
 
-            <div class="swiper-slide"><img src="assets/images/Coffee That makes you happy.png" alt="poster" class="posters"></div>
-            <div class="swiper-slide"><img src="assets/images/Grand Opening.png" alt="poster" class="posters"></div>
+            <div class="swiper-slide">
+                <img src="assets/images/coffee-that-makes-you-happy.png" alt="poster" class="posters">
+            </div>
+
+            <div class="swiper-slide">
+                <img src="assets/images/grand-opening.png" alt="poster" class="posters">
+            </div>
 
         </div>
 
@@ -197,7 +202,7 @@
     </div> 
 
     <div class="welcome-popup " data-welcomePopup>
-        <form action="" class="welcome-container" >
+        <form action="#" method="post" class="welcome-container" >
             <h1>Welcome guest</h1>
             <p>Sign up to our website to obtain <strong>50% OFF</strong> coupon on your first purchase</p>
             <input type="email" placeholder="Email" class="form-control">
@@ -362,7 +367,7 @@
     <div class="explore-btn-wrapper">
     <!--Customers can explore every coffee on menu by clicking button below-->
     
-    <button class="explore-btn" data-exploreBtns data-explore="espresso machine">Explore more</button>
+    <button class="explore-btn" data-exploreBtns data-explore="espresso+machine">Explore more</button>
     </div>
 
     </div>

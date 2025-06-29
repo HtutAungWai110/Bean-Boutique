@@ -246,7 +246,13 @@ function appendEventListeners(productData){
 
     const quantityInput = document.getElementById("quantity");
     quantityInput.addEventListener("change", () => {
+        const maxLimit = 99;
         product.quantity = parseInt(quantityInput.value);
+        if (product.quantity >= maxLimit){
+            product.quantity = maxLimit;
+        } if (product.quantity <= 1){
+            product.quantity = 1;
+        }
     })
 
     if (product.category === "beans"){
