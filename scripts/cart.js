@@ -38,7 +38,7 @@ function renderCartList(){
         const clone = template.content.cloneNode(true);
         clone.querySelector("[data-cartImg]").src = item.image;
         clone.querySelector("[data-cartImg]").alt = item.image;
-        clone.querySelector("[data-name]").textContent = `${item?.temp || ""} ${item?.portion || ""} ${item.name} `;
+        clone.querySelector("[data-name]").textContent = `${item?.temp || ""} ${item?.portion || ""} ${item?.bean || ""} ${item.name} `;
         clone.querySelector("[data-brief]").textContent = item.briefDescription;
         clone.querySelector("[data-brief]").href = `product.html?id=${encodeURIComponent(item.id)}`;
         clone.querySelector("[data-price]").textContent = `£${(item.price / 100).toFixed(2)}`;

@@ -108,6 +108,24 @@ window.location.href = url;
 
 export function domEvents(){
 
+
+let lastScrollTop = 0;
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", function () {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (currentScroll < lastScrollTop) {
+        // Scrolling up
+        nav.style.top = "0";
+    } else {
+        // Scrolling down
+        nav.style.top = "-150px"; // hides the nav (adjust if your nav height is different)
+    }
+
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // For Mobile or negative scrolling
+});
+
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
