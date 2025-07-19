@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <meta http-equiv="Content-Security-Policy" content="
     default-src 'self';
     script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net;
     style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net https://fonts.googleapis.com;
     font-src https://fonts.gstatic.com data:;
     img-src 'self' data: https:;
+    frame-src https://www.google.com https://www.google.co.uk https://*.elfsight.com;
+    connect-src https://*.elfsight.com https://api.emailjs.com ws://127.0.0.1:8080;
     ">
 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Strict-Transport-Security" content="max-age=31536000; includeSubDomains; preload">
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <title>Events & Workshops</title>
@@ -61,7 +64,7 @@
             <div class="search-overlay" id="searchOverlay">
                 <div class="search-container">
                     <div class="search-field">
-                    <input type="text" placeholder="Search..." id="searchInput" autofocus />
+                    <input type="search" placeholder="Search..." id="searchInput" autofocus />
                     <button class="search-btn" data-searchBtn><img src="assets/icons/search_50dp_000000_FILL0_wght200_GRAD200_opsz48.png" alt="search" class="nav-buttons"></button>
                     </div>
                     <button class="close-btn" id="closeSearch">✕</button>
@@ -157,30 +160,30 @@
         <!-- Event Name -->
         <div class="row mb-3">
             <div class="col-12 col-md-6">
-            <label for="eventName" class="form-label">Event:</label>
+            <label for="event_name" class="form-label">Event:</label>
             </div>
             <div class="col-12 col-md-6">
-            <input type="text" name="eventName" id="eventName" readonly class="form-control">
+            <input type="text" name="event_name" id="eventName" readonly class="form-control">
             </div>
         </div>
 
         <!-- First Name -->
         <div class="row mb-3">
             <div class="col-12 col-md-6">
-            <label for="firstName" class="form-label">First Name:</label>
+            <label for="first_name" class="form-label">First Name:</label>
             </div>
             <div class="col-12 col-md-6">
-            <input type="text" id="firstName" name="firstName" required class="form-control">
+            <input type="text" id="firstName" name="first_name" required class="form-control">
             </div>
         </div>
 
         <!-- Last Name -->
         <div class="row mb-3">
             <div class="col-12 col-md-6">
-            <label for="lastName" class="form-label">Last Name:</label>
+            <label for="last_name" class="form-label">Last Name:</label>
             </div>
             <div class="col-12 col-md-6">
-            <input type="text" name="lastName" id="lastName" required class="form-control">
+            <input type="text" name="last_name" id="last_name" required class="form-control">
             </div>
         </div>
 
@@ -332,7 +335,12 @@
     </div>
     </footer>
 
-    <script nonce="dev" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script nonce="dev" nonce="dev" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    <script nonce="dev" type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
     <script nonce="dev" src="scripts/script.js" type="module"></script>
+
+
 </body>
 </html>

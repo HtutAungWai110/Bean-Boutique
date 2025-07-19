@@ -1,9 +1,11 @@
 import { domEvents } from "./index.js";
 
-window.addEventListener("DOMContentLoaded", () => {
     const signUpOverlay = document.querySelector(".event-signup-overlay");
     const eventSignupBtns = document.querySelectorAll(".event-signup-btn");
     const formCloseBtn = document.getElementById("formCloseBtn")
+
+window.addEventListener("DOMContentLoaded", () => {
+
     if (eventSignupBtns){
         eventSignupBtns.forEach(btn => {
         btn.addEventListener("click", (e) =>{
@@ -16,7 +18,6 @@ window.addEventListener("DOMContentLoaded", () => {
     }
     if (formCloseBtn){
         formCloseBtn.addEventListener("click", () => {
-        const signUpOverlay = document.querySelector(".event-signup-overlay");
         signUpOverlay.style.display = "none";
         signUpOverlay.style.opacity = 0;
         document.getElementById("eventName").value = "";
@@ -32,7 +33,32 @@ window.addEventListener("DOMContentLoaded", () => {
         })
     }
     
-})
+});
 
+
+
+const eventForm = document.getElementById("eventSignupForm");
+if (eventForm){
+
+    (function() {
+        emailjs.init("mLa_Rh4awOcqOKIlm"); 
+        })();
+    eventForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    emailjs.sendForm('service_0o6fj29', 'template_ycidit5', this)
+        .then(function(response) {
+        alert('Successfully signed up for the workshop!');
+        }, function(error) {
+        alert('Signup failed. Please try again.');
+        console.error('EmailJS error:', error);
+        });
+
+        signUpOverlay.style.display = "none";
+        signUpOverlay.style.opacity = 0;
+        document.getElementById("eventName").value = "";
+    });
+
+}
 
 domEvents();
