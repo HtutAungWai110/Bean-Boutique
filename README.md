@@ -72,7 +72,7 @@ npm install
 Start the local development server with:
 
 ```bash
-npm start
+npm run start
 ```
 
 This will launch the site in your default browser, opening the home page (`home-page.html`).
